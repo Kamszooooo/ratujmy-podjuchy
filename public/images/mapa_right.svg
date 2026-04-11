@@ -28,15 +28,15 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showguides="false"
-     inkscape:zoom="0.7064382"
-     inkscape:cx="973.89977"
-     inkscape:cy="729.00928"
+     inkscape:zoom="0.99905448"
+     inkscape:cx="1051.9947"
+     inkscape:cy="513.48551"
      inkscape:window-width="2560"
      inkscape:window-height="1476"
      inkscape:window-x="-12"
      inkscape:window-y="2088"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer5" />
+     inkscape:current-layer="layer2" />
   <defs
      id="defs1">
     <rect
@@ -76,16 +76,16 @@
      style="display:inline;opacity:0.69">
     <path
        style="fill:#a8713a;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
-       d="m 187.68065,85.55241 -17.97005,18.8365 9.31798,2.93389 -6.29054,16.8355 11.42028,3.85686 -7.63126,22.63116 14.6884,5.53293 v 0 l 6.64712,2.67284 7.58927,-22.01969 31.97462,11.37292 7.33117,-5.60072 9.49038,-7.25027 -30.96604,-53.565283 -3.46061,3.706995 -9.37774,-19.402772 -9.20203,-12.885031 -5.17411,3.595 -5.31088,6.0115 3.04096,2.771703 6.62041,8.932807 z"
+       d="m 193.36993,80.490295 7.32594,4.949275 15.15589,-2.899618 -0.0389,-4.124475 v -10e-7 l -5.36919,-12.322206 -9.20203,-12.885031 -5.17411,3.595 -5.31088,6.0115 3.04096,2.771703 6.62041,8.932807 z"
        id="path18"
-       sodipodi:nodetypes="cccccccccccccccccccccc"
+       sodipodi:nodetypes="cccccccccccc"
        inkscape:label="SW" />
     <path
        style="fill:#e9d8b9;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
-       d="m 274.82636,229.02197 8.86946,10.89676 9.58057,5.44982 15.60234,-16.12484 12.89238,-5.73347 -18.46746,-6.84215 -10.0098,-15.14143 -12.65076,-22.55797 -3.85278,-9.15032 -22.54229,-34.46404 -4.98311,3.8069 c 0,0 6.50746,11.13099 6.45895,11.28393 l -36.29143,23.39126 5.16614,7.9454 33.79345,12.63936 z"
+       d="m 274.82636,229.02197 8.86946,10.89676 9.58057,5.44982 15.60234,-16.12484 12.89238,-5.73347 -18.46746,-6.84215 -10.0098,-15.14143 -12.65076,-22.55797 -3.85278,-9.15032 -22.54229,-34.46404 -30.96604,-53.565283 -3.46061,3.706995 -4.00851,-7.080565 0.0389,4.124475 -15.15589,2.899618 -7.32594,-4.949275 -23.65933,23.898615 9.31798,2.93389 -6.29054,16.8355 11.42028,3.85686 -7.63126,22.63116 14.6884,5.53293 -4.02202,11.73926 37.40513,13.86331 33.79345,12.63936 z"
        id="path19"
        inkscape:label="SJ I"
-       sodipodi:nodetypes="cccccccccccccccc" />
+       sodipodi:nodetypes="cccccccccccccccccccccccccc" />
     <path
        style="fill:#e9d8b9;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
        d="m 195.45478,346.466 -31.49659,-34.07117 -12.98742,-23.06058 -1.45712,-3.92789 -9.16306,-16.7109 -8.10834,-14.73841 29.92473,-18.85973 -11.82654,-18.32218 -6.16427,-9.34173 -29.22577,17.89805 -19.020852,12.20167 2.154594,4.17182 1.038669,2.5834 1.038669,2.5834 5.81266,14.93552 2.04314,4.0071 8.04586,18.76047 8.04586,18.76048 2.85834,7.08901 6.36124,15.25354 2.63185,4.95013 13.57365,13.61845 12.87928,13.08087 10.46022,12.47609 z"
@@ -93,9 +93,10 @@
        sodipodi:nodetypes="ccccccccccccccccccccccccc"
        inkscape:label="SJ II" />
     <path
-       style="fill:#daf9c5;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-opacity:1;stroke-dasharray:none"
-       d="m 193.36993,80.490294 -14.67431,14.480366 -8.98502,9.41825 9.31798,2.93389 -6.29054,16.8355 11.42028,3.85686 -7.63126,22.63116 21.33552,8.20577 7.58927,-22.01969 31.97462,11.37292 11.83844,-9.04409 6.45895,11.28393 -36.29143,23.39126 5.16614,7.9454 33.79345,12.63936 16.43434,34.60079 8.86946,10.89676 9.58057,5.44982 -97.82161,101.09745 -31.49659,-34.07117 -12.98742,-23.06058 -1.45712,-3.92789 -17.2714,-31.44931 29.92473,-18.85973 -17.99081,-27.66391 -48.246622,30.09972 -15.641217,-26.18409 -11.120981,-17.43183 0.721887,-8.42032 38.573473,-38.99682 63.90324,-71.08768 5.54735,-8.988888 z"
-       id="path7" />
+       style="fill:#daf9c5;fill-opacity:1;stroke:#000000;stroke-width:0.8;stroke-dasharray:none;stroke-opacity:1"
+       d="m 193.36993,80.490294 -14.67431,14.480366 -8.98502,9.41825 9.31798,2.93389 -6.29054,16.8355 11.42028,3.85686 -7.63126,22.63116 14.6884,5.53293 -4.02202,11.73926 6.22558,2.00964 31.17955,11.85367 33.79345,12.63936 16.43434,34.60079 8.86946,10.89676 9.58057,5.44982 -97.82161,101.09745 -31.49659,-34.07117 -12.98742,-23.06058 -1.45712,-3.92789 -17.2714,-31.44931 29.92473,-18.85973 -17.99081,-27.66391 -48.246622,30.09972 -15.641217,-26.18409 -11.120981,-17.43183 0.721887,-8.42032 38.573473,-38.99682 63.90324,-71.08768 5.54735,-8.988888 z"
+       id="path7"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccc" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -337,29 +338,19 @@
     <text
        xml:space="preserve"
        style="font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:none;fill-opacity:0;stroke:#000000;stroke-width:0.799999;stroke-opacity:1"
-       x="180.00047"
-       y="104.22319"
+       x="234.71809"
+       y="37.369083"
        id="text1-8-5-1-2"><tspan
          sodipodi:role="line"
-         style="font-weight:bold;font-size:5.64444px;fill:#000000;fill-opacity:0.983306;stroke:none;stroke-width:0.8;stroke-opacity:1"
-         x="180.00047"
-         y="104.22319"
-         id="tspan3-2-2">Proponowana</tspan><tspan
-         sodipodi:role="line"
-         style="font-weight:bold;font-size:5.64444px;fill:#000000;fill-opacity:0.983306;stroke:none;stroke-width:0.8;stroke-opacity:1"
-         x="180.00047"
-         y="111.27874"
-         id="tspan6">zabud. wielorodzinna</tspan><tspan
+         style="font-weight:bold;font-size:4.93889px;fill:#000000;fill-opacity:0.983306;stroke:none;stroke-width:0.8;stroke-opacity:1"
+         x="234.71809"
+         y="37.369083"
+         id="tspan4-7-2">Strefa 1386 SW powinna</tspan><tspan
          sodipodi:role="line"
          style="font-weight:bold;font-size:4.93889px;fill:#000000;fill-opacity:0.983306;stroke:none;stroke-width:0.8;stroke-opacity:1"
-         x="180.00047"
-         y="118.33429"
-         id="tspan4-7-2">(strefa 1386 SW powinna</tspan><tspan
-         sodipodi:role="line"
-         style="font-weight:bold;font-size:4.93889px;fill:#000000;fill-opacity:0.983306;stroke:none;stroke-width:0.8;stroke-opacity:1"
-         x="180.00047"
-         y="125.38984"
-         id="tspan7">objąć tylko ten obszar)</tspan></text>
+         x="234.71809"
+         y="44.424633"
+         id="tspan7">objąć tylko ten obszar</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:none;fill-opacity:0;stroke:#000000;stroke-width:0.799999;stroke-opacity:1"
@@ -386,5 +377,15 @@
        transform="scale(0.26458333)"
        id="text7"
        style="font-size:18.6667px;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect7);display:inline;fill:#daf9c5;fill-opacity:1;stroke:#000000;stroke-width:3.02362;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.5;stroke-opacity:1;stroke-dasharray:none"
+       d="m 257.95854,46.254635 -53.08983,21.91009"
+       id="path10"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 208.22552,56.839939 -3.35681,11.324786 11.43424,3.406592"
+       id="path22"
+       sodipodi:nodetypes="ccc" />
   </g>
 </svg>
