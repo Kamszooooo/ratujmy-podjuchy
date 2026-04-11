@@ -23,12 +23,6 @@ const HeroSection = () => {
         <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
           NIE dla blokowiska w Górnych Podjuchach!
         </p>
-        <a
-          href="#co-nam-grozi"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary-foreground text-primary font-semibold text-lg transition-transform hover:scale-105"
-        >
-          Dowiedz się więcej
-        </a>
       </div>
 
       {/* Bottom wave */}
