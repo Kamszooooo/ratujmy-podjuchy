@@ -2,8 +2,10 @@ import { useState, useRef, useCallback } from "react";
 
 const MapComparisonSection = () => {
   const [sliderPosition, setSliderPosition] = useState(80);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
+  const allLoaded = imagesLoaded >= 2;
 
   const updatePosition = useCallback((clientX: number) => {
     if (!containerRef.current) return;
