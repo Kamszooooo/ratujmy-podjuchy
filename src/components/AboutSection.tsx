@@ -13,7 +13,7 @@ const AboutSection = () => {
               <AvatarImage src="" alt="Kamil Szostak" />
               <AvatarFallback className="text-2xl font-bold bg-primary/10 text-primary">KS</AvatarFallback>
             </Avatar>
-            <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground/60">Autor uwagi</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Autor uwagi</span>
           </div>
           {/* Content */}
 
