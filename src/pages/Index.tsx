@@ -14,8 +14,8 @@ const Index = () => {
       <MapComparisonSection />
       <ArgumentsSection />
       <StepsSection />
-      <AboutFooter />
       <HighwaySection />
+      <AboutFooter />
     </div>
   );
 };
