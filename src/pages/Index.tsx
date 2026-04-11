@@ -4,8 +4,7 @@ import MapComparisonSection from "@/components/MapComparisonSection";
 import ArgumentsSection from "@/components/ArgumentsSection";
 import ThreatSection from "@/components/ThreatSection";
 import StepsSection from "@/components/StepsSection";
-import AboutSection from "@/components/AboutSection";
-import { TreePine } from "lucide-react";
+import AboutFooter from "@/components/AboutFooter";
 
 const Index = () => {
   return (
@@ -15,16 +14,8 @@ const Index = () => {
       <MapComparisonSection />
       <ArgumentsSection />
       <StepsSection />
-      <AboutSection />
       <HighwaySection />
-
-      {/* Footer */}
-      <footer className="py-8 px-4 border-t border-border">
-        <div className="max-w-4xl mx-auto flex items-center justify-center gap-2 text-muted-foreground text-sm">
-          <TreePine className="w-4 h-4" />
-          <span>Ratujmy Podjuchy © {new Date().getFullYear()}</span>
-        </div>
-      </footer>
+      <AboutFooter />
     </div>
   );
 };
