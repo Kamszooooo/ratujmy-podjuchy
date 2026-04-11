@@ -2,7 +2,7 @@ import { AlertTriangle } from "lucide-react";
 
 const ThreatSection = () => {
   return (
-    <section id="co-nam-grozi" className="py-20 px-4">
+    <section id="co-nam-grozi" className="px-4 py-[30px] pb-[40px]">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center">
