@@ -2,7 +2,7 @@ import { TreePine, Leaf } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
+    <section className="relative min-h-[33vh] flex items-center justify-center overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <TreePine className="absolute top-10 left-[10%] w-20 h-20 text-primary-foreground" />
