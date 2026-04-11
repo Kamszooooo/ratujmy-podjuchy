@@ -8,7 +8,7 @@ const HighwaySection = () => {
           <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
             <Construction className="w-6 h-6 text-primary" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
             A&nbsp;co z&nbsp;terenem za&nbsp;autostradą?
           </h2>
         </div>

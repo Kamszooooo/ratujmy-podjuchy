@@ -15,8 +15,8 @@ const Index = () => {
       <MapComparisonSection />
       <ArgumentsSection />
       <StepsSection />
-      <HighwaySection />
       <AboutSection />
+      <HighwaySection />
 
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-border">
