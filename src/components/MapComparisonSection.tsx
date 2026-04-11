@@ -30,17 +30,13 @@ const MapComparisonSection = () => {
   return (
     <section className="pb-12 pt-0 px-4" id="mapa">
       <div className="max-w-xl mx-auto">
-        <h3 className="text-xl md:text-2xl font-semibold text-muted-foreground text-center mb-6">
-          Porównaj plany
-        </h3>
-
         {/* Captions */}
         <div className="flex justify-between mb-4 gap-4">
           <p className="text-sm md:text-base font-semibold text-destructive max-w-[45%]">
             Miasto proponuje blokowisko
           </p>
-          <p className="text-sm md:text-base font-semibold text-primary text-right max-w-[45%]">
-            Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na zabudowę jednorodzinną
+          <p className="text-sm md:text-base font-semibold text-primary text-right w-[55%]">
+            Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na&nbsp;zabudowę jednorodzinną
           </p>
         </div>
 
