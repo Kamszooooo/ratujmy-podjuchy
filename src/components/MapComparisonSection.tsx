@@ -38,7 +38,7 @@ const MapComparisonSection = () => {
             Miasto proponuje blokowisko
           </p>
           <p className="text-sm md:text-base font-semibold text-primary text-right w-[55%]">
-            Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na&nbsp;zabudowę jednorodzinną
+            Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na&nbsp;zabudowę jednorodzinną!
           </p>
         </div>
 

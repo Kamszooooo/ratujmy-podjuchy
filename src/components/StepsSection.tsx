@@ -3,15 +3,15 @@ import { Download, FileText, Send } from "lucide-react";
 const steps = [
   {
     number: 1,
-    title: "Pobierz wniosek",
-    description: "Przeczytaj go uważnie. Załącznik nr 4 na końcu pliku przedstawia szczegółową argumentację.",
+    title: "Pobierz szkic uwagi",
+    description: "Przeczytaj go uważnie. Załącznik nr 4 (strony 7-8 w pliku) przedstawia szczegółową argumentację.",
     icon: FileText,
     hasDownload: true,
   },
   {
     number: 2,
     title: "Wypełnij formularz",
-    description: "Pamietaj o uzupełnieniu pkt 4 formularza swoimi danymi. Jeśli chcesz, możesz też dostosować wniosek do swoich preferencji.",
+    description: "Pamietaj o uzupełnieniu pkt 4 formularza swoimi danymi. Jeśli chcesz, możesz też dostosować uwagę do swoich preferencji.",
     icon: FileText,
     hasDownload: false,
   },
