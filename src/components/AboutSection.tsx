@@ -6,13 +6,16 @@ const AboutSection = () => {
     <section className="py-20 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="bg-card border border-border rounded-xl p-6 md:p-8">
-          <h2 className="text-lg md:text-xl font-semibold text-muted-foreground mb-6">Autor uwagi</h2>
           <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
           {/* Avatar */}
-          <Avatar className="w-28 h-28 md:w-32 md:h-32 shrink-0 ring-2 ring-border">
-            <AvatarImage src="" alt="Kamil Szostak" />
-            <AvatarFallback className="text-2xl font-bold bg-primary/10 text-primary">KS</AvatarFallback>
-          </Avatar>
+          <div className="flex flex-col items-center gap-3 shrink-0">
+            <Avatar className="w-28 h-28 md:w-32 md:h-32 ring-2 ring-border">
+              <AvatarImage src="" alt="Kamil Szostak" />
+              <AvatarFallback className="text-2xl font-bold bg-primary/10 text-primary">KS</AvatarFallback>
+            </Avatar>
+            <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground/60">Autor uwagi</span>
+          </div>
+          {/* Content */}
 
           {/* Content */}
           <div className="text-center md:text-left">
