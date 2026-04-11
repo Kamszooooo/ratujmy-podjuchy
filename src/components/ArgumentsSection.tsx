@@ -18,8 +18,8 @@ const ArgumentsSection = () => {
             />
             Przeczytaj uzasadnienie
           </CollapsibleTrigger>
-          <CollapsibleContent className="mt-4">
-            <div className="bg-card border border-border rounded-xl p-5 md:p-6 text-xs md:text-sm text-muted-foreground leading-relaxed space-y-4">
+          <CollapsibleContent className="mt-4 -mx-4 px-4 md:-mx-0 md:px-0">
+            <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl p-5 md:p-6 text-xs md:text-sm text-muted-foreground leading-relaxed space-y-4">
               {/* Wstęp */}
               <p>
                 Niniejsza uwaga dotyczy terenu oznaczonego w&nbsp;projekcie planu symbolem <strong className="text-foreground">1386SW</strong> „strefa wielofunkcyjna z&nbsp;zabudową mieszkaniową wielorodzinną". Teren ten z&nbsp;trzech stron, tj.&nbsp;od strony ul.&nbsp;Sąsiedzkiej, Olkuskiej i&nbsp;Wschodniej, graniczy ze strefą zabudowy jednorodzinnej 872SJ, natomiast od strony autostrady A6 graniczy z&nbsp;położoną wzdłuż niej strefą zieleni i&nbsp;rekreacji (401SN). Przedmiotowy teren przecina ul.&nbsp;Ukośna, oddzielając:
@@ -98,7 +98,6 @@ const ArgumentsSection = () => {
             </div>
           </CollapsibleContent>
         </Collapsible>
-      </div>
     </section>
   );
 };
