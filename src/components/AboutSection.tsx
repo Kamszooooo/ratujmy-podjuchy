@@ -12,7 +12,7 @@ const AboutSection = () => {
             <div className="w-28 h-28 md:w-32 md:h-32 rounded-full ring-2 ring-border overflow-hidden shadow-lg">
               <img src={authorPhoto} alt="Kamil Szostak" className="w-full h-full object-cover object-top grayscale-[15%] contrast-[1.05]" />
             </div>
-            </Avatar>
+            
             <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Autor uwagi</span>
           </div>
           {/* Content */}
