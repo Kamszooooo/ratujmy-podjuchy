@@ -29,7 +29,7 @@ const MapComparisonSection = () => {
 
   return (
     <section className="pb-16 pt-4 px-4" id="mapa">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         <h3 className="text-xl md:text-2xl font-semibold text-muted-foreground text-center mb-6">
           Porównaj plany
         </h3>
