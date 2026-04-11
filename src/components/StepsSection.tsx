@@ -57,10 +57,10 @@ const StepsSection = () => {
                   <p className="text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{step.description}</p>
 
                   {step.hasDownload && (
-                    <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold transition-transform hover:scale-105">
+                    <a href="/files/Szkic_uwagi.docx" download className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold transition-transform hover:scale-105">
                       <Download className="w-5 h-5" />
-                      Pobierz wniosek (PDF)
-                    </button>
+                      Pobierz szkic uwagi (DOCX)
+                    </a>
                   )}
                 </div>
               </div>
