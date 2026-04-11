@@ -34,6 +34,16 @@ const MapComparisonSection = () => {
           Porównaj plany
         </h3>
 
+        {/* Captions */}
+        <div className="flex justify-between mb-4 gap-4">
+          <p className="text-sm md:text-base font-semibold text-destructive max-w-[45%]">
+            Miasto proponuje blokowisko
+          </p>
+          <p className="text-sm md:text-base font-semibold text-primary text-right max-w-[45%]">
+            Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na zabudowę jednorodzinną
+          </p>
+        </div>
+
         <div
           ref={containerRef}
           className="relative w-full overflow-hidden rounded-2xl border border-border shadow-lg cursor-col-resize select-none touch-none"
@@ -75,16 +85,6 @@ const MapComparisonSection = () => {
               </svg>
             </div>
           </div>
-        </div>
-
-        {/* Captions */}
-        <div className="flex justify-between mt-4 gap-4">
-          <p className="text-sm md:text-base font-semibold text-destructive max-w-[45%]">
-            Miasto proponuje blokowisko
-          </p>
-          <p className="text-sm md:text-base font-semibold text-primary text-right max-w-[45%]">
-            Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na zabudowę jednorodzinną
-          </p>
         </div>
       </div>
     </section>
