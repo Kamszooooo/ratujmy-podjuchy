@@ -10,9 +10,9 @@ const socialLinks = [
 
 const AboutFooter = () => {
   return (
-    <footer className="py-12 px-4 border-t border-border bg-primary/5">
+    <footer className="px-4 border-t border-border bg-primary/5 py-[16px]">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm">
+        <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm py-[30px]">
           <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
             {/* Photo */}
             <div className="w-20 h-20 rounded-full ring-2 ring-primary/20 overflow-hidden shadow-md shrink-0">
@@ -28,7 +28,7 @@ const AboutFooter = () => {
               <p className="text-base text-muted-foreground leading-relaxed">
                 <span className="text-lg font-bold text-foreground">Kamil Szostak</span>
                 <span className="mx-2 text-border">·</span>
-                <span className="text-xs uppercase tracking-wider font-bold text-primary">Autor uwagi</span>
+                <span className="uppercase tracking-wider font-bold text-primary text-sm">Autor uwag do planu ogólnego</span>
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed mt-2">
                 Dzieciństwo spędziłem w&nbsp;Podjuchach i&nbsp;już od najmłodszych lat pamiętam oburzenie społeczne, jakie wywoływał plan budowy osiedla TBS. Z&nbsp;wykształcenia jestem prawnikiem, a także informatykiem. Obecnie mieszkam w&nbsp;Holandii, gdzie robię doktorat w&nbsp;Law and Tech Lab na Maastricht University.
