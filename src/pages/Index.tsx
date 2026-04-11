@@ -1,16 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import MapSection from "@/components/MapSection";
+import ThreatSection from "@/components/ThreatSection";
+import StepsSection from "@/components/StepsSection";
+import AboutSection from "@/components/AboutSection";
+import { TreePine } from "lucide-react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <HeroSection />
+      <MapSection />
+      <ThreatSection />
+      <StepsSection />
+      <AboutSection />
+
+      {/* Footer */}
+      <footer className="py-8 px-4 border-t border-border">
+        <div className="max-w-4xl mx-auto flex items-center justify-center gap-2 text-muted-foreground text-sm">
+          <TreePine className="w-4 h-4" />
+          <span>Ratujmy Podjuchy © {new Date().getFullYear()}</span>
+        </div>
+      </footer>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
