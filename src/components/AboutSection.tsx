@@ -21,7 +21,7 @@ const AboutSection = () => {
           <div className="text-center md:text-left">
             <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">Kamil Szostak</h3>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5">
-              Dzieciństwo spędziłem w&nbsp;Podjuchach i&nbsp;już od najmłodszych lat pamiętam oburzenie społeczne, jakie wywoływał plan budowy osiedla TBS. Z&nbsp;wykształcenia jestem prawnikiem oraz informatykiem. Obecnie mieszkam w&nbsp;Holandii, gdzie robię doktorat w&nbsp;Law and Tech Lab na Maastricht University.
+              Dzieciństwo spędziłem w&nbsp;Podjuchach i&nbsp;już od najmłodszych lat pamiętam oburzenie społeczne, jakie wywoływał plan budowy osiedla TBS. Z&nbsp;wykształcenia jestem prawnikiem, a także informatykiem. Obecnie mieszkam w&nbsp;Holandii, gdzie robię doktorat w&nbsp;Law and Tech Lab na Maastricht University.
             </p>
 
             {/* Social links */}
