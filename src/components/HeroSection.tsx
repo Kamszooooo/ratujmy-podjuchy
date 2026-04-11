@@ -13,8 +13,8 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center px-6 animate-fade-in-up">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-primary-foreground mb-6 leading-tight">
-          Ratujmy<br />Podjuchy
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground mb-6 leading-tight">
+          Ratujmy Podjuchy
         </h1>
         <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
           NIE dla blokowiska w Górnych Podjuchach!
