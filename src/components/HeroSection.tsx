@@ -21,7 +21,7 @@ const HeroSection = () => {
           Ratujmy<br />Podjuchy
         </h1>
         <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-          Chroń przyrodę i tereny zielone w&nbsp;Twojej okolicy. Razem możemy więcej.
+          NIE dla blokowiska w Górnych Podjuchach!
         </p>
         <a
           href="#co-nam-grozi"
