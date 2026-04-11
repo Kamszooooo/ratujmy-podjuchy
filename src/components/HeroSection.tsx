@@ -13,10 +13,6 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center px-6 animate-fade-in-up">
-        <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10">
-          <TreePine className="w-4 h-4 text-primary-foreground" />
-          <span className="text-sm font-medium text-primary-foreground/90">Inicjatywa mieszkańców Podjuch</span>
-        </div>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-primary-foreground mb-6 leading-tight">
           Ratujmy<br />Podjuchy
         </h1>
