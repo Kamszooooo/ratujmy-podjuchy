@@ -42,45 +42,55 @@ const MapComparisonSection = () => {
           </p>
         </div>
 
-        <div
-          ref={containerRef}
-          className="relative w-full overflow-hidden rounded-2xl border border-border shadow-lg cursor-col-resize select-none touch-none"
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-        >
-          {/* Right image (full, behind) */}
-          <img
-            src="/images/mapa_right.svg"
-            alt="Alternatywny plan - zabudowa jednorodzinna"
-            className="block w-full h-auto"
-            draggable={false}
-          />
+        <div className="relative">
+          {!allLoaded && (
+            <div className="flex items-center justify-center rounded-2xl border border-border bg-muted/30 aspect-[379/443]">
+              <p className="text-muted-foreground text-sm animate-pulse">Mapa się ładuje…</p>
+            </div>
+          )}
 
-          {/* Left image (clipped) */}
           <div
-            className="absolute inset-0"
-            style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+            ref={containerRef}
+            className={`relative w-full overflow-hidden rounded-2xl border border-border shadow-lg cursor-col-resize select-none touch-none transition-opacity duration-500 ${allLoaded ? 'opacity-100' : 'opacity-0 absolute inset-0'}`}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
           >
+            {/* Right image (full, behind) */}
             <img
-              src="/images/mapa_left.svg"
-              alt="Propozycja miasta - blokowisko"
+              src="/images/mapa_right.svg"
+              alt="Alternatywny plan - zabudowa jednorodzinna"
               className="block w-full h-auto"
               draggable={false}
+              onLoad={() => setImagesLoaded(n => n + 1)}
             />
-          </div>
 
-          {/* Slider line */}
-          <div
-            className="absolute top-0 bottom-0 w-1 bg-primary shadow-md -translate-x-1/2 pointer-events-none"
-            style={{ left: `${sliderPosition}%` }}
-          >
-            {/* Handle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary border-2 border-primary-foreground shadow-lg flex items-center justify-center pointer-events-none">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-primary-foreground">
-                <path d="M6 10L2 10M2 10L5 7M2 10L5 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M14 10L18 10M18 10L15 7M18 10L15 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+            {/* Left image (clipped) */}
+            <div
+              className="absolute inset-0"
+              style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+            >
+              <img
+                src="/images/mapa_left.svg"
+                alt="Propozycja miasta - blokowisko"
+                className="block w-full h-auto"
+                draggable={false}
+                onLoad={() => setImagesLoaded(n => n + 1)}
+              />
+            </div>
+
+            {/* Slider line */}
+            <div
+              className="absolute top-0 bottom-0 w-1 bg-primary shadow-md -translate-x-1/2 pointer-events-none"
+              style={{ left: `${sliderPosition}%` }}
+            >
+              {/* Handle */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary border-2 border-primary-foreground shadow-lg flex items-center justify-center pointer-events-none">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-primary-foreground">
+                  <path d="M6 10L2 10M2 10L5 7M2 10L5 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M14 10L18 10M18 10L15 7M18 10L15 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
