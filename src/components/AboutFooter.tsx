@@ -23,13 +23,13 @@ const AboutFooter = () => {
 
         {/* Info */}
         <div className="text-center sm:text-left flex-1">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             <span className="font-semibold text-foreground">Kamil Szostak</span>
             <span className="mx-1.5 text-border">·</span>
-            <span>Autor uwagi</span>
+            <span className="text-xs uppercase tracking-wider font-bold text-muted-foreground/60">Autor uwagi</span>
           </p>
-          <p className="text-xs text-muted-foreground/70 mt-0.5">
-            Prawnik &amp; informatyk · Doktorant, Maastricht University
+          <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+            Dzieciństwo spędziłem w&nbsp;Podjuchach i&nbsp;już od najmłodszych lat pamiętam oburzenie społeczne, jakie wywoływał plan budowy osiedla TBS. Z&nbsp;wykształcenia jestem prawnikiem, a także informatykiem. Obecnie mieszkam w&nbsp;Holandii, gdzie robię doktorat w&nbsp;Law and Tech Lab na Maastricht University.
           </p>
         </div>
 
