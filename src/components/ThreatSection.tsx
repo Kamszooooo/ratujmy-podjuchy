@@ -13,10 +13,10 @@ const ThreatSection = () => {
 
         <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-4">
           <p>
-            Władze Szczeciina chcą budowy bloków wielorodzinnych w górnej części Podjuch, na terenie między ul.&nbsp;Sąsiedzką a ul.&nbsp;Wschodnią. Szczecińskie TBS ogłosiło nawet niedawno wyniki konkursu architektonicznego na zabudowę większości tego obszaru.
+            Władze Szczecina chcą budowy bloków wielorodzinnych w górnej części Podjuch, na terenie między ul.&nbsp;Sąsiedzką a ul.&nbsp;Wschodnią. Szczecińskie TBS ogłosiło nawet niedawno wyniki konkursu architektonicznego na zabudowę większości tego obszaru.
           </p>
           <p>
-            To absurdalny pomysł! Ta część Podjuch ma w przeważającej mierze charakter jednorodzinny. Teren jest cenny przyrodniczo - pagórkowaty i częściowo lesisty. Do 20 kwietnia 2026 r. trwają konsultację planu ogólnego Miasta Szczecin - możemy jeszcze uratować Podjuchy!
+            To absurdalny pomysł! Ta część Podjuch ma w przeważającej mierze charakter jednorodzinny. Teren jest cenny przyrodniczo — pagórkowaty i częściowo lesisty. Do 20 kwietnia 2026 r. trwają konsultacje planu ogólnego Miasta Szczecin. Możemy jeszcze uratować Podjuchy!
           </p>
         </div>
       </div>
