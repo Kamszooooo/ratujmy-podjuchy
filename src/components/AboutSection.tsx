@@ -59,9 +59,10 @@ const AboutSection = () => {
               </a>
             </div>
           </div>
+          </div>
+          </div>
         </div>
       </div>
-    </section>
   );
 };
 
