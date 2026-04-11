@@ -28,11 +28,11 @@ const MapComparisonSection = () => {
   }, []);
 
   return (
-    <section className="py-16 px-4" id="mapa">
+    <section className="pb-16 pt-4 px-4" id="mapa">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-8">
+        <h3 className="text-xl md:text-2xl font-semibold text-muted-foreground text-center mb-6">
           Porównaj plany
-        </h2>
+        </h3>
 
         <div
           ref={containerRef}
