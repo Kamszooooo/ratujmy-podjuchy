@@ -12,7 +12,7 @@ const steps = [
   {
     number: 2,
     title: "Wypełnij formularz",
-    description: "Pamietaj o uzupełnieniu pkt 4 formularza swoimi danymi. Jeśli chcesz, możesz też dostosować uwagę do swoich preferencji.",
+    description: "Pamiętaj o uzupełnieniu pkt 4 formularza swoimi danymi. Jeśli chcesz, możesz też dostosować uwagę do swoich preferencji.",
     icon: FileText,
     hasDownload: false,
   },
