@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import MapComparisonSection from "@/components/MapComparisonSection";
+import ArgumentsSection from "@/components/ArgumentsSection";
 import ThreatSection from "@/components/ThreatSection";
 import StepsSection from "@/components/StepsSection";
 import AboutSection from "@/components/AboutSection";
