@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Twitter, Facebook, GraduationCap } from "lucide-react";
+import { Mail, Linkedin, Twitter, Facebook } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const AboutSection = () => {
