@@ -15,7 +15,7 @@ const HighwaySection = () => {
 
         <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed mb-5">
           <p>
-            Kontrowersje wzbudza także przeznaczenie terenów za autostradą A6. Projekt planu przewiduje strefę usługową, dopuszczającą między innymi lokalizowanie składowisk i&nbsp;magazynów. W&nbsp;odniesieniu do tego terenu też przygotowałem uwagę, aby stał się on strefą zieleni i&nbsp;rekreacji z&nbsp;usługami sportu.
+            Kontrowersje wzbudza także przeznaczenie terenów za autostradą A6. Projekt planu przewiduje strefę usługową i&nbsp;dopuszcza tam między innymi składowiska i&nbsp;magazyny. W&nbsp;odniesieniu do tego terenu też przygotowałem uwagę, tak aby był on przeznaczony pod strefą zieleni z&nbsp;usługami sportu rekreacji.
           </p>
         </div>
 
