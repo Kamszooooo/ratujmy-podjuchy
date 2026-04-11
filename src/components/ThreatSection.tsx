@@ -13,10 +13,10 @@ const ThreatSection = () => {
 
         <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-4">
           <p>
-            Do 20 kwietnia 2026 r. trwają konsultację planu ogólnego Miasta Szczecin. Władze Szczeciina chcą budowy bloków wielorodzinnych w górnej części Podjuch, na terenie między ul. Sąsiedzką a Wschodnią. Szczecińskie TBS ogłosiło nawet niedawno wyniki konkursu architektonicznego na zabudowę większości tego obszaru.
+            Władze Szczeciina chcą budowy bloków wielorodzinnych w górnej części Podjuch, na terenie między ul. Sąsiedzką a Wschodnią. Szczecińskie TBS ogłosiło nawet niedawno wyniki konkursu architektonicznego na zabudowę większości tego obszaru.
           </p>
           <p>
-            To absurdalny pomysł! Zabudowa tej części Podjuch ma w przeważającej mierze charakter jednorodzinny. Teren jest cenny przyrodniczo - górzysty i częściowo zalesiony.
+            To absurdalny pomysł! Zabudowa tej części Podjuch ma w przeważającej mierze charakter jednorodzinny. Teren jest cenny przyrodniczo - górzysty i częściowo zalesiony. Do 20 kwietnia 2026 r. trwają konsultację planu ogólnego Miasta Szczecin - możemy jeszcze uratować Podjuchy!
           </p>
         </div>
       </div>
