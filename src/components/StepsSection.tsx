@@ -18,7 +18,7 @@ const steps = [
   },
   {
     number: 3,
-    title: "Złóż wniosek",
+    title: "Wyślij wniosek",
     description: "Prześlij uwagę do Biura Planowania Przestrzennego Miasta. Możesz to zrobić:\n- mailowo (bppm@um.szczecin.pl);\n- przez system e-Doręczeń; albo\n- w formie papierowej (Biuro Planowania Przestrzennego Miasta, ul. Karola Szymanowskiego 2, 71-416 Szczecin).\n\nJeśli składasz na papierze, pamiętaj o podpisie w pkt 10 formularza.",
     icon: Send,
     hasDownload: false,
@@ -62,7 +62,7 @@ const StepsSection = () => {
           Zadziałaj!
         </h2>
         <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
-          Złóż uwagę do planu ogólnego w&nbsp;trzech prostych krokach
+          Złóż uwagę do projektu planu ogólnego w&nbsp;trzech prostych krokach
         </p>
 
         {/* Timeline */}
