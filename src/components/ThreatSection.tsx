@@ -16,7 +16,7 @@ const ThreatSection = () => {
             Władze Szczeciina chcą budowy bloków wielorodzinnych w górnej części Podjuch, na terenie między ul. Sąsiedzką a Wschodnią. Szczecińskie TBS ogłosiło nawet niedawno wyniki konkursu architektonicznego na zabudowę większości tego obszaru.
           </p>
           <p>
-            To absurdalny pomysł! Zabudowa tej części Podjuch ma w przeważającej mierze charakter jednorodzinny. Teren jest cenny przyrodniczo - pagórkowaty i częściowo lesisty. Do 20 kwietnia 2026 r. trwają konsultację planu ogólnego Miasta Szczecin - możemy jeszcze uratować Podjuchy!
+            To absurdalny pomysł! Ta część Podjuch ma w przeważającej mierze charakter jednorodzinny. Teren jest cenny przyrodniczo - pagórkowaty i częściowo lesisty. Do 20 kwietnia 2026 r. trwają konsultację planu ogólnego Miasta Szczecin - możemy jeszcze uratować Podjuchy!
           </p>
         </div>
       </div>
