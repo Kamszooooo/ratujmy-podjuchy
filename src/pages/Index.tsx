@@ -15,6 +15,7 @@ const Index = () => {
       <MapComparisonSection />
       <ArgumentsSection />
       <StepsSection />
+      <HighwaySection />
       <AboutSection />
 
       {/* Footer */}
