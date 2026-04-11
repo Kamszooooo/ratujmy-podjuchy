@@ -5,11 +5,8 @@ const AboutSection = () => {
   return (
     <section className="py-20 px-4">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-6">
-            <GraduationCap className="w-7 h-7 text-primary" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">O autorze uwagi</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-semibold text-foreground">Autor uwagi</h2>
         </div>
 
         <div className="bg-card border border-border rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
