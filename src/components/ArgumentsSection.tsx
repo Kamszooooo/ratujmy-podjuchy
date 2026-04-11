@@ -11,8 +11,7 @@ const ArgumentsSection = () => {
 
   return (
     <section className="pb-12 pt-2 px-4">
-      <div className="max-w-xl mx-auto">
-        <Collapsible open={open} onOpenChange={setOpen}>
+      <Collapsible open={open} onOpenChange={setOpen} className="max-w-xl mx-auto">
           <CollapsibleTrigger className="flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors group">
             <ChevronDown
               className={`w-4 h-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
