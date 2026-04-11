@@ -11,6 +11,7 @@ const Index = () => {
       <HeroSection />
       <ThreatSection />
       <MapComparisonSection />
+      <ArgumentsSection />
       <StepsSection />
       <AboutSection />
 
