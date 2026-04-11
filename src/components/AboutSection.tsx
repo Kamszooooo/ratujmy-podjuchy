@@ -1,5 +1,5 @@
 import { Mail, Linkedin, Twitter, Facebook } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import authorPhoto from "@/assets/author.png";
 
 const AboutSection = () => {
   return (
@@ -9,9 +9,9 @@ const AboutSection = () => {
           <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
           {/* Avatar */}
           <div className="flex flex-col items-center gap-3 shrink-0">
-            <Avatar className="w-28 h-28 md:w-32 md:h-32 ring-2 ring-border">
-              <AvatarImage src="" alt="Kamil Szostak" />
-              <AvatarFallback className="text-2xl font-bold bg-primary/10 text-primary">KS</AvatarFallback>
+            <div className="w-28 h-28 md:w-32 md:h-32 rounded-full ring-2 ring-border overflow-hidden shadow-lg">
+              <img src={authorPhoto} alt="Kamil Szostak" className="w-full h-full object-cover object-top grayscale-[15%] contrast-[1.05]" />
+            </div>
             </Avatar>
             <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Autor uwagi</span>
           </div>
