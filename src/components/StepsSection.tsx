@@ -5,7 +5,7 @@ const steps = [
     number: 1,
     title: "Pobierz szkic uwagi",
     description: "Przeczytaj go uważnie. Załącznik nr 4 (strony 7-8 w pliku) przedstawia szczegółową argumentację.",
-    icon: FileText,
+    icon: Download,
     hasDownload: true,
   },
   {
