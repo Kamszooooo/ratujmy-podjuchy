@@ -1,4 +1,4 @@
-import { TreePine, Leaf, Facebook } from "lucide-react";
+import { TreePine, Leaf } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -19,15 +19,6 @@ const HeroSection = () => {
         <p className="text-base md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
           NIE dla blokowiska w Górnych Podjuchach!
         </p>
-        <a
-          href="https://www.facebook.com/profile.php?id=61576745960498"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary-foreground/30 bg-primary-foreground/10 hover:bg-primary-foreground/20 text-primary-foreground text-sm font-medium transition-colors"
-        >
-          <Facebook className="w-4 h-4" />
-          Profil inicjatywy na Facebooku
-        </a>
       </div>
 
       {/* Bottom wave */}
