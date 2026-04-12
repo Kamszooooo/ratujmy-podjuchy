@@ -12,14 +12,14 @@ const steps = [
   {
     number: 2,
     title: "Wypełnij formularz",
-    description: "Pamiętaj o uzupełnieniu pkt 4 formularza swoimi danymi. Jeśli chcesz, możesz też dostosować uwagę do swoich preferencji.",
+    description: "Pamiętaj o uzupełnieniu pkt 4. formularza swoimi danymi. Jeśli chcesz, możesz też dostosować uwagę do swoich preferencji.",
     icon: FileText,
     hasDownload: false,
   },
   {
     number: 3,
     title: "Wyślij wniosek",
-    description: "Prześlij uwagę do Biura Planowania Przestrzennego Miasta. Możesz to zrobić:\n- mailowo (bppm@um.szczecin.pl);\n- przez system e-Doręczeń; albo\n- w formie papierowej (Biuro Planowania Przestrzennego Miasta, ul. Karola Szymanowskiego 2, 71-416 Szczecin).\n\nJeśli składasz na papierze, pamiętaj o podpisie w pkt 10 formularza.",
+    description: "Prześlij uwagę do Biura Planowania Przestrzennego Miasta. Możesz to zrobić:\n- mailowo (bppm@um.szczecin.pl);\n- przez system e-Doręczeń; albo\n- w formie papierowej (Biuro Planowania Przestrzennego Miasta, ul. Karola Szymanowskiego 2, 71-416 Szczecin).\n\nJeśli składasz na papierze, pamiętaj o podpisie w pkt 10. formularza.",
     icon: Send,
     hasDownload: false,
   },
