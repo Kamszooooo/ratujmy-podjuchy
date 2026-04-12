@@ -37,6 +37,7 @@ const AboutFooter = () => {
 
             {/* Social */}
             <div className="flex items-center gap-2 shrink-0">
+              <span className="text-sm font-medium text-muted-foreground mr-1">Napisz do mnie:</span>
               {socialLinks.map(({ href, icon: Icon, title }) => (
                 <a
                   key={title}
