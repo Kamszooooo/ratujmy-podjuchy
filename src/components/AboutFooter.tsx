@@ -51,6 +51,7 @@ const AboutFooter = () => {
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
+              </div>
             </div>
           </div>
         </div>
