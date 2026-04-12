@@ -34,10 +34,10 @@ const MapComparisonSection = () => {
       <div className="max-w-xl mx-auto">
         {/* Captions */}
         <div className="flex justify-between mb-4 gap-4">
-          <p className="text-sm md:text-base font-bold text-destructive max-w-[45%]">
+          <p className="text-xs md:text-base font-bold text-destructive max-w-[45%]">
             Miasto proponuje blokowisko
           </p>
-          <p className="text-sm md:text-base font-bold text-primary text-right w-[55%]">
+          <p className="text-xs md:text-base font-bold text-primary text-right w-[55%]">
             Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na&nbsp;zabudowę jednorodzinną!
           </p>
         </div>

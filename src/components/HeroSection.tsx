@@ -16,7 +16,7 @@ const HeroSection = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground mb-6 leading-tight">
           Ratujmy Podjuchy
         </h1>
-        <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
+        <p className="text-base md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
           NIE dla blokowiska w Górnych Podjuchach!
         </p>
       </div>
