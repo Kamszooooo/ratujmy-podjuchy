@@ -63,9 +63,16 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+  @media (min-width: 768px) {
+    body {
+      line-height: 1.5;
+    }
   }
   h1, h2, h3 {
     font-family: 'Playfair Display', serif;
