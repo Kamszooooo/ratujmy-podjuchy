@@ -100,6 +100,15 @@ const StepsSection = () => {
 
         {/* Countdown */}
         <div className="mt-16 text-center">
+          <a
+            href="https://www.facebook.com/profile.php?id=61576745960498"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary text-sm font-medium transition-colors"
+          >
+            <Facebook className="w-4 h-4" />
+            Profil inicjatywy na Facebooku
+          </a>
           <div className="inline-flex items-center gap-2 text-muted-foreground mb-4">
             <Clock className="w-5 h-5 text-primary" />
             <span className="font-semibold text-foreground">
@@ -114,16 +123,6 @@ const StepsSection = () => {
               <CountdownUnit value={seconds} label="sek." />
             </div>
           )}
-
-          <a
-            href="https://www.facebook.com/profile.php?id=61576745960498"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary text-sm font-medium transition-colors"
-          >
-            <Facebook className="w-4 h-4" />
-            Profil inicjatywy na Facebooku
-          </a>
         </div>
       </div>
     </section>
