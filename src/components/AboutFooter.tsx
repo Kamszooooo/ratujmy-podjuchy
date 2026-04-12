@@ -12,17 +12,6 @@ const AboutFooter = () => {
   return (
     <footer className="px-4 border-t border-border bg-primary/5 py-[16px]">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-3">
-          <a
-            href="https://www.facebook.com/profile.php?id=61576745960498"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-muted hover:bg-primary/10 hover:text-primary text-muted-foreground text-sm font-medium transition-colors"
-          >
-            <Facebook className="w-5 h-5" />
-            Profil inicjatywy na Facebooku
-          </a>
-        </div>
         <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm py-[30px]">
           <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
             {/* Photo */}
