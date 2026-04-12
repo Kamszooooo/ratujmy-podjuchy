@@ -56,7 +56,7 @@ const StepsSection = () => {
   const { days, hours, minutes, seconds, expired } = useCountdown();
 
   return (
-    <section className="py-20 px-4 bg-card">
+    <section className="px-4 bg-card py-[40px]">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4">
           Zadziałaj!
