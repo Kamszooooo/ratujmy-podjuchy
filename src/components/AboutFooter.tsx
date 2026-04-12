@@ -24,7 +24,7 @@ const AboutFooter = () => {
             </div>
 
             {/* Info */}
-            <div className="text-center sm:text-left flex-1">
+            <div className="text-left flex-1">
               <p className="text-base text-muted-foreground leading-relaxed flex flex-wrap items-baseline gap-x-2 gap-y-0">
                 <span className="text-lg font-bold text-foreground whitespace-nowrap">Kamil Szostak</span>
                 <span className="text-border hidden sm:inline">·</span>
