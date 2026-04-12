@@ -84,7 +84,7 @@ const StepsSection = () => {
                     <step.icon className="w-5 h-5 text-primary" />
                     <h3 className="text-xl font-bold text-foreground font-sans">Krok {step.number}: {step.title}</h3>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{step.description}</p>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{step.description}</p>
 
                   {step.hasDownload && (
                     <a href="/files/Szkic_uwagi.docx" download className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold transition-transform hover:scale-105">

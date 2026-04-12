@@ -11,7 +11,7 @@ const ThreatSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">Co nam grozi?</h2>
         </div>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-4">
+        <div className="prose prose-base md:prose-lg max-w-none text-muted-foreground leading-relaxed space-y-4">
           <p>
             Władze Szczecina chcą budowy bloków wielorodzinnych w górnej części Podjuch, na terenie między ul.&nbsp;Sąsiedzką a ul.&nbsp;Wschodnią. Szczecińskie TBS ogłosiło nawet niedawno wyniki konkursu architektonicznego na zabudowę większości tego obszaru.
           </p>
