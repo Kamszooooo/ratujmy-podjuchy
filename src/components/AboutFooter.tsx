@@ -36,7 +36,9 @@ const AboutFooter = () => {
             </div>
 
             {/* Social */}
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex flex-col items-center gap-2 shrink-0">
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Śmiało pisz</span>
+              <div className="flex items-center gap-2">
               {socialLinks.map(({ href, icon: Icon, title }) => (
                 <a
                   key={title}
@@ -49,6 +51,7 @@ const AboutFooter = () => {
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
+              </div>
             </div>
           </div>
         </div>
