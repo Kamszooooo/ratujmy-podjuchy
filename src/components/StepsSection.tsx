@@ -99,7 +99,7 @@ const StepsSection = () => {
         </div>
 
         {/* Countdown */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center flex flex-col items-center">
           <a
             href="https://www.facebook.com/profile.php?id=61576745960498"
             target="_blank"
