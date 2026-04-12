@@ -101,7 +101,7 @@ const StepsSection = () => {
         {/* Countdown */}
         <div className="mt-6 text-center flex flex-col items-center">
           <a
-            href="https://www.facebook.com/profile.php?id=61576745960498"
+            href="https://www.facebook.com/profile.php?id=61574321447466"
             target="_blank"
             rel="noopener noreferrer"
             className="mb-10 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary text-sm font-medium transition-colors"
