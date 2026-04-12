@@ -22,7 +22,7 @@
     --secondary-foreground: 150 30% 15%;
 
     --muted: 140 15% 92%;
-    --muted-foreground: 150 10% 40%;
+    --muted-foreground: 150 10% 35%;
 
     --accent: 205 65% 38%;
     --accent-foreground: 0 0% 100%;
@@ -63,6 +63,9 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   h1, h2, h3 {
     font-family: 'Playfair Display', serif;
