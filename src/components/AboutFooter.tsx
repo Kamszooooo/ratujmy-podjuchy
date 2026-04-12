@@ -37,7 +37,16 @@ const AboutFooter = () => {
 
             {/* Social */}
             <div className="flex flex-col items-center gap-2 shrink-0">
-              <span className="text-sm font-semibold text-[hsl(220,70%,55%)]">↓ Śmiało pisz ↓</span>
+              <a
+                href="https://www.facebook.com/profile.php?id=61576745960498"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border bg-muted hover:bg-primary/10 hover:text-primary text-muted-foreground text-xs font-medium transition-colors"
+              >
+                <Facebook className="w-4 h-4" />
+                Profil inicjatywy
+              </a>
+              <span className="text-xs font-semibold text-[hsl(220,70%,55%)]">↓ Śmiało pisz ↓</span>
               <div className="flex items-center gap-2">
               {socialLinks.map(({ href, icon: Icon, title }) => (
                 <a
