@@ -25,6 +25,7 @@ const AboutSection = () => {
             </p>
 
             {/* Social links */}
+            <p className="text-sm font-medium text-muted-foreground mb-1">Napisz do mnie:</p>
             <div className="flex items-center justify-center md:justify-start gap-3">
               <a
                 href="mailto:kamszo@proton.me"
