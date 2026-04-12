@@ -61,20 +61,9 @@ const StepsSection = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4">
           Zadziałaj!
         </h2>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
-          <p className="text-xl text-muted-foreground text-center max-w-2xl">
-            Złóż uwagę do projektu planu ogólnego w&nbsp;trzech prostych krokach
-          </p>
-          <a
-            href="https://www.facebook.com/profile.php?id=61576745960498"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-muted hover:bg-primary/10 hover:text-primary text-muted-foreground text-xs font-medium transition-colors whitespace-nowrap shrink-0"
-          >
-            <Facebook className="w-3.5 h-3.5" />
-            Inicjatywa na Facebooku
-          </a>
-        </div>
+        <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
+          Złóż uwagę do projektu planu ogólnego w&nbsp;trzech prostych krokach
+        </p>
 
         {/* Timeline */}
         <div className="relative">
@@ -126,6 +115,15 @@ const StepsSection = () => {
             </div>
           )}
 
+          <a
+            href="https://www.facebook.com/profile.php?id=61576745960498"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary text-sm font-medium transition-colors"
+          >
+            <Facebook className="w-4 h-4" />
+            Profil inicjatywy na Facebooku
+          </a>
         </div>
       </div>
     </section>
