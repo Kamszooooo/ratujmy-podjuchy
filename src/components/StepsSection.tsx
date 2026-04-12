@@ -103,7 +103,7 @@ const StepsSection = () => {
           <div className="inline-flex items-center gap-2 text-muted-foreground mb-4">
             <Clock className="w-5 h-5 text-primary" />
             <span className="font-semibold text-foreground">
-              {expired ? "Termin minął!" : "Pozostało:"}
+              {expired ? "Termin minął!" : "Czas do końca konsultacji:"}
             </span>
           </div>
           {!expired && (
