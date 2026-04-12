@@ -114,6 +114,16 @@ const StepsSection = () => {
               <CountdownUnit value={seconds} label="sek." />
             </div>
           )}
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61576745960498"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[hsl(220,46%,48%)] text-white font-semibold transition-transform hover:scale-105"
+          >
+            <Facebook className="w-5 h-5" />
+            Profil inicjatywy na Facebooku
+          </a>
         </div>
       </div>
     </section>
