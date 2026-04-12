@@ -1,4 +1,4 @@
-import { Download, FileText, Send, Clock } from "lucide-react";
+import { Download, FileText, Send, Clock, Facebook } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const steps = [
@@ -61,9 +61,20 @@ const StepsSection = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4">
           Zadziałaj!
         </h2>
-        <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
-          Złóż uwagę do projektu planu ogólnego w&nbsp;trzech prostych krokach
-        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
+          <p className="text-xl text-muted-foreground text-center max-w-2xl">
+            Złóż uwagę do projektu planu ogólnego w&nbsp;trzech prostych krokach
+          </p>
+          <a
+            href="https://www.facebook.com/profile.php?id=61576745960498"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-muted hover:bg-primary/10 hover:text-primary text-muted-foreground text-xs font-medium transition-colors whitespace-nowrap shrink-0"
+          >
+            <Facebook className="w-3.5 h-3.5" />
+            Inicjatywa na Facebooku
+          </a>
+        </div>
 
         {/* Timeline */}
         <div className="relative">
