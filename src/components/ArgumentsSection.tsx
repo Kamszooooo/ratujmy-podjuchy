@@ -24,7 +24,7 @@ const ArgumentsSection = () => {
             <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl p-5 md:p-6 text-sm md:text-base text-muted-foreground leading-relaxed space-y-4">
               {/* Wstęp */}
               <p>
-                Niniejsza uwaga dotyczy terenu oznaczonego w&nbsp;projekcie planu symbolem <strong className="text-foreground">1386SW</strong> „strefa wielofunkcyjna z&nbsp;zabudową mieszkaniową wielorodzinną". Teren ten z&nbsp;trzech stron, tj.&nbsp;od strony ul.&nbsp;Sąsiedzkiej, Olkuskiej i&nbsp;Wschodniej, graniczy ze strefą zabudowy jednorodzinnej 872SJ, natomiast od strony autostrady A6 graniczy z&nbsp;położoną wzdłuż niej strefą zieleni i&nbsp;rekreacji (401SN). Przedmiotowy teren przecina ul.&nbsp;Ukośna, oddzielając:
+                Niniejsza uwaga dotyczy terenu oznaczonego w&nbsp;projekcie planu symbolem 1386SW „strefa wielofunkcyjna z&nbsp;zabudową mieszkaniową wielorodzinną". Teren ten z&nbsp;trzech stron, tj.&nbsp;od strony ul.&nbsp;Sąsiedzkiej, Olkuskiej i&nbsp;Wschodniej, graniczy ze strefą zabudowy jednorodzinnej 872SJ, natomiast od strony autostrady A6 graniczy z&nbsp;położoną wzdłuż niej strefą zieleni i&nbsp;rekreacji (401SN). Przedmiotowy teren przecina ul.&nbsp;Ukośna, oddzielając:
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>grunty, na których Szczecińskie TBS zamierza wybudować osiedle bloków mieszkalnych liczące 560 mieszkań (między ul.&nbsp;Ukośną a&nbsp;autostradą), oraz</li>
@@ -51,7 +51,7 @@ const ArgumentsSection = () => {
               </p>
 
               {/* Sekcja 1 */}
-              <h3 className="text-sm md:text-base font-bold text-foreground pt-2">1. Wymagania ładu przestrzennego</h3>
+              <p className="text-sm md:text-base font-semibold text-foreground/80 pt-3 uppercase tracking-wide">1. Wymagania ładu przestrzennego</p>
               <p>
                 Zasadniczym aspektem, który należy brać pod uwagę w&nbsp;planowaniu przestrzennym są wymagania ładu przestrzennego oraz walory architektoniczne i&nbsp;krajobrazowe (art.&nbsp;1 ust.&nbsp;2 pkt&nbsp;1 i&nbsp;2 ustawy o&nbsp;planowaniu i&nbsp;zagospodarowaniu przestrzennym). Nowa zabudowa powinna zasadniczo kontynuować funkcję i&nbsp;formę zabudowy sąsiedniej. Przedmiotowy teren z&nbsp;trzech stron otoczony jest strefą zabudowy jednorodzinnej 872SJ. W&nbsp;jego bezpośredniej bliskości, po przeciwległych stronach ul.&nbsp;Wschodniej, Olkuskiej i&nbsp;Sąsiedzkiej usytuowana jest zwarta zabudowa jednorodzinna. Patrząc szerzej, charakter jednorodzinny ma większa część terenów górnej części Podjuch.
               </p>
@@ -63,7 +63,7 @@ const ArgumentsSection = () => {
               </p>
 
               {/* Sekcja 2 */}
-              <h3 className="text-sm md:text-base font-bold text-foreground pt-2">2. Uwarunkowania przyrodnicze</h3>
+              <p className="text-sm md:text-base font-semibold text-foreground/80 pt-3 uppercase tracking-wide">2. Uwarunkowania przyrodnicze</p>
               <p>
                 Znaczna część przedmiotowego terenu zajmują wzgórza oraz lasy. Ochrona środowiska, obejmująca także ochronę istniejącej rzeźby terenu i&nbsp;roślinności, powinna być zasadniczym aspektem branym pod uwagę podczas planowania przestrzennego (art.&nbsp;1 ust.&nbsp;2 pkt&nbsp;3 ustawy o&nbsp;planowaniu przestrzennym oraz art.&nbsp;8 ustawy – Prawo ochrony środowiska).
               </p>
@@ -75,7 +75,7 @@ const ArgumentsSection = () => {
               </p>
 
               {/* Sekcja 3 */}
-              <h3 className="text-sm md:text-base font-bold text-foreground pt-2">3. Ograniczenia infrastrukturalne</h3>
+              <p className="text-sm md:text-base font-semibold text-foreground/80 pt-3 uppercase tracking-wide">3. Ograniczenia infrastrukturalne</p>
               <p>
                 Przeznaczenie całości przedmiotowego terenu pod zabudowę wielorodzinną spowodowałoby komunikacyjny paraliż tej części miasta. Szczecińskie TBS planuje budowę osiedla na 560 mieszkań. Obsługę komunikacyjną wzmożonego ruchu samochodowego miałyby zapewniać ul.&nbsp;Sąsiedzka, ul.&nbsp;Wschodnia oraz ul.&nbsp;Żeliwna – lokalne ulice osiedlowe. Wtłoczenie do nich wzmożonego ruchu (zwłaszcza w&nbsp;godzinach szczytu) prowadziłoby do zatorów drogowych.
               </p>
@@ -87,7 +87,7 @@ const ArgumentsSection = () => {
               </p>
 
               {/* Sekcja 4 */}
-              <h3 className="text-sm md:text-base font-bold text-foreground pt-2">4. Podsumowanie</h3>
+              <p className="text-sm md:text-base font-semibold text-foreground/80 pt-3 uppercase tracking-wide">4. Podsumowanie</p>
               <p>
                 Przedstawione wyżej względy ładu przestrzennego, ochrony środowiska, a&nbsp;także ograniczenia infrastrukturalne i&nbsp;oczekiwania społeczne przemawiają za wprowadzeniem wnioskowanych zmian w&nbsp;projekcie planu, tj.&nbsp;wyłączeniem znacznej większości strefy 1386SW spod zabudowy wielorodzinnej.
               </p>
