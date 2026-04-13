@@ -2,9 +2,22 @@ import { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setCollapsed(true), 500);
+    const img = new Image();
+    img.src = "/images/hero-bg.png";
+    if (img.complete) {
+      setImageLoaded(true);
+    } else {
+      img.onload = () => setImageLoaded(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!imageLoaded) return;
+
+    const timer = setTimeout(() => setCollapsed(true), 800);
 
     const handleInteraction = () => {
       setCollapsed(true);
@@ -23,7 +36,7 @@ const HeroSection = () => {
     window.addEventListener("touchstart", handleInteraction, { once: true });
 
     return cleanup;
-  }, []);
+  }, [imageLoaded]);
 
   return (
     <section
