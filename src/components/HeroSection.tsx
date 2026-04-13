@@ -8,7 +8,7 @@ const HeroSection = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [overscrollVh, setOverscrollVh] = useState(0);
-  const sectionRef = useRef<HTMLSectionElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const touchStartY = useRef(0);
 
   useEffect(() => {
