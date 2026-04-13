@@ -1,6 +1,15 @@
+import { useState } from "react";
+
 const HeroSection = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <section className="relative min-h-[25vh] md:min-h-[30vh] flex items-center justify-center overflow-hidden">
+    <section
+      className={`relative flex items-center justify-center overflow-hidden cursor-pointer transition-all duration-700 ease-in-out ${
+        expanded ? "min-h-[80vh] md:min-h-[90vh]" : "min-h-[25vh] md:min-h-[30vh]"
+      }`}
+      onClick={() => setExpanded((prev) => !prev)}
+    >
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-bottom"
