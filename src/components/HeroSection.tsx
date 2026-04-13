@@ -3,7 +3,7 @@ const HeroSection = () => {
     <section className="relative min-h-[25vh] md:min-h-[30vh] flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-bottom"
         style={{ backgroundImage: "url('/images/hero-bg.png')" }}
       />
       {/* Dark overlay */}
