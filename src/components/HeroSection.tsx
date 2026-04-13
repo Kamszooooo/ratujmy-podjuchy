@@ -4,8 +4,25 @@ const HeroSection = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setCollapsed(true), 1000);
-    return () => clearTimeout(timer);
+    const timer = setTimeout(() => setCollapsed(true), 2000);
+
+    const handleInteraction = () => {
+      setCollapsed(true);
+      cleanup();
+    };
+
+    const cleanup = () => {
+      clearTimeout(timer);
+      window.removeEventListener("mousemove", handleInteraction);
+      window.removeEventListener("scroll", handleInteraction);
+      window.removeEventListener("touchstart", handleInteraction);
+    };
+
+    window.addEventListener("mousemove", handleInteraction, { once: true });
+    window.addEventListener("scroll", handleInteraction, { once: true });
+    window.addEventListener("touchstart", handleInteraction, { once: true });
+
+    return cleanup;
   }, []);
 
   return (
