@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[25vh] md:min-h-[30vh] flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
