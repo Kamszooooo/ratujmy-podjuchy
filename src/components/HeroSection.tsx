@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const HeroSection = () => {
-  const [expanded, setExpanded] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setCollapsed(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section
-      className={`relative flex items-center justify-center overflow-hidden cursor-pointer transition-all duration-700 ease-in-out ${
-        expanded ? "min-h-[80vh] md:min-h-[90vh]" : "min-h-[25vh] md:min-h-[30vh]"
+      className={`relative flex items-center justify-center overflow-hidden transition-all duration-500 ease-in-out ${
+        collapsed ? "min-h-[25vh] md:min-h-[30vh]" : "min-h-[80vh] md:min-h-[90vh]"
       }`}
-      onClick={() => setExpanded((prev) => !prev)}
     >
       {/* Background image */}
       <div
