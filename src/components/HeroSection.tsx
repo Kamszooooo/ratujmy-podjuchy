@@ -4,7 +4,7 @@ const HeroSection = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setCollapsed(true), 2000);
+    const timer = setTimeout(() => setCollapsed(true), 500);
 
     const handleInteraction = () => {
       setCollapsed(true);
