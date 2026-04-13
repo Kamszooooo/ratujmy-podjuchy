@@ -1,10 +1,10 @@
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[30vh] md:min-h-[37vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[25vh] md:min-h-[30vh] flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover"
-        style={{ backgroundImage: "url('/images/hero-bg.png')", backgroundPosition: "center bottom" }}
+        className="absolute inset-0 bg-cover bg-bottom"
+        style={{ backgroundImage: "url('/images/hero-bg.png')" }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
