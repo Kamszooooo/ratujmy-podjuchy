@@ -1,8 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+
+const COLLAPSED_VH = 30; // collapsed height in vh
+const EXPANDED_VH = 90;  // max expanded height in vh
+const OVERSCROLL_SENSITIVITY = 1.5; // pixels of wheel → vh expansion rate
 
 const HeroSection = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [overscrollVh, setOverscrollVh] = useState(0);
+  const sectionRef = useRef<HTMLSectionElement>(null);
+  const touchStartY = useRef(0);
 
   useEffect(() => {
     const img = new Image();
@@ -38,11 +45,87 @@ const HeroSection = () => {
     return cleanup;
   }, [imageLoaded]);
 
+  const handleWheel = useCallback(
+    (e: WheelEvent) => {
+      if (!collapsed) return;
+      if (window.scrollY > 0) {
+        // If we have overscroll and user scrolls down, shrink it
+        if (overscrollVh > 0) {
+          setOverscrollVh((prev) => Math.max(0, prev - Math.abs(e.deltaY) / (window.innerHeight / 100) * OVERSCROLL_SENSITIVITY));
+          e.preventDefault();
+        }
+        return;
+      }
+
+      // At top of page
+      if (e.deltaY < 0) {
+        // Scrolling up → expand
+        const delta = Math.abs(e.deltaY) / (window.innerHeight / 100) * OVERSCROLL_SENSITIVITY;
+        setOverscrollVh((prev) => Math.min(EXPANDED_VH - COLLAPSED_VH, prev + delta));
+        e.preventDefault();
+      } else if (e.deltaY > 0 && overscrollVh > 0) {
+        // Scrolling down → shrink
+        const delta = Math.abs(e.deltaY) / (window.innerHeight / 100) * OVERSCROLL_SENSITIVITY;
+        setOverscrollVh((prev) => Math.max(0, prev - delta));
+        e.preventDefault();
+      }
+    },
+    [collapsed, overscrollVh]
+  );
+
+  const handleTouchStart = useCallback((e: TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY;
+  }, []);
+
+  const handleTouchMove = useCallback(
+    (e: TouchEvent) => {
+      if (!collapsed) return;
+      const deltaY = touchStartY.current - e.touches[0].clientY;
+      touchStartY.current = e.touches[0].clientY;
+
+      if (window.scrollY > 0) {
+        if (overscrollVh > 0) {
+          setOverscrollVh((prev) => Math.max(0, prev - Math.abs(deltaY) / (window.innerHeight / 100) * OVERSCROLL_SENSITIVITY));
+          e.preventDefault();
+        }
+        return;
+      }
+
+      if (deltaY < 0) {
+        // Pulling down → expand
+        const delta = Math.abs(deltaY) / (window.innerHeight / 100) * OVERSCROLL_SENSITIVITY;
+        setOverscrollVh((prev) => Math.min(EXPANDED_VH - COLLAPSED_VH, prev + delta));
+        e.preventDefault();
+      } else if (deltaY > 0 && overscrollVh > 0) {
+        const delta = Math.abs(deltaY) / (window.innerHeight / 100) * OVERSCROLL_SENSITIVITY;
+        setOverscrollVh((prev) => Math.max(0, prev - delta));
+        e.preventDefault();
+      }
+    },
+    [collapsed, overscrollVh]
+  );
+
+  useEffect(() => {
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, [handleWheel, handleTouchStart, handleTouchMove]);
+
+  const currentHeight = collapsed ? COLLAPSED_VH + overscrollVh : EXPANDED_VH;
+
   return (
     <section
-      className={`relative flex items-center justify-center overflow-hidden transition-all duration-1000 ease-in-out ${
-        collapsed ? "min-h-[25vh] md:min-h-[30vh]" : "min-h-[80vh] md:min-h-[90vh]"
-      }`}
+      ref={sectionRef}
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{
+        minHeight: `${currentHeight}vh`,
+        transition: overscrollVh > 0 ? "none" : "min-height 1s ease-in-out",
+      }}
     >
       {/* Background image */}
       <div
