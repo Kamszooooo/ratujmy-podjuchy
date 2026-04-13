@@ -10,7 +10,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className={`relative flex items-center justify-center overflow-hidden transition-all duration-500 ease-in-out ${
+      className={`relative flex items-center justify-center overflow-hidden transition-all duration-1000 ease-in-out ${
         collapsed ? "min-h-[25vh] md:min-h-[30vh]" : "min-h-[80vh] md:min-h-[90vh]"
       }`}
     >
