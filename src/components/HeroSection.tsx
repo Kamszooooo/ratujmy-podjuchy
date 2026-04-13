@@ -24,7 +24,7 @@ const HeroSection = () => {
   useEffect(() => {
     if (!imageLoaded) return;
 
-    const timer = setTimeout(() => setCollapsed(true), 100);
+    const timer = setTimeout(() => setCollapsed(true), 500);
 
     const handleInteraction = () => {
       setCollapsed(true);
