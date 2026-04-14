@@ -59,7 +59,7 @@ const MapComparisonSection = () => {
             {/* Right image (full, behind) */}
             <img
               src="/images/mapa_right.jpg"
-              alt="Alternatywny plan zabudowy Górnych Podjuch - zabudowa jednorodzinna przy ul. Ukośnej, TBS Szczecin"
+              alt="Alternatywny plan - zabudowa jednorodzinna"
               className="block w-full h-auto"
               draggable={false}
               onLoad={() => setImagesLoaded(n => n + 1)}
@@ -72,7 +72,7 @@ const MapComparisonSection = () => {
             >
               <img
                 src="/images/mapa_left.jpg"
-                alt="Propozycja TBS - blokowisko na górkach w Podjuchach, ul. Ukośna Szczecin"
+                alt="Propozycja miasta - blokowisko"
                 className="block w-full h-auto"
                 draggable={false}
                 onLoad={() => setImagesLoaded(n => n + 1)}
