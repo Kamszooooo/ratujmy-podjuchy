@@ -140,7 +140,7 @@ const HeroSection = () => {
           Ratujmy Podjuchy
         </h1>
         <p className="text-base md:text-xl text-white/90 max-w-2xl mx-auto mb-8 drop-shadow">
-          NIE dla blokowiska w Górnych Podjuchach!
+          NIE dla blokowiska TBS na górkach w Podjuchach!
         </p>
       </div>
 
