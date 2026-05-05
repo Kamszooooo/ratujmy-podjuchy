@@ -1,26 +1,15 @@
-import { Download, FileText, Send } from "lucide-react";
+import { Download } from "lucide-react";
 
-const steps = [
+const drafts = [
   {
-    number: 1,
-    title: "Pobierz szkic uwagi",
-    description: "Otwórz go (być może trzeba będzie kliknąć \"włącz edycję\") i przeczytaj uważnie! Załącznik nr 4 (strony 8-9 w pliku) przedstawia szczegółową argumentację.",
-    icon: Download,
-    hasDownload: true,
+    title: "Szkic uwagi — teren między ul. Sąsiedzką a ul. Wschodnią",
+    description: "Sprzeciw wobec planowanej zabudowy wielorodzinnej (osiedla TBS) w górnej części Podjuch.",
+    href: "/files/Szkic_uwagi.docx",
   },
   {
-    number: 2,
-    title: "Wypełnij formularz",
-    description: "Pamiętaj o uzupełnieniu pkt 4. formularza swoimi danymi. Jeśli chcesz, możesz też dostosować uwagę do swoich preferencji.",
-    icon: FileText,
-    hasDownload: false,
-  },
-  {
-    number: 3,
-    title: "Wyślij wniosek",
-    description: "Prześlij uwagę do Biura Planowania Przestrzennego Miasta. Możesz to zrobić:\n- mailowo (bppm@um.szczecin.pl);\n- przez system e-Doręczeń; albo\n- w formie papierowej (Biuro Planowania Przestrzennego Miasta, ul. Karola Szymanowskiego 2, 71-416 Szczecin).\n\nJeśli składasz na papierze, pamiętaj o podpisie w pkt 10. formularza.",
-    icon: Send,
-    hasDownload: false,
+    title: "Szkic uwagi — teren za autostradą A6",
+    description: "Sprzeciw wobec strefy usługowej dopuszczającej składowiska i magazyny; postulat strefy zieleni i rekreacji.",
+    href: "/files/Szkic_uwagi_za_autostrada.docx",
   },
 ];
 
@@ -28,7 +17,7 @@ const StepsSection = () => {
   return (
     <section className="px-4 bg-card py-[40px]">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-4">
+        <div className="text-center mb-8">
           <span className="inline-block px-3 py-1 rounded-full bg-destructive/10 text-destructive text-xs font-semibold uppercase tracking-wide mb-3">
             Archiwum — czas konsultacji minął, ale walczymy dalej!
           </span>
@@ -36,43 +25,29 @@ const StepsSection = () => {
             Uwagi do planu ogólnego
           </h2>
         </div>
-        <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
-          Termin składania uwag do projektu planu ogólnego już minął. Poniżej zachowujemy historyczny opis trzech kroków oraz pliki do pobrania.
+        <p className="text-base md:text-lg text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+          Termin składania uwag już minął. Poniżej zachowujemy szkice uwag, które przygotowaliśmy w&nbsp;ramach konsultacji — do wglądu i&nbsp;wykorzystania w&nbsp;dalszych działaniach.
         </p>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border md:left-1/2 md:-translate-x-px" />
-
-          {steps.map((step, index) => (
-            <div key={step.number} className="relative flex items-start mb-16 last:mb-0">
-              {/* Circle on timeline */}
-              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-muted flex items-center justify-center z-10 shadow-lg">
-                <span className="text-2xl font-bold text-muted-foreground">{step.number}</span>
-              </div>
-
-              {/* Content card */}
-              <div className={`ml-24 md:ml-0 md:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                <div className="bg-muted/50 rounded-2xl p-6 shadow-sm border border-border">
-                  <div className="flex items-center gap-3 mb-3">
-                    <step.icon className="w-5 h-5 text-muted-foreground" />
-                    <h3 className="text-xl font-bold text-muted-foreground font-sans">Krok {step.number}: {step.title}</h3>
-                  </div>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{step.description}</p>
-
-                  {step.hasDownload && (
-                    <a href="/files/Szkic_uwagi.docx" download className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold transition-transform hover:scale-105">
-                      <Download className="w-5 h-5" />
-                      Pobierz szkic uwagi (DOCX)
-                    </a>
-                  )}
-                </div>
-              </div>
+        <div className="grid md:grid-cols-2 gap-4">
+          {drafts.map((d) => (
+            <div
+              key={d.href}
+              className="bg-muted/50 rounded-2xl p-6 border border-border flex flex-col"
+            >
+              <h3 className="text-lg font-bold text-muted-foreground mb-2">{d.title}</h3>
+              <p className="text-sm text-muted-foreground mb-5 flex-1">{d.description}</p>
+              <a
+                href={d.href}
+                download
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold transition-transform hover:scale-105 self-start"
+              >
+                <Download className="w-5 h-5" />
+                Pobierz szkic (DOCX)
+              </a>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
