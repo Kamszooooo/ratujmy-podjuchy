@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const photos: { src: string; alt: string }[] = [
   { src: "/images/teren_1.jpg", alt: "Górne Podjuchy — drzewa i ścieżka o zachodzie słońca" },
@@ -38,24 +45,29 @@ const PhotosSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {photos.map((p) => (
-            <button
-              key={p.src}
-              type="button"
-              onClick={() => { setOpenSrc(p.src); setOpenAlt(p.alt); }}
-              className="aspect-[4/3] rounded-xl overflow-hidden border border-border bg-muted cursor-zoom-in group"
-              aria-label={`Powiększ: ${p.alt}`}
-            >
-              <img
-                src={p.src}
-                alt={p.alt}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform group-hover:scale-105"
-              />
-            </button>
-          ))}
-        </div>
+        <Carousel opts={{ align: "start", loop: true }} className="px-8 sm:px-12">
+          <CarouselContent>
+            {photos.map((p) => (
+              <CarouselItem key={p.src} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                <button
+                  type="button"
+                  onClick={() => { setOpenSrc(p.src); setOpenAlt(p.alt); }}
+                  className="block w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-muted cursor-zoom-in group"
+                  aria-label={`Powiększ: ${p.alt}`}
+                >
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                  />
+                </button>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
 
       {openSrc && (
