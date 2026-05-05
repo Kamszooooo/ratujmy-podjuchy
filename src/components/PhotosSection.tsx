@@ -7,6 +7,10 @@ const photos: { src: string; alt: string }[] = [
   { src: "/images/teren_3.jpg", alt: "Górne Podjuchy — samotne drzewo na łące" },
   { src: "/images/teren_4.jpg", alt: "Górne Podjuchy — widok nieba przez korony drzew" },
   { src: "/images/teren_5.jpg", alt: "Górne Podjuchy — kwitnący bez i drzewa" },
+  { src: "/images/teren_6.jpg", alt: "Górne Podjuchy — panorama wzgórz i zieleni o zachodzie słońca" },
+  { src: "/images/teren_7.jpg", alt: "Górne Podjuchy — domy jednorodzinne przy otwartym terenie" },
+  { src: "/images/teren_8.jpg", alt: "Górne Podjuchy — łąka i drzewa pod wieczornym niebem" },
+  { src: "/images/teren_9.jpg", alt: "Górne Podjuchy — zielony teren z kwitnącymi krzewami" },
 ];
 
 const INITIAL_COUNT = 3;
