@@ -8,7 +8,7 @@ const drafts = [
   },
   {
     title: "Teren za autostradą A6",
-    description: "Sprzeciw wobec strefy usługowej dopuszczającej składowiska i magazyny; postulat strefy zieleni i rekreacji.",
+    description: "Sprzeciw wobec strefy ze składowiskami i magazynami. Proponujemy strefę z usługami sportu i rekreacji!",
     href: "/files/Szkic_uwagi_za_autostrada.docx",
   },
 ];
