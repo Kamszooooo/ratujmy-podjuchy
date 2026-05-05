@@ -58,11 +58,16 @@ const StepsSection = () => {
   return (
     <section className="px-4 bg-card py-[40px]">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4">
-          Zadziałaj!
-        </h2>
+        <div className="text-center mb-4">
+          <span className="inline-block px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-semibold uppercase tracking-wide mb-3">
+            Archiwum — etap zakończony
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            Jak składaliśmy uwagi
+          </h2>
+        </div>
         <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
-          Złóż uwagę do projektu planu ogólnego w&nbsp;trzech prostych krokach
+          Termin składania uwag do projektu planu ogólnego już minął. Poniżej zachowujemy historyczny opis trzech kroków oraz pliki do pobrania.
         </p>
 
         {/* Timeline */}
