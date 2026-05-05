@@ -32,7 +32,7 @@ const PostersSection = () => {
             Plakaty do pobrania
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Pobierz, wydrukuj i&nbsp;rozwieś w&nbsp;swojej okolicy. Pomóż nam dotrzeć do jak największej liczby mieszkańców!
+            Pobierz, wydrukuj i&nbsp;rozwieś w&nbsp;swojej okolicy!
           </p>
         </div>
 
