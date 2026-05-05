@@ -103,32 +103,6 @@ const StepsSection = () => {
           ))}
         </div>
 
-        {/* Countdown */}
-        <div className="mt-6 text-center flex flex-col items-center">
-          <a
-            href="https://www.facebook.com/profile.php?id=61574321447466"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-10 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary text-sm font-medium transition-colors"
-          >
-            <Facebook className="w-4 h-4" />
-            Profil inicjatywy na Facebooku
-          </a>
-          <div className="inline-flex items-center gap-2 text-muted-foreground mb-4">
-            <Clock className="w-5 h-5 text-primary" />
-            <span className="font-semibold text-foreground">
-              {expired ? "Termin minął!" : "Czas do końca konsultacji:"}
-            </span>
-          </div>
-          {!expired && (
-            <div className="flex justify-center gap-3 sm:gap-5">
-              <CountdownUnit value={days} label="dni" />
-              <CountdownUnit value={hours} label="godz." />
-              <CountdownUnit value={minutes} label="min." />
-              <CountdownUnit value={seconds} label="sek." />
-            </div>
-          )}
-        </div>
       </div>
     </section>
   );
