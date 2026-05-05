@@ -52,9 +52,6 @@ const PhotosSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
             Zdjęcia terenu
           </h2>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Zobacz, jak wygląda obszar górnej części Podjuch zagrożony osiedlem TBS.
-          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -63,14 +60,14 @@ const PhotosSection = () => {
               key={p.src}
               type="button"
               onClick={() => { setOpenSrc(p.src); setOpenAlt(p.alt); }}
-              className="aspect-[4/3] rounded-xl overflow-hidden border border-border bg-muted cursor-zoom-in group"
+              className="rounded-xl overflow-hidden border border-border bg-muted cursor-zoom-in group"
               aria-label={`Powiększ: ${p.alt}`}
             >
               <img
                 src={p.src}
                 alt={p.alt}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                className="w-full h-auto object-contain transition-transform group-hover:scale-105"
               />
             </button>
           ))}
