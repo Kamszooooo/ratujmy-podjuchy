@@ -33,11 +33,11 @@ const PostersSection = () => {
     <section className="px-4 py-16 bg-card">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl font-bold text-foreground mb-4 md:text-2xl">
             Plakaty do pobrania
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Pobierz, wydrukuj i&nbsp;rozwieś w&nbsp;swojej okolicy!
+            ​
           </p>
         </div>
 
