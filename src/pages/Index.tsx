@@ -3,7 +3,6 @@ import HighwaySection from "@/components/HighwaySection";
 import MapComparisonSection from "@/components/MapComparisonSection";
 import ArgumentsSection from "@/components/ArgumentsSection";
 import ThreatSection from "@/components/ThreatSection";
-import MeetingSection from "@/components/MeetingSection";
 import PostersSection from "@/components/PostersSection";
 import PhotosSection from "@/components/PhotosSection";
 import StepsSection from "@/components/StepsSection";
@@ -16,7 +15,6 @@ const Index = () => {
       <ThreatSection />
       <MapComparisonSection />
       <ArgumentsSection />
-      <MeetingSection />
       <PostersSection />
       <PhotosSection />
       <StepsSection />
