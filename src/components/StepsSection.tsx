@@ -33,7 +33,7 @@ const StepsSection = () => {
             Archiwum — etap zakończony
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Jak składaliśmy uwagi
+            Uwagi do planu ogólnego
           </h2>
         </div>
         <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
