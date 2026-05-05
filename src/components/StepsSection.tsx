@@ -2,12 +2,12 @@ import { Download } from "lucide-react";
 
 const drafts = [
   {
-    title: "Szkic uwagi — teren między ul. Sąsiedzką a ul. Wschodnią",
-    description: "Sprzeciw wobec planowanej zabudowy wielorodzinnej (osiedla TBS) w górnej części Podjuch.",
+    title: "Górne Podjuchy — teren między ul. Sąsiedzką a ul. Wschodnią",
+    description: "Sprzeciw wobec strefy zabudowy wielorodzinnej, obejmującej planowane osiedle TBS i miejską działkę między ul. Ukośną a ul. Olkuską.",
     href: "/files/Szkic_uwagi.docx",
   },
   {
-    title: "Szkic uwagi — teren za autostradą A6",
+    title: "Teren za autostradą A6",
     description: "Sprzeciw wobec strefy usługowej dopuszczającej składowiska i magazyny; postulat strefy zieleni i rekreacji.",
     href: "/files/Szkic_uwagi_za_autostrada.docx",
   },
@@ -26,7 +26,7 @@ const StepsSection = () => {
           </h2>
         </div>
         <p className="text-base md:text-lg text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          Termin składania uwag już minął. Poniżej zachowujemy szkice uwag, które przygotowaliśmy w&nbsp;ramach konsultacji — do wglądu i&nbsp;wykorzystania w&nbsp;dalszych działaniach.
+          Termin składania uwag już minął. Złożyliśmy ich około tysiąca. Poniżej można je pobrać do wykorzystania w&nbsp;dalszych działaniach.
         </p>
 
         <div className="grid md:grid-cols-2 gap-4">
