@@ -30,7 +30,7 @@ const StepsSection = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-4">
           <span className="inline-block px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-semibold uppercase tracking-wide mb-3">
-            Archiwum — etap zakończony
+            Archiwum — czas konsultacji minął, ale walczymy dalej!
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             Uwagi do planu ogólnego

@@ -41,7 +41,7 @@ const PhotosSection = () => {
             Zdjęcia terenu
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Zobacz, jak wygląda obszar Górnych Podjuch zagrożony osiedlem TBS.
+            Zobacz, jak wygląda obszar górnej części Podjuch zagrożony osiedlem TBS.
           </p>
         </div>
 
