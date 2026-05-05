@@ -1,12 +1,5 @@
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { X, ChevronDown } from "lucide-react";
 
 const photos: { src: string; alt: string }[] = [
   { src: "/images/teren_1.jpg", alt: "Górne Podjuchy — drzewa i ścieżka o zachodzie słońca" },
@@ -16,7 +9,11 @@ const photos: { src: string; alt: string }[] = [
   { src: "/images/teren_5.jpg", alt: "Górne Podjuchy — kwitnący bez i drzewa" },
 ];
 
+const INITIAL_COUNT = 3;
+const STEP = 9; // trzy kolejne rzędy po 3 zdjęcia
+
 const PhotosSection = () => {
+  const [visible, setVisible] = useState(INITIAL_COUNT);
   const [openSrc, setOpenSrc] = useState<string | null>(null);
   const [openAlt, setOpenAlt] = useState("");
 
@@ -33,6 +30,17 @@ const PhotosSection = () => {
     };
   }, [openSrc]);
 
+  const shown = photos.slice(0, visible);
+  const hasMore = visible < photos.length;
+
+  const openIdx = openSrc ? photos.findIndex((p) => p.src === openSrc) : -1;
+  const goRel = (delta: number) => {
+    if (openIdx < 0) return;
+    const n = (openIdx + delta + photos.length) % photos.length;
+    setOpenSrc(photos[n].src);
+    setOpenAlt(photos[n].alt);
+  };
+
   return (
     <section className="px-4 py-16 bg-background">
       <div className="max-w-5xl mx-auto">
@@ -45,29 +53,37 @@ const PhotosSection = () => {
           </p>
         </div>
 
-        <Carousel opts={{ align: "start", loop: true }} className="relative">
-          <CarouselContent>
-            {photos.map((p) => (
-              <CarouselItem key={p.src} className="basis-full sm:basis-1/2 lg:basis-1/3">
-                <button
-                  type="button"
-                  onClick={() => { setOpenSrc(p.src); setOpenAlt(p.alt); }}
-                  className="block w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-muted cursor-zoom-in group"
-                  aria-label={`Powiększ: ${p.alt}`}
-                >
-                  <img
-                    src={p.src}
-                    alt={p.alt}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                  />
-                </button>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-2 h-12 w-12 bg-background/90 hover:bg-background border-2 border-primary text-primary shadow-lg z-10" />
-          <CarouselNext className="right-2 h-12 w-12 bg-background/90 hover:bg-background border-2 border-primary text-primary shadow-lg z-10" />
-        </Carousel>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {shown.map((p) => (
+            <button
+              key={p.src}
+              type="button"
+              onClick={() => { setOpenSrc(p.src); setOpenAlt(p.alt); }}
+              className="aspect-[4/3] rounded-xl overflow-hidden border border-border bg-muted cursor-zoom-in group"
+              aria-label={`Powiększ: ${p.alt}`}
+            >
+              <img
+                src={p.src}
+                alt={p.alt}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform group-hover:scale-105"
+              />
+            </button>
+          ))}
+        </div>
+
+        {hasMore && (
+          <div className="flex justify-center mt-8">
+            <button
+              type="button"
+              onClick={() => setVisible((v) => Math.min(v + STEP, photos.length))}
+              className="inline-flex flex-col items-center gap-1 px-6 py-3 rounded-xl border border-border bg-card hover:bg-muted text-foreground font-semibold transition-colors"
+            >
+              <span>Pokaż więcej</span>
+              <ChevronDown className="w-5 h-5 animate-bounce" />
+            </button>
+          </div>
+        )}
       </div>
 
       {openSrc && (
@@ -85,40 +101,22 @@ const PhotosSection = () => {
           >
             <X className="w-6 h-6" />
           </button>
-
-          {(() => {
-            const idx = photos.findIndex((p) => p.src === openSrc);
-            const prev = () => {
-              const n = (idx - 1 + photos.length) % photos.length;
-              setOpenSrc(photos[n].src);
-              setOpenAlt(photos[n].alt);
-            };
-            const next = () => {
-              const n = (idx + 1) % photos.length;
-              setOpenSrc(photos[n].src);
-              setOpenAlt(photos[n].alt);
-            };
-            return (
-              <>
-                <button
-                  type="button"
-                  onClick={(e) => { e.stopPropagation(); prev(); }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center transition-colors shadow-lg z-10"
-                  aria-label="Poprzednie zdjęcie"
-                >
-                  <span className="text-2xl leading-none">‹</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={(e) => { e.stopPropagation(); next(); }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center transition-colors shadow-lg z-10"
-                  aria-label="Następne zdjęcie"
-                >
-                  <span className="text-2xl leading-none">›</span>
-                </button>
-              </>
-            );
-          })()}
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); goRel(-1); }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center transition-colors shadow-lg z-10"
+            aria-label="Poprzednie zdjęcie"
+          >
+            <span className="text-2xl leading-none">‹</span>
+          </button>
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); goRel(1); }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center transition-colors shadow-lg z-10"
+            aria-label="Następne zdjęcie"
+          >
+            <span className="text-2xl leading-none">›</span>
+          </button>
           <img
             src={openSrc}
             alt={openAlt}
