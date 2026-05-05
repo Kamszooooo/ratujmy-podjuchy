@@ -8,7 +8,7 @@ const drafts = [
   },
   {
     title: "Teren za autostradą A6",
-    description: "Sprzeciw wobec strefy ze składowiskami i magazynami. Proponujemy strefę z usługami sportu i rekreacji!",
+    description: "Nasza dodatkowa inicjatywa: sprzeciw wobec strefy ze składowiskami i magazynami, którą miasto przewiduje na terenach za autostradą A6. Proponujemy strefę z usługami sportu i rekreacji!",
     href: "/files/Szkic_uwagi_za_autostrada.docx",
   },
 ];
