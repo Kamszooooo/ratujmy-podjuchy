@@ -29,7 +29,7 @@ const StepsSection = () => {
     <section className="px-4 bg-card py-[40px]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-4">
-          <span className="inline-block px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-semibold uppercase tracking-wide mb-3">
+          <span className="inline-block px-3 py-1 rounded-full bg-destructive/10 text-destructive text-xs font-semibold uppercase tracking-wide mb-3">
             Archiwum — czas konsultacji minął, ale walczymy dalej!
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
@@ -48,16 +48,16 @@ const StepsSection = () => {
           {steps.map((step, index) => (
             <div key={step.number} className="relative flex items-start mb-16 last:mb-0">
               {/* Circle on timeline */}
-              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-primary flex items-center justify-center z-10 shadow-lg">
-                <span className="text-2xl font-bold text-primary-foreground">{step.number}</span>
+              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-muted flex items-center justify-center z-10 shadow-lg">
+                <span className="text-2xl font-bold text-muted-foreground">{step.number}</span>
               </div>
 
               {/* Content card */}
               <div className={`ml-24 md:ml-0 md:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                <div className="bg-background rounded-2xl p-6 shadow-sm border border-border">
+                <div className="bg-muted/50 rounded-2xl p-6 shadow-sm border border-border">
                   <div className="flex items-center gap-3 mb-3">
-                    <step.icon className="w-5 h-5 text-primary" />
-                    <h3 className="text-xl font-bold text-foreground font-sans">Krok {step.number}: {step.title}</h3>
+                    <step.icon className="w-5 h-5 text-muted-foreground" />
+                    <h3 className="text-xl font-bold text-muted-foreground font-sans">Krok {step.number}: {step.title}</h3>
                   </div>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{step.description}</p>
 
