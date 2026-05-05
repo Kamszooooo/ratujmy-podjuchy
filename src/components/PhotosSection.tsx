@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { X, ChevronDown } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const photos: { src: string; alt: string }[] = [
   { src: "/images/teren_1.jpg", alt: "Górne Podjuchy — drzewa i ścieżka o zachodzie słońca" },
@@ -13,11 +14,16 @@ const photos: { src: string; alt: string }[] = [
   { src: "/images/teren_9.jpg", alt: "Górne Podjuchy — zielony teren z kwitnącymi krzewami" },
 ];
 
-const INITIAL_COUNT = 3;
 const STEP = 9; // trzy kolejne rzędy po 3 zdjęcia
 
 const PhotosSection = () => {
-  const [visible, setVisible] = useState(INITIAL_COUNT);
+  const isMobile = useIsMobile();
+  const initialCount = isMobile ? 1 : 3;
+  const [visible, setVisible] = useState(initialCount);
+
+  useEffect(() => {
+    setVisible((v) => (v <= 3 ? initialCount : v));
+  }, [initialCount]);
   const [openSrc, setOpenSrc] = useState<string | null>(null);
   const [openAlt, setOpenAlt] = useState("");
 
