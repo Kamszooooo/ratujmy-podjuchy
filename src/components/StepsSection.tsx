@@ -2,7 +2,7 @@ import { Download } from "lucide-react";
 
 const drafts = [
   {
-    title: "Górne Podjuchy — teren między ul. Sąsiedzką a ul. Wschodnią",
+    title: "Teren między ul. Sąsiedzką a ul. Wschodnią (TBS-y)",
     description: "Sprzeciw wobec strefy zabudowy wielorodzinnej, obejmującej planowane osiedle TBS i miejską działkę między ul. Ukośną a ul. Olkuską.",
     href: "/files/Szkic_uwagi.docx",
   },
