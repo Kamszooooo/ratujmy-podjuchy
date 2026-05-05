@@ -1,5 +1,4 @@
 import HeroSection from "@/components/HeroSection";
-import HighwaySection from "@/components/HighwaySection";
 import MapComparisonSection from "@/components/MapComparisonSection";
 import ArgumentsSection from "@/components/ArgumentsSection";
 import ThreatSection from "@/components/ThreatSection";
@@ -18,11 +17,9 @@ const Index = () => {
       <PostersSection />
       <PhotosSection />
       <StepsSection />
-      <HighwaySection />
       <AboutFooter />
     </div>
   );
 };
 
 export default Index;
-
