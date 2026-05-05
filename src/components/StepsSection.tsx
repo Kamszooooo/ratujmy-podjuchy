@@ -19,14 +19,14 @@ const StepsSection = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <span className="inline-block px-3 py-1 rounded-full bg-destructive/10 text-destructive text-xs font-semibold uppercase tracking-wide mb-3">
-            Archiwum — czas konsultacji minął, ale walczymy dalej!
+            Czas konsultacji minął, ale walczymy dalej!
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             Uwagi do planu ogólnego
           </h2>
         </div>
         <p className="text-base md:text-lg text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          Termin składania uwag już minął. Złożyliśmy ich około tysiąca. Poniżej można je pobrać do wykorzystania w&nbsp;dalszych działaniach.
+          Złożyliśmy około tysiąca uwag. Poniżej można je pobrać do wykorzystania w&nbsp;dalszych działaniach.
         </p>
 
         <div className="grid md:grid-cols-2 gap-4">
