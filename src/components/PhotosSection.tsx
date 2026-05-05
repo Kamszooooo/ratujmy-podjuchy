@@ -45,7 +45,7 @@ const PhotosSection = () => {
           </p>
         </div>
 
-        <Carousel opts={{ align: "start", loop: true }} className="px-8 sm:px-12">
+        <Carousel opts={{ align: "start", loop: true }} className="relative">
           <CarouselContent>
             {photos.map((p) => (
               <CarouselItem key={p.src} className="basis-full sm:basis-1/2 lg:basis-1/3">
@@ -65,8 +65,8 @@ const PhotosSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="left-2 h-12 w-12 bg-background/90 hover:bg-background border-2 border-primary text-primary shadow-lg z-10" />
+          <CarouselNext className="right-2 h-12 w-12 bg-background/90 hover:bg-background border-2 border-primary text-primary shadow-lg z-10" />
         </Carousel>
       </div>
 
@@ -80,11 +80,45 @@ const PhotosSection = () => {
           <button
             type="button"
             onClick={() => setOpenSrc(null)}
-            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center transition-colors shadow-lg z-10"
             aria-label="Zamknij"
           >
             <X className="w-6 h-6" />
           </button>
+
+          {(() => {
+            const idx = photos.findIndex((p) => p.src === openSrc);
+            const prev = () => {
+              const n = (idx - 1 + photos.length) % photos.length;
+              setOpenSrc(photos[n].src);
+              setOpenAlt(photos[n].alt);
+            };
+            const next = () => {
+              const n = (idx + 1) % photos.length;
+              setOpenSrc(photos[n].src);
+              setOpenAlt(photos[n].alt);
+            };
+            return (
+              <>
+                <button
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); prev(); }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center transition-colors shadow-lg z-10"
+                  aria-label="Poprzednie zdjęcie"
+                >
+                  <span className="text-2xl leading-none">‹</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); next(); }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center transition-colors shadow-lg z-10"
+                  aria-label="Następne zdjęcie"
+                >
+                  <span className="text-2xl leading-none">›</span>
+                </button>
+              </>
+            );
+          })()}
           <img
             src={openSrc}
             alt={openAlt}
