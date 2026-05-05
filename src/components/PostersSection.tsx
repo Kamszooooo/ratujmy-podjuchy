@@ -32,13 +32,10 @@ const PostersSection = () => {
   return (
     <section className="px-4 py-16 bg-card">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-foreground mb-4 md:text-2xl">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl font-bold text-foreground mb-3 md:text-2xl">
             Plakaty do pobrania
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            ​
-          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
