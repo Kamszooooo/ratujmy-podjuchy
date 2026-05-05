@@ -1,5 +1,6 @@
-import { Download, X } from "lucide-react";
+import { Download, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const posters = [
   { src: "/files/plakat_1.png", title: "Plakat informacyjny — spotkanie 16 maja", filename: "plakat-nie-dla-tbs-spotkanie.png" },
@@ -8,6 +9,10 @@ const posters = [
 ];
 
 const PostersSection = () => {
+  const isMobile = useIsMobile();
+  const [showAll, setShowAll] = useState(false);
+  const visiblePosters = isMobile && !showAll ? posters.slice(0, 1) : posters;
+  const hasMore = isMobile && !showAll && posters.length > 1;
   const [openSrc, setOpenSrc] = useState<string | null>(null);
   const [openAlt, setOpenAlt] = useState<string>("");
 
@@ -37,7 +42,7 @@ const PostersSection = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posters.map((p) => (
+          {visiblePosters.map((p) => (
             <div key={p.src} className="bg-background border border-border rounded-2xl overflow-hidden shadow-sm flex flex-col">
               <button
                 type="button"
@@ -66,6 +71,19 @@ const PostersSection = () => {
             </div>
           ))}
         </div>
+
+        {hasMore && (
+          <div className="flex justify-center mt-8">
+            <button
+              type="button"
+              onClick={() => setShowAll(true)}
+              className="inline-flex flex-col items-center gap-1 px-6 py-3 rounded-xl border border-border bg-card hover:bg-muted text-foreground font-semibold transition-colors"
+            >
+              <span>Pokaż więcej</span>
+              <ChevronDown className="w-5 h-5 animate-bounce" />
+            </button>
+          </div>
+        )}
       </div>
 
       {openSrc && (
