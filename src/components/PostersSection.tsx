@@ -1,5 +1,6 @@
-import { Download, X } from "lucide-react";
+import { Download, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const posters = [
   { src: "/files/plakat_1.png", title: "Plakat informacyjny — spotkanie 16 maja", filename: "plakat-nie-dla-tbs-spotkanie.png" },
