@@ -35,7 +35,7 @@ const StepsSection = () => {
               key={d.href}
               className="bg-muted/50 rounded-2xl p-6 border border-border flex flex-col"
             >
-              <h3 className="text-lg font-bold text-muted-foreground mb-2">{d.title}</h3>
+              <h3 className="text-base font-bold text-muted-foreground mb-2">{d.title}</h3>
               <p className="text-sm text-muted-foreground mb-5 flex-1">{d.description}</p>
               <a
                 href={d.href}
