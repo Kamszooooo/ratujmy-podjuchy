@@ -26,7 +26,7 @@ const StepsSection = () => {
           </h2>
         </div>
         <p className="text-base md:text-lg text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          Złożyliśmy około tysiąca uwag. Poniżej można je pobrać do wykorzystania w&nbsp;dalszych działaniach.
+          Złożyliśmy około tysiąca uwag
         </p>
 
         <div className="grid md:grid-cols-2 gap-4">
