@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
-import { X, ChevronDown } from "lucide-react";
+import { X, ChevronDown, Play } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-const photos: { src: string; alt: string }[] = [
+type MediaItem = {
+  src: string;
+  alt: string;
+  type?: "image" | "video";
+  poster?: string;
+};
+
+const photos: MediaItem[] = [
+  { src: "/images/teren_new_1.jpg", alt: "Górne Podjuchy — łąka i drzewa wiosną" },
+  { src: "/images/teren_new_2.jpg", alt: "Górne Podjuchy — leśny zakątek z bujną zielenią" },
+  { src: "/images/teren_new_video.mp4", alt: "Górne Podjuchy — film z terenu", type: "video" },
   { src: "/images/teren_1.jpg", alt: "Górne Podjuchy — drzewa i ścieżka o zachodzie słońca" },
   { src: "/images/teren_2.jpg", alt: "Górne Podjuchy — łąka i drzewa pod błękitnym niebem" },
   { src: "/images/teren_3.jpg", alt: "Górne Podjuchy — samotne drzewo na łące" },
@@ -14,7 +24,7 @@ const photos: { src: string; alt: string }[] = [
   { src: "/images/teren_9.jpg", alt: "Górne Podjuchy — zielony teren z kwitnącymi krzewami" },
 ];
 
-const STEP = 9; // trzy kolejne rzędy po 3 zdjęcia
+const STEP = 9; // trzy kolejne rzędy po 3 elementy
 
 const PhotosSection = () => {
   const isMobile = useIsMobile();
@@ -44,6 +54,7 @@ const PhotosSection = () => {
   const hasMore = visible < photos.length;
 
   const openIdx = openSrc ? photos.findIndex((p) => p.src === openSrc) : -1;
+  const openItem = openIdx >= 0 ? photos[openIdx] : null;
   const goRel = (delta: number) => {
     if (openIdx < 0) return;
     const n = (openIdx + delta + photos.length) % photos.length;
@@ -66,15 +77,32 @@ const PhotosSection = () => {
               key={p.src}
               type="button"
               onClick={() => { setOpenSrc(p.src); setOpenAlt(p.alt); }}
-              className="rounded-xl overflow-hidden border border-border bg-muted cursor-zoom-in group"
+              className="relative rounded-xl overflow-hidden border border-border bg-muted cursor-zoom-in group aspect-[3/4]"
               aria-label={`Powiększ: ${p.alt}`}
             >
-              <img
-                src={p.src}
-                alt={p.alt}
-                loading="lazy"
-                className="w-full h-auto object-contain transition-transform group-hover:scale-105"
-              />
+              {p.type === "video" ? (
+                <>
+                  <video
+                    src={p.src}
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                    <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                      <Play className="w-7 h-7 text-black fill-black ml-1" />
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                />
+              )}
             </button>
           ))}
         </div>
@@ -112,7 +140,7 @@ const PhotosSection = () => {
             type="button"
             onClick={(e) => { e.stopPropagation(); goRel(-1); }}
             className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center transition-colors shadow-lg z-10"
-            aria-label="Poprzednie zdjęcie"
+            aria-label="Poprzednie"
           >
             <span className="text-2xl leading-none">‹</span>
           </button>
@@ -120,16 +148,28 @@ const PhotosSection = () => {
             type="button"
             onClick={(e) => { e.stopPropagation(); goRel(1); }}
             className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center transition-colors shadow-lg z-10"
-            aria-label="Następne zdjęcie"
+            aria-label="Następne"
           >
             <span className="text-2xl leading-none">›</span>
           </button>
-          <img
-            src={openSrc}
-            alt={openAlt}
-            onClick={(e) => e.stopPropagation()}
-            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-          />
+          {openItem?.type === "video" ? (
+            <video
+              key={openSrc}
+              src={openSrc}
+              controls
+              autoPlay
+              playsInline
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-full max-h-full rounded-lg shadow-2xl"
+            />
+          ) : (
+            <img
+              src={openSrc}
+              alt={openAlt}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            />
+          )}
         </div>
       )}
     </section>
