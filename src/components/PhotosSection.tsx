@@ -10,9 +10,9 @@ type MediaItem = {
 };
 
 const photos: MediaItem[] = [
+  { src: "/images/teren_new_video.mp4", alt: "Górne Podjuchy — film z terenu", type: "video", poster: "/images/teren_new_1.jpg" },
   { src: "/images/teren_new_1.jpg", alt: "Górne Podjuchy — łąka i drzewa wiosną" },
   { src: "/images/teren_new_2.jpg", alt: "Górne Podjuchy — leśny zakątek z bujną zielenią" },
-  { src: "/images/teren_new_video.mp4", alt: "Górne Podjuchy — film z terenu", type: "video" },
   { src: "/images/teren_2.jpg", alt: "Górne Podjuchy — łąka i drzewa pod błękitnym niebem" },
   { src: "/images/teren_5.jpg", alt: "Górne Podjuchy — kwitnący bez i drzewa" },
   { src: "/images/teren_6.jpg", alt: "Górne Podjuchy — panorama wzgórz i zieleni o zachodzie słońca" },
@@ -79,13 +79,22 @@ const PhotosSection = () => {
             >
               {p.type === "video" ? (
                 <>
-                  <video
-                    src={p.src}
-                    muted
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                  />
+                  {p.poster ? (
+                    <img
+                      src={p.poster}
+                      alt={p.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    />
+                  ) : (
+                    <video
+                      src={p.src}
+                      muted
+                      playsInline
+                      preload="none"
+                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    />
+                  )}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
                     <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
                       <Play className="w-7 h-7 text-black fill-black ml-1" />
