@@ -124,7 +124,7 @@ const HeroSection = () => {
       ref={sectionRef}
       className="relative flex items-center justify-center overflow-hidden"
       style={{
-        minHeight: `${currentHeight}vh`,
+        minHeight: `max(${currentHeight}vh, 22rem)`,
         transition: overscrollVh > 0 ? "none" : "min-height 1s ease-in-out",
       }}
     >
