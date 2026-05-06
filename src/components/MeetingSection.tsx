@@ -82,7 +82,7 @@ const MeetingSection = () => {
 
           <div className="flex justify-center mt-8">
             <a
-              href="https://www.facebook.com/profile.php?id=61574321447466"
+              href="https://www.facebook.com/people/Ratujmy-Podjuchy/61574321447466/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary text-sm font-medium transition-colors"
