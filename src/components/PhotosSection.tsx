@@ -79,13 +79,22 @@ const PhotosSection = () => {
             >
               {p.type === "video" ? (
                 <>
-                  <video
-                    src={p.src}
-                    muted
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                  />
+                  {p.poster ? (
+                    <img
+                      src={p.poster}
+                      alt={p.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    />
+                  ) : (
+                    <video
+                      src={p.src}
+                      muted
+                      playsInline
+                      preload="none"
+                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    />
+                  )}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
                     <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
                       <Play className="w-7 h-7 text-black fill-black ml-1" />
