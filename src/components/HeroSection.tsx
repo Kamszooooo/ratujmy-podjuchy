@@ -136,7 +136,7 @@ const HeroSection = () => {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
-      <div className="relative z-10 text-center px-6 animate-fade-in-up">
+      <div className="relative z-10 text-center px-6 py-10 animate-fade-in-up">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
           Ratujmy Podjuchy
         </h1>
