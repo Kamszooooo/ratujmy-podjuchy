@@ -10,9 +10,9 @@ type MediaItem = {
 };
 
 const photos: MediaItem[] = [
+  { src: "/images/teren_new_video.mp4", alt: "Górne Podjuchy — film z terenu", type: "video", poster: "/images/teren_new_1.jpg" },
   { src: "/images/teren_new_1.jpg", alt: "Górne Podjuchy — łąka i drzewa wiosną" },
   { src: "/images/teren_new_2.jpg", alt: "Górne Podjuchy — leśny zakątek z bujną zielenią" },
-  { src: "/images/teren_new_video.mp4", alt: "Górne Podjuchy — film z terenu", type: "video" },
   { src: "/images/teren_2.jpg", alt: "Górne Podjuchy — łąka i drzewa pod błękitnym niebem" },
   { src: "/images/teren_5.jpg", alt: "Górne Podjuchy — kwitnący bez i drzewa" },
   { src: "/images/teren_6.jpg", alt: "Górne Podjuchy — panorama wzgórz i zieleni o zachodzie słońca" },
