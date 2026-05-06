@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Facebook } from "lucide-react";
 
 const COLLAPSED_VH = 30; // collapsed height in vh
 const EXPANDED_VH = 90;  // max expanded height in vh
@@ -142,6 +143,15 @@ const HeroSection = () => {
         <p className="text-base md:text-xl text-white/90 max-w-2xl mx-auto mb-8 drop-shadow">
           NIE dla osiedla TBS na górkach w Podjuchach!
         </p>
+        <a
+          href="https://www.facebook.com/profile.php?id=61574321447466"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/30 bg-white/10 hover:bg-white/20 text-white text-sm font-medium backdrop-blur-sm transition-colors"
+        >
+          <Facebook className="w-4 h-4" />
+          Profil inicjatywy na Facebooku
+        </a>
       </div>
 
       {/* Bottom wave */}
