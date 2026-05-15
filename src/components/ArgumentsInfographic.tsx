@@ -60,21 +60,21 @@ const ArgumentsInfographic = () => {
               <span className="text-3xl md:text-4xl font-bold text-primary">~1000</span>
             </div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-              nowych mieszkań łącznie
+              nowych mieszkań
             </p>
           </div>
 
           <div className="text-center md:text-left border-l border-border pl-4 md:pl-6">
             <div className="text-3xl md:text-4xl font-bold text-foreground">560</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-              na działce TBS
+              mieszkań planuje wybudować TBS
             </p>
           </div>
 
           <div className="text-center md:text-left border-l border-border pl-4 md:pl-6">
-            <div className="text-3xl md:text-4xl font-bold text-foreground">400+</div>
+            <div className="text-3xl md:text-4xl font-bold text-foreground">~ 500</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-              na działce miejskiej przy ul. Ukośnej
+              może dodatkowo powstać na działce między ul. Ukośną a Olkuską
             </p>
           </div>
 
