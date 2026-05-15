@@ -137,7 +137,7 @@ const ArgumentsInfographic = () => {
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">21 min</div>
               <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
-                dojście do przystanku SKM Podjuchy
+                zajmuje dojście do przystanku SKM Podjuchy
               </p>
             </div>
           </div>
