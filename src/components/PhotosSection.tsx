@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { X, ChevronDown, Play } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 type MediaItem = {
   src: string;
@@ -21,16 +20,31 @@ const photos: MediaItem[] = [
   { src: "/images/teren_9.jpg", alt: "Górne Podjuchy — zielony teren z kwitnącymi krzewami" },
 ];
 
-const STEP = 9; // trzy kolejne rzędy po 3 elementy
+const useColumns = () => {
+  const [cols, setCols] = useState(1);
+  useEffect(() => {
+    const compute = () => {
+      const w = window.innerWidth;
+      if (w >= 1024) setCols(3);
+      else if (w >= 640) setCols(2);
+      else setCols(1);
+    };
+    compute();
+    window.addEventListener("resize", compute);
+    return () => window.removeEventListener("resize", compute);
+  }, []);
+  return cols;
+};
 
 const PhotosSection = () => {
-  const isMobile = useIsMobile();
-  const initialCount = isMobile ? 1 : 3;
-  const [visible, setVisible] = useState(initialCount);
+  const cols = useColumns();
+  const [extraRows, setExtraRows] = useState(0);
+  const visible = cols * (1 + extraRows);
 
   useEffect(() => {
-    setVisible((v) => (v <= 3 ? initialCount : v));
-  }, [initialCount]);
+    setExtraRows(0);
+  }, [cols]);
+
   const [openSrc, setOpenSrc] = useState<string | null>(null);
   const [openAlt, setOpenAlt] = useState("");
 
@@ -117,7 +131,7 @@ const PhotosSection = () => {
           <div className="flex justify-center mt-8">
             <button
               type="button"
-              onClick={() => setVisible((v) => Math.min(v + STEP, photos.length))}
+              onClick={() => setExtraRows((r) => r + 3)}
               className="inline-flex flex-col items-center gap-1 px-6 py-3 rounded-xl border border-border bg-card hover:bg-muted text-foreground font-semibold transition-colors"
             >
               <span>Pokaż więcej</span>
