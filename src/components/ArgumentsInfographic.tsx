@@ -28,7 +28,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Przyroda</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Strome wzgórza, lasy i strumień. Teren w{" "}
+            Strome wzgórza, strumień, tereny zalesione i podmokłe. Teren w{" "}
             <span className="font-semibold text-foreground">otulinie Szczecińskiego Parku Krajobrazowego</span>{" "}
             „Puszcza Bukowa".
           </p>
