@@ -65,7 +65,7 @@ const ArgumentsInfographic = () => {
           </div>
 
           <div className="text-center md:text-left border-l border-border pl-4 md:pl-6">
-            <div className="text-2xl md:text-3xl font-bold text-destructive">560</div>
+            <div className="text-2xl md:text-3xl font-bold text-foreground">560</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
               mieszkań ma wybudować TBS
             </p>
