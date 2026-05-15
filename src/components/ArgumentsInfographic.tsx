@@ -17,7 +17,7 @@ const ArgumentsInfographic = () => {
           <h4 className="font-bold text-lg text-foreground mb-2">Ład przestrzenny</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Otoczenie ma charakter jednorodzinny.{" "}
-            <span className="font-semibold text-foreground">99% mieszkańców</span> (badanie 474 osób)
+            <span className="font-semibold text-foreground">99% mieszkańców</span> (ankieta rady osiedla)
             preferuje na tym terenie zabudowę jednorodzinną.
           </p>
         </div>
