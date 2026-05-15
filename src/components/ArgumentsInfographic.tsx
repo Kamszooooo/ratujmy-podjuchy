@@ -1,4 +1,4 @@
-import { Home, Trees, Car, Users, Building2, TrendingUp } from "lucide-react";
+import { Home, Trees, Car, Users, Building2, TrendingUp, Train, Bus, Mountain } from "lucide-react";
 
 const ArgumentsInfographic = () => {
   return (
@@ -126,6 +126,50 @@ const ArgumentsInfographic = () => {
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
               (licząc półtorej samochodu na mieszkanie)
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Słaba komunikacja publiczna */}
+      <div className="mt-6 bg-card border border-border rounded-2xl p-6 md:p-8">
+        <h4 className="font-bold text-lg text-foreground mb-5">
+          Słaba komunikacja publiczna
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Train className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-foreground leading-tight">21 min</div>
+              <p className="text-xs md:text-sm text-muted-foreground leading-tight mt-1">
+                dojście do przystanku SKM Podjuchy
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Bus className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-foreground leading-tight">17 min</div>
+              <p className="text-xs md:text-sm text-muted-foreground leading-tight mt-1">
+                do przystanku autobusu linii 61 Szlamowa
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Mountain className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-foreground leading-tight">50–75 m</div>
+              <p className="text-xs md:text-sm text-muted-foreground leading-tight mt-1">
+                wspinaczki w górę (w zależności od położenia budynku)
+              </p>
+            </div>
           </div>
         </div>
       </div>
