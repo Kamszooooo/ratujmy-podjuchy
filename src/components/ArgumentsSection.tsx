@@ -14,8 +14,8 @@ const ArgumentsSection = () => {
     <section className="pb-12 pt-2 px-4">
       <Collapsible open={open} onOpenChange={setOpen}>
           <ArgumentsInfographic />
-          <div className="max-w-xl mx-auto flex justify-center">
-            <CollapsibleTrigger className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground text-base md:text-lg font-semibold shadow-md hover:bg-primary/90 hover:shadow-lg transition-all group">
+          <div className="max-w-xl mx-auto flex justify-center -mt-5 relative z-10">
+            <CollapsibleTrigger className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground text-base md:text-lg font-semibold shadow-lg ring-4 ring-background hover:bg-primary/90 hover:shadow-xl transition-all group">
               <ChevronDown
                 className={`w-5 h-5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
               />
