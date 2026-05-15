@@ -57,7 +57,7 @@ const ArgumentsInfographic = () => {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-1 mb-1">
               <Building2 className="w-4 h-4 text-muted-foreground md:hidden" />
-              <span className="text-3xl md:text-4xl font-bold text-primary">~1000</span>
+              <span className="text-3xl md:text-4xl font-bold text-foreground">~1000</span>
             </div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
               nowych mieszkań
