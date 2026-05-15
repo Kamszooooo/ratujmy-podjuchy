@@ -26,7 +26,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Przyroda</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Strome wzgórza, strumień, tereny zalesione i podmokłe. Teren w otulinie Szczecińskiego Parku Krajobrazowego „Puszcza Bukowa".
+            Lasy, łąki, wzgórza, strumień i tereny podmokłe.
           </p>
         </div>
 
