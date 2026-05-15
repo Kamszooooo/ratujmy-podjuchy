@@ -101,7 +101,7 @@ const ArgumentsInfographic = () => {
                 title="Obecni mieszkańcy"
               />
               <div
-                className="absolute inset-y-0 bg-destructive"
+                className="absolute inset-y-0 bg-muted-foreground/60"
                 style={{ left: "74%", width: "26%" }}
                 title="Nowi mieszkańcy"
               />
@@ -111,7 +111,7 @@ const ArgumentsInfographic = () => {
                 <span className="w-2 h-2 rounded-full bg-primary" /> obecni mieszkańcy
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-destructive" /> nowi mieszkańcy
+                <span className="w-2 h-2 rounded-full bg-muted-foreground/60" /> nowi mieszkańcy
               </span>
             </div>
           </div>
