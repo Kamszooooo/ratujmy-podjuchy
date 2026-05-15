@@ -12,6 +12,16 @@ const ArgumentsSection = () => {
   return (
     <section className="pb-12 pt-2 px-4">
       <Collapsible open={open} onOpenChange={setOpen}>
+          <div className="max-w-5xl mx-auto mb-8">
+            <img
+              src="/images/infografika_argumenty.jpg"
+              alt="Infografika: dlaczego mówimy NIE budowie osiedla TBS — ład przestrzenny, przyroda, infrastruktura"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              className="w-full h-auto rounded-xl border border-border shadow-sm"
+            />
+          </div>
           <div className="max-w-xl mx-auto flex justify-center">
             <CollapsibleTrigger className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground text-base md:text-lg font-semibold shadow-md hover:bg-primary/90 hover:shadow-lg transition-all group">
               <ChevronDown
