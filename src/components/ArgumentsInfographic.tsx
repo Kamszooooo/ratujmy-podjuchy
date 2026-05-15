@@ -52,7 +52,7 @@ const ArgumentsInfographic = () => {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-1 mb-1">
               <Building2 className="w-4 h-4 text-muted-foreground md:hidden" />
-              <span className="text-3xl md:text-4xl font-bold text-foreground">~1000 <span className="text-2xl md:text-3xl">mieszkań</span></span>
+              <span className="text-3xl font-bold text-foreground md:text-3xl">~1000 <span className="text-2xl md:text-3xl">mieszkań</span></span>
             </div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
               &zwnj;
@@ -61,14 +61,14 @@ const ArgumentsInfographic = () => {
 
           <div className="grid grid-cols-2 gap-4 md:contents">
             <div className="text-center md:text-left md:border-l md:border-border md:pl-6">
-            <div className="text-2xl md:text-3xl font-bold text-foreground">560 <span className="text-lg md:text-xl">mieszkań</span></div>
+            <div className="text-2xl font-bold text-foreground md:text-2xl">560 <span className="text-lg md:text-xl">mieszkań</span></div>
               <p className="text-xs md:text-sm text-muted-foreground leading-tight">
                 planuje wybudować TBS między ul. Ukośną a autostradą
               </p>
             </div>
 
             <div className="text-center md:text-left border-l border-border pl-4 md:pl-6">
-              <div className="text-2xl md:text-3xl font-bold text-foreground">~500 <span className="text-lg md:text-xl">mieszkań</span></div>
+              <div className="text-2xl font-bold text-foreground md:text-2xl">~500 <span className="text-lg md:text-xl">mieszkań</span></div>
               <p className="text-xs md:text-sm text-muted-foreground leading-tight">
                 może dodatkowo powstać między ul. Ukośną a Olkuską
               </p>
@@ -78,7 +78,7 @@ const ArgumentsInfographic = () => {
 
         <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           <div className="text-center md:text-left">
-            <div className="text-3xl md:text-4xl font-bold text-slate-800">Łącznie ~3000 osób</div>
+            <div className="text-3xl font-bold text-slate-800 md:text-3xl">Łącznie ~3000 osób</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
               (licząc trzy osoby na mieszkanie)
             </p>
@@ -121,7 +121,7 @@ const ArgumentsInfographic = () => {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-1 mb-1">
               <Car className="w-4 h-4 text-muted-foreground md:hidden" />
-              <span className="text-3xl md:text-4xl font-bold text-slate-800">czyli <span className="text-destructive">~2000</span> <span className="text-[0.75em]">dodatkowych</span> samochodów!</span>
+              <span className="text-3xl font-bold text-slate-800 md:text-3xl">czyli <span className="text-destructive">~2000</span> <span className="text-[0.75em]">dodatkowych</span> samochodów!</span>
             </div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
               (licząc półtorej samochodu na mieszkanie)
