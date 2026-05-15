@@ -14,6 +14,7 @@ const Index = () => {
       <HeroSection />
       <ThreatSection />
       <MapComparisonSection />
+      <ArgumentsInfographic />
       <ArgumentsSection />
       <PostersSection />
       <PhotosSection />
