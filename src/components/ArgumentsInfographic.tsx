@@ -74,7 +74,7 @@ const ArgumentsInfographic = () => {
           <div className="text-center md:text-left border-l border-border pl-4 md:pl-6">
             <div className="text-3xl md:text-4xl font-bold text-foreground">~ 500</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-              może dodatkowo powstać na działce między ul. Ukośną a Olkuską
+              może dodatkowo powstać na działce miejskiej między ul. Ukośną a Olkuską
             </p>
           </div>
         </div>
