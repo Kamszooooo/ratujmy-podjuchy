@@ -128,14 +128,8 @@ const ArgumentsInfographic = () => {
             </p>
           </div>
         </div>
-      </div>
 
-      {/* Słaba komunikacja publiczna */}
-      <div className="mt-6 bg-card border border-border rounded-2xl p-6 md:p-8">
-        <h4 className="font-bold text-lg text-foreground mb-5">
-          Słaba komunikacja publiczna
-        </h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="mt-6 pt-6 border-t border-border grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
               <Train className="w-5 h-5 text-primary" />
