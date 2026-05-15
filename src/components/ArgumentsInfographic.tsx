@@ -80,7 +80,7 @@ const ArgumentsInfographic = () => {
           <div className="text-center md:text-left">
             <div className="text-3xl md:text-4xl font-bold text-slate-800">Łącznie ~3000 osób</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-              (licząc trzy osoby/mieszkanie)
+              (licząc trzy osoby na mieszkanie)
             </p>
           </div>
 
