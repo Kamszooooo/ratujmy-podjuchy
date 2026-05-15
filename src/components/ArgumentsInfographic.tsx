@@ -16,7 +16,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Ład przestrzenny</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Otoczenie to zabudowa jednorodzinna. 99% mieszkańców (ankieta rady osiedla) preferuje na tym terenie zabudowę jednorodzinną.
+            Otoczenie to zabudowa jednorodzinna. <br /><br />99% mieszkańców (ankieta rady osiedla) preferuje na tym terenie zabudowę jednorodzinną.
           </p>
         </div>
 
