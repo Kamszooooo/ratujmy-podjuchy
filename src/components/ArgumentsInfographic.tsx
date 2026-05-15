@@ -36,7 +36,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-foreground mb-2 text-2xl">Infrastruktura</h4>
           <p className="text-muted-foreground leading-relaxed text-base">
-            Słaba komunikacja miejska. Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu i jeszcze bardziej zakorkuje się wjazd do Podjuch.
+            Słaby dostęp do komunikacji publicznej. Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu i jeszcze bardziej zakorkuje się wjazd do Podjuch.
           </p>
         </div>
       </div>
