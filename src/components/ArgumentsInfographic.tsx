@@ -2,7 +2,7 @@ import { Home, Trees, Car, Users, Building2, TrendingUp, Train, Bus, Mountain } 
 
 const ArgumentsInfographic = () => {
   return (
-    <div className="max-w-5xl mx-auto mb-10">
+    <div className="max-w-5xl mx-auto">
       <h3 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-2">
         Dlaczego mówimy <span className="text-destructive">NIE</span>?
       </h3>
