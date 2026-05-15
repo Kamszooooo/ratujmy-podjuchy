@@ -91,7 +91,7 @@ const ArgumentsInfographic = () => {
               <span className="text-muted-foreground">
                 Podjuchy dziś: <span className="font-semibold text-foreground">8 600</span> mieszkańców
                 {" → "}
-                wzrost o <span className="font-bold text-destructive">35%</span>
+                wzrost o <span className="font-bold text-destructive text-base md:text-lg">35%</span>
               </span>
             </div>
             <div className="relative h-4 bg-muted rounded-full overflow-hidden">
