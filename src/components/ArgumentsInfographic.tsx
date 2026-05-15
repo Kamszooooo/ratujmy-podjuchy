@@ -16,9 +16,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Ład przestrzenny</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Otoczenie ma charakter jednorodzinny.{" "}
-            <span className="font-semibold text-foreground">99% mieszkańców</span> (ankieta rady osiedla)
-            preferuje na tym terenie zabudowę jednorodzinną.
+            Otoczenie ma charakter jednorodzinny. 99% mieszkańców (ankieta rady osiedla) preferuje na tym terenie zabudowę jednorodzinną.
           </p>
         </div>
 
@@ -28,9 +26,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Przyroda</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Strome wzgórza, strumień, tereny zalesione i podmokłe. Teren w{" "}
-            <span className="font-semibold text-foreground">otulinie Szczecińskiego Parku Krajobrazowego</span>{" "}
-            „Puszcza Bukowa".
+            Strome wzgórza, strumień, tereny zalesione i podmokłe. Teren w otulinie Szczecińskiego Parku Krajobrazowego „Puszcza Bukowa".
           </p>
         </div>
 
