@@ -89,20 +89,20 @@ const ArgumentsInfographic = () => {
             <div className="flex items-center gap-2 mb-3 text-sm">
               <Users className="w-4 h-4 text-muted-foreground" />
               <span className="text-muted-foreground">
-                Podjuchy dziś: <span className="font-semibold text-foreground">8 600</span> mieszkańców
+                Podjuchy dziś: <span className="font-semibold text-foreground">7 592</span> mieszkańców
                 {" → "}
-                wzrost o <span className="font-bold md:text-lg text-amber-600 text-xl">35%</span>
+                wzrost o <span className="font-bold md:text-lg text-amber-600 text-xl">40%</span>
               </span>
             </div>
             <div className="relative h-4 bg-muted rounded-full overflow-hidden">
               <div
                 className="absolute inset-y-0 left-0 bg-slate-700 rounded-full"
-                style={{ width: "74%" }}
+                style={{ width: "72%" }}
                 title="Obecni mieszkańcy"
               />
               <div
                 className="absolute inset-y-0 bg-amber-500"
-                style={{ left: "74%", width: "26%" }}
+                style={{ left: "72%", width: "28%" }}
                 title="Nowi mieszkańcy"
               />
             </div>
