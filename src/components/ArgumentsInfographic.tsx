@@ -36,8 +36,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Infrastruktura</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu. Słaba komunikacja publiczna
-            i przestarzała sieć wodociągowa.
+            Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu. Jeszcze bardziej zakorkuje się ul. Granitowa.
           </p>
         </div>
       </div>
