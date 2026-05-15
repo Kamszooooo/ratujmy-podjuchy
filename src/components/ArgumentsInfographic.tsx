@@ -26,7 +26,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-foreground mb-2 text-2xl">Przyroda</h4>
           <p className="text-muted-foreground leading-relaxed text-base">
-            Teren jest pagórkowaty, zajmują go łąki i lasy. Częściowo jest podmokły, znajdują się na nim źródła, z których wypływa strumień.
+            Teren jest pagórkowaty, zajmują go łąki i lasy. Częściowo podmokły, ze źródłami i strumieniem.
           </p>
         </div>
 
