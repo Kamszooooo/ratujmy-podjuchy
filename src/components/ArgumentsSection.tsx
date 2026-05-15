@@ -12,10 +12,10 @@ const ArgumentsSection = () => {
   return (
     <section className="pb-12 pt-2 px-4">
       <Collapsible open={open} onOpenChange={setOpen}>
-          <div className="max-w-xl mx-auto">
-            <CollapsibleTrigger className="flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors group">
+          <div className="max-w-xl mx-auto flex justify-center">
+            <CollapsibleTrigger className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground text-base md:text-lg font-semibold shadow-md hover:bg-primary/90 hover:shadow-lg transition-all group">
               <ChevronDown
-                className={`w-4 h-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+                className={`w-5 h-5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
               />
               Przeczytaj uzasadnienie uwagi
             </CollapsibleTrigger>
