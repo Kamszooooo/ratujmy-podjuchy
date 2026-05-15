@@ -1,6 +1,5 @@
 import { Download, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const posters = [
   { src: "/files/plakat_1.png", title: "Plakat informacyjny — spotkanie 16 maja", filename: "plakat-nie-dla-tbs-spotkanie.png" },
@@ -8,11 +7,28 @@ const posters = [
   { src: "/files/plakat_3.png", title: "Plakat — NIE dla TBS / TAK dla zabudowy jednorodzinnej", filename: "plakat-nie-tbs-tak-jednorodzinna.png" },
 ];
 
+const useColumns = () => {
+  const [cols, setCols] = useState(1);
+  useEffect(() => {
+    const compute = () => {
+      const w = window.innerWidth;
+      if (w >= 1024) setCols(3);
+      else if (w >= 640) setCols(2);
+      else setCols(1);
+    };
+    compute();
+    window.addEventListener("resize", compute);
+    return () => window.removeEventListener("resize", compute);
+  }, []);
+  return cols;
+};
+
 const PostersSection = () => {
-  const isMobile = useIsMobile();
+  const cols = useColumns();
   const [showAll, setShowAll] = useState(false);
-  const visiblePosters = isMobile && !showAll ? posters.slice(0, 1) : posters;
-  const hasMore = isMobile && !showAll && posters.length > 1;
+  useEffect(() => { setShowAll(false); }, [cols]);
+  const visiblePosters = showAll ? posters : posters.slice(0, cols);
+  const hasMore = !showAll && posters.length > cols;
   const [openSrc, setOpenSrc] = useState<string | null>(null);
   const [openAlt, setOpenAlt] = useState<string>("");
 
