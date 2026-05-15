@@ -10,7 +10,7 @@ const ArgumentsInfographic = () => {
 
       {/* Trzy filary argumentów */}
       <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8">
-        <div className="group bg-card border border-border rounded-2xl p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 """>
             <Home className="w-6 h-6 text-primary" />
           </div>
@@ -20,7 +20,7 @@ const ArgumentsInfographic = () => {
           </p>
         </div>
 
-        <div className="group bg-card border border-border rounded-2xl p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 """>
             <Trees className="w-6 h-6 text-primary" />
           </div>
@@ -30,7 +30,7 @@ const ArgumentsInfographic = () => {
           </p>
         </div>
 
-        <div className="group bg-card border border-border rounded-2xl p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 """>
             <Car className="w-6 h-6 text-primary" />
           </div>
