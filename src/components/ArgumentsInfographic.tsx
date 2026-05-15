@@ -10,8 +10,8 @@ const ArgumentsInfographic = () => {
 
       {/* Trzy filary argumentów */}
       <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8">
-        <div className="group bg-card border border-border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-all">
+        <div className="bg-card border border-border rounded-2xl p-6">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
             <Home className="w-6 h-6 text-primary" />
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Ład przestrzenny</h4>
@@ -20,8 +20,8 @@ const ArgumentsInfographic = () => {
           </p>
         </div>
 
-        <div className="group bg-card border border-border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-all">
+        <div className="bg-card border border-border rounded-2xl p-6">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
             <Trees className="w-6 h-6 text-primary" />
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Przyroda</h4>
@@ -30,8 +30,8 @@ const ArgumentsInfographic = () => {
           </p>
         </div>
 
-        <div className="group bg-card border border-border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-all">
+        <div className="bg-card border border-border rounded-2xl p-6">
+          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
             <Car className="w-6 h-6 text-primary" />
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Infrastruktura</h4>
