@@ -14,7 +14,7 @@ const ArgumentsInfographic = () => {
           <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
             <Home className="w-6 h-6 text-primary" />
           </div>
-          <h4 className="font-bold text-lg text-foreground mb-2">Ład przestrzenny</h4>
+          <h4 className="font-bold text-foreground mb-2 text-2xl">Ład przestrzenny</h4>
           <p className="text-muted-foreground leading-relaxed text-base">
             Otoczenie to zabudowa jednorodzinna. <br /><br /><span className="font-bold">99% mieszkańców</span> (ankieta rady osiedla) preferuje na tym terenie zabudowę jednorodzinną.
           </p>
@@ -24,7 +24,7 @@ const ArgumentsInfographic = () => {
           <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
             <Trees className="w-6 h-6 text-primary" />
           </div>
-          <h4 className="font-bold text-lg text-foreground mb-2">Przyroda</h4>
+          <h4 className="font-bold text-foreground mb-2 text-2xl">Przyroda</h4>
           <p className="text-muted-foreground leading-relaxed text-base">
             Teren jest pagórkowaty, zajmują go łąki i lasy. Częściowo jest podmokły, znajdują się na nim źródła, z których wypływa strumień.
           </p>
@@ -34,7 +34,7 @@ const ArgumentsInfographic = () => {
           <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
             <Car className="w-6 h-6 text-primary" />
           </div>
-          <h4 className="font-bold text-lg text-foreground mb-2">Infrastruktura</h4>
+          <h4 className="font-bold text-foreground mb-2 text-2xl">Infrastruktura</h4>
           <p className="text-muted-foreground leading-relaxed text-base">
             Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu i jeszcze bardziej zakorkuje się wjazd do Podjuch.
           </p>
