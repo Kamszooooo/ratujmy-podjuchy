@@ -79,44 +79,44 @@ const ArgumentsInfographic = () => {
           </div>
         </div>
 
-        <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border">
+        <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           <div className="text-center md:text-left">
             <div className="text-3xl md:text-4xl font-bold text-slate-800">Łącznie ~3000 osób</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
               (zakładając trzy osoby/mieszkanie)
             </p>
           </div>
-        </div>
 
-        {/* Wizualizacja proporcji */}
-        <div className="mt-6 pt-6 border-t border-border">
-          <div className="flex items-center gap-2 mb-3 text-sm">
-            <Users className="w-4 h-4 text-muted-foreground" />
-            <span className="text-muted-foreground">
-              Podjuchy dziś: <span className="font-semibold text-foreground">8 600</span> mieszkańców
-              {" → "}
-              wzrost o <span className="font-semibold text-destructive">~23%</span>
-            </span>
-          </div>
-          <div className="relative h-4 bg-muted rounded-full overflow-hidden">
-            <div
-              className="absolute inset-y-0 left-0 bg-primary rounded-full"
-              style={{ width: "81%" }}
-              title="Obecni mieszkańcy"
-            />
-            <div
-              className="absolute inset-y-0 bg-destructive"
-              style={{ left: "81%", width: "19%" }}
-              title="Nowi mieszkańcy"
-            />
-          </div>
-          <div className="flex justify-between mt-2 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-primary" /> obecni mieszkańcy
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-destructive" /> nowi mieszkańcy
-            </span>
+          {/* Wizualizacja proporcji */}
+          <div>
+            <div className="flex items-center gap-2 mb-3 text-sm">
+              <Users className="w-4 h-4 text-muted-foreground" />
+              <span className="text-muted-foreground">
+                Podjuchy dziś: <span className="font-semibold text-foreground">8 600</span> mieszkańców
+                {" → "}
+                wzrost o <span className="font-semibold text-destructive">~23%</span>
+              </span>
+            </div>
+            <div className="relative h-4 bg-muted rounded-full overflow-hidden">
+              <div
+                className="absolute inset-y-0 left-0 bg-primary rounded-full"
+                style={{ width: "81%" }}
+                title="Obecni mieszkańcy"
+              />
+              <div
+                className="absolute inset-y-0 bg-destructive"
+                style={{ left: "81%", width: "19%" }}
+                title="Nowi mieszkańcy"
+              />
+            </div>
+            <div className="flex justify-between mt-2 text-xs text-muted-foreground">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-primary" /> obecni mieszkańcy
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-destructive" /> nowi mieszkańcy
+              </span>
+            </div>
           </div>
         </div>
 
