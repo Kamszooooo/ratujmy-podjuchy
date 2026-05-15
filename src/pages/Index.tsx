@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import MapComparisonSection from "@/components/MapComparisonSection";
+import ArgumentsInfographic from "@/components/ArgumentsInfographic";
 import ArgumentsSection from "@/components/ArgumentsSection";
 import ThreatSection from "@/components/ThreatSection";
 import PostersSection from "@/components/PostersSection";
