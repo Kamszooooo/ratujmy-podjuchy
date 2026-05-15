@@ -161,7 +161,10 @@ const ArgumentsInfographic = () => {
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">50–75 m</div>
               <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
-                wspinaczki w górę <span className="text-[0.7em]">(w zależności od położenia budynku)</span>
+                wspinaczki w górę
+              </p>
+              <p className="text-xs md:text-sm text-muted-foreground leading-tight">
+                (w zależności od położenia budynku)
               </p>
             </div>
           </div>
