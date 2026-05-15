@@ -48,7 +48,7 @@ const ARGUMENTS: Argument[] = [
     accent: "accent",
     details: [
       { icon: TrafficCone, text: "Obsługa przez wąskie ul. Sąsiedzką, Wschodnią i Żeliwną." },
-      { icon: Bus, text: "25 min pieszo do SKM Podjuchy, autobus 904 tylko „na żądanie"." },
+      { icon: Bus, text: "25 min pieszo do SKM Podjuchy, autobus 904 tylko „na żądanie”." },
       { icon: Droplets, text: "Wodociągi i kanalizacja w dużej części z połowy XX w." },
     ],
   },
