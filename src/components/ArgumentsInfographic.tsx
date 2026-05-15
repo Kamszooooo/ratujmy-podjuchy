@@ -53,7 +53,7 @@ const ArgumentsInfographic = () => {
           <h4 className="font-bold text-lg text-foreground">Skala inwestycji</h4>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-1 mb-1">
               <Building2 className="w-4 h-4 text-muted-foreground md:hidden" />
@@ -77,11 +77,23 @@ const ArgumentsInfographic = () => {
               może dodatkowo powstać na działce między ul. Ukośną a Olkuską
             </p>
           </div>
+        </div>
 
-          <div className="text-center md:text-left border-l border-border pl-4 md:pl-6">
+        <div className="grid grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border">
+          <div className="text-center md:text-left">
             <div className="text-3xl md:text-4xl font-bold text-destructive">2000+</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
               nowych mieszkańców
+            </p>
+          </div>
+
+          <div className="text-center md:text-left border-l border-border pl-4 md:pl-6">
+            <div className="flex items-center justify-center md:justify-start gap-1 mb-1">
+              <Car className="w-4 h-4 text-muted-foreground md:hidden" />
+              <span className="text-3xl md:text-4xl font-bold text-destructive">5 000</span>
+            </div>
+            <p className="text-xs md:text-sm text-muted-foreground leading-tight">
+              dodatkowych przejazdów samochodów dziennie
             </p>
           </div>
         </div>
