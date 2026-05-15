@@ -81,9 +81,9 @@ const ArgumentsInfographic = () => {
 
         <div className="grid grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border">
           <div className="text-center md:text-left">
-            <div className="text-3xl md:text-4xl font-bold text-destructive">2000+</div>
+            <div className="text-3xl md:text-4xl font-bold text-destructive">~3000</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-              nowych mieszkańców
+              nowych mieszkańców (zakładając trzy osoby/mieszkanie)
             </p>
           </div>
 
