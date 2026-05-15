@@ -135,8 +135,8 @@ const ArgumentsInfographic = () => {
               <Train className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-foreground leading-tight">21 min</div>
-              <p className="text-xs md:text-sm text-muted-foreground leading-tight mt-1">
+              <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">21 min</div>
+              <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
                 dojście do przystanku SKM Podjuchy
               </p>
             </div>
@@ -147,8 +147,8 @@ const ArgumentsInfographic = () => {
               <Bus className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-foreground leading-tight">17 min</div>
-              <p className="text-xs md:text-sm text-muted-foreground leading-tight mt-1">
+              <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">17 min</div>
+              <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
                 do przystanku autobusu linii 61 Szlamowa
               </p>
             </div>
@@ -159,8 +159,8 @@ const ArgumentsInfographic = () => {
               <Mountain className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-foreground leading-tight">50–75 m</div>
-              <p className="text-xs md:text-sm text-muted-foreground leading-tight mt-1">
+              <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">50–75 m</div>
+              <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
                 wspinaczki w górę (w zależności od położenia budynku)
               </p>
             </div>
