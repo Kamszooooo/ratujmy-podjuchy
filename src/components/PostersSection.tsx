@@ -46,7 +46,7 @@ const PostersSection = () => {
   }, [openSrc]);
 
   return (
-    <section className="px-4 py-16 bg-card">
+    <section className="px-4 py-16 bg-muted/30">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-foreground mb-3 md:text-2xl">
