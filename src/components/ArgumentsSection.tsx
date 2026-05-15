@@ -19,7 +19,7 @@ const ArgumentsSection = () => {
               <ChevronDown
                 className={`w-5 h-5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
               />
-              Przeczytaj uzasadnienie uwagi
+              Przeczytaj pełne uzasadnienie uwag
             </CollapsibleTrigger>
           </div>
           <CollapsibleContent className="mt-4">
