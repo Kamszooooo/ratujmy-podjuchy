@@ -36,7 +36,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-lg text-foreground mb-2">Infrastruktura</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu. Jeszcze bardziej zakorkuje się wjazd do Podjuch, czyli ul. Granitowa.
+            Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu i jeszcze bardziej zakorkuje się wjazd do Podjuch.
           </p>
         </div>
       </div>
