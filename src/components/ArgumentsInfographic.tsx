@@ -96,22 +96,22 @@ const ArgumentsInfographic = () => {
             </div>
             <div className="relative h-4 bg-muted rounded-full overflow-hidden">
               <div
-                className="absolute inset-y-0 left-0 bg-primary rounded-full"
+                className="absolute inset-y-0 left-0 bg-slate-700 rounded-full"
                 style={{ width: "74%" }}
                 title="Obecni mieszkańcy"
               />
               <div
-                className="absolute inset-y-0 bg-muted-foreground/60"
+                className="absolute inset-y-0 bg-amber-500"
                 style={{ left: "74%", width: "26%" }}
                 title="Nowi mieszkańcy"
               />
             </div>
             <div className="flex justify-between mt-2 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-primary" /> obecni mieszkańcy
+                <span className="w-2 h-2 rounded-full bg-slate-700" /> obecni mieszkańcy
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-muted-foreground/60" /> nowi mieszkańcy
+                <span className="w-2 h-2 rounded-full bg-amber-500" /> nowi mieszkańcy
               </span>
             </div>
           </div>
