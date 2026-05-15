@@ -83,7 +83,7 @@ const ArgumentsInfographic = () => {
           <div className="text-center md:text-left">
             <div className="text-3xl md:text-4xl font-bold text-slate-800">Łącznie ~3000 osób</div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-              (zakładając trzy osoby/mieszkanie)
+              (licząc trzy osoby/mieszkanie)
             </p>
           </div>
 
@@ -127,7 +127,7 @@ const ArgumentsInfographic = () => {
               <span className="text-3xl md:text-4xl font-bold text-slate-800">i <span className="text-destructive">2000</span> dodatkowych samochodów?</span>
             </div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-              licząc średnio półtorej samochodu na mieszkanie - teren jest słabo skomunikowany
+              (licząc półtorej samochodu na mieszkanie)
             </p>
           </div>
         </div>
