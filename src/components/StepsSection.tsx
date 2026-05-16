@@ -4,12 +4,12 @@ const drafts = [
   {
     title: "Teren między ul. Sąsiedzką a ul. Wschodnią (TBS-y)",
     description: "Sprzeciw wobec strefy zabudowy wielorodzinnej, obejmującej planowane osiedle TBS i miejską działkę między ul. Ukośną a ul. Olkuską.",
-    href: "/files/Szkic_uwagi.docx",
+    href: "/files/Szkic_uwagi.pdf",
   },
   {
     title: "Teren za autostradą A6",
     description: "Nasza dodatkowa inicjatywa: sprzeciw wobec strefy ze składowiskami i magazynami, którą miasto przewiduje na terenach za autostradą A6. Proponujemy strefę z usługami sportu i rekreacji!",
-    href: "/files/Szkic_uwagi_za_autostrada.docx",
+    href: "/files/Szkic_uwagi_za_autostrada.pdf",
   },
 ];
 
@@ -50,7 +50,7 @@ const StepsSection = () => {
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold transition-transform hover:scale-105 self-start"
               >
                 <Download className="w-5 h-5" />
-                Pobierz szkic (DOCX)
+                Pobierz szkic
               </a>
             </div>
           ))}
