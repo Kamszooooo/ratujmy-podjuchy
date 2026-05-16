@@ -16,7 +16,7 @@ const ArgumentsInfographic = () => {
           </div>
           <h4 className="font-bold text-foreground mb-2 text-2xl">Ład przestrzenny</h4>
           <p className="text-muted-foreground leading-relaxed text-base">
-            Otoczenie to zabudowa jednorodzinna.<br />Projekt planu przewiduje zabudowę o intensywności <span className="font-bold text-destructive">1,6</span>, podczas gdy w okolicy wskaźnik ten wynosi <span className="font-bold">0,9</span>.<br /><span className="font-bold">99% mieszkańców</span> (ankieta rady osiedla) preferuje na tym terenie zabudowę jednorodzinną.
+            Otoczenie to zabudowa jednorodzinna.<br />Projekt planu przewiduje zabudowę o intensywności <span className="font-bold">1.6</span>, podczas gdy w okolicy wskaźnik ten wynosi <span className="font-bold">0.9</span>.<br /><span className="font-bold">99% mieszkańców</span> (ankieta rady osiedla) preferuje na tym terenie zabudowę jednorodzinną.
           </p>
         </div>
 
