@@ -49,14 +49,11 @@ const ArgumentsInfographic = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left md:flex md:flex-col md:justify-center">
             <div className="flex items-center justify-center md:justify-start gap-1 mb-1">
               <Building2 className="w-4 h-4 text-muted-foreground md:hidden" />
               <span className="text-3xl font-bold text-foreground md:text-3xl">~1000 <span className="text-2xl md:text-3xl">mieszkań</span></span>
             </div>
-            <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-              &zwnj;
-            </p>
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:contents">
