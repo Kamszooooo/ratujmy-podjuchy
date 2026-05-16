@@ -18,7 +18,7 @@ const ArgumentsInfographic = () => {
             <h4 className="font-bold text-foreground text-2xl">Ład przestrzenny</h4>
           </div>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            Otoczenie to zabudowa jednorodzinna. Projekt planu ogólnego przewiduje zabudowę o intensywności aż <span className="font-bold">1.6</span>, podczas gdy w okolicy wskaźnik ten wynosi&nbsp;<span className="font-bold">0.9</span>.
+            Otoczenie to zabudowa jednorodzinna. Projekt planu ogólnego przewiduje zabudowę o&nbsp;intensywności aż&nbsp;<span className="font-bold">1.6</span>, podczas gdy w okolicy wskaźnik ten wynosi&nbsp;<span className="font-bold">0.9</span>.
           </p>
         </div>
 
@@ -30,7 +30,7 @@ const ArgumentsInfographic = () => {
             <h4 className="font-bold text-foreground text-2xl">Przyroda</h4>
           </div>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            Teren jest pagórkowaty, zajmują go łąki i lasy. Częściowo podmokły, ze źródłami i strumieniem. Położony w otulinie Parku Krajobrazowego „Puszcza Bukowa”.
+            Teren jest pagórkowaty, zajmują go łąki i lasy. Częściowo podmokły, ze źródłami i strumieniem. Położony w otulinie Parku Krajobrazowego „Puszcza&nbsp;Bukowa”.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ const ArgumentsInfographic = () => {
             <h4 className="font-bold text-foreground text-2xl">Infrastruktura</h4>
           </div>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            Słaby dostęp do komunikacji publicznej. Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu i jeszcze bardziej zakorkuje się wjazd do Podjuch.
+            Słaby dostęp do komunikacji publicznej. Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu i jeszcze bardziej zakorkuje się wjazd do&nbsp;Podjuch.
           </p>
         </div>
       </div>
