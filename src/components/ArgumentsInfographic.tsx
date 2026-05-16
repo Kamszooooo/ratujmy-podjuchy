@@ -149,7 +149,7 @@ const ArgumentsInfographic = () => {
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">21 min</div>
               <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
-                pieszo do najbliższego przystanku bezpośredniego autobusu do centrum Szczecina (linii 61, przystanek Szlamowa)
+                pieszo do przystanku autobusu do centrum Szczecina (linia 61, przystanek Szlamowa)
               </p>
             </div>
           </div>
