@@ -27,7 +27,7 @@ const StepsSection = () => {
         </div>
         <p className="text-base md:text-lg text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
           Złożyliśmy około{" "}
-          <span className="font-serif italic font-extrabold text-foreground text-3xl md:text-5xl underline decoration-foreground/30 decoration-4 underline-offset-4 mx-1">
+          <span className="font-serif italic font-extrabold text-foreground text-xl md:text-2xl underline decoration-foreground/30 decoration-2 underline-offset-4 mx-1">
             tysiąca
           </span>{" "}
           uwag!
