@@ -25,12 +25,15 @@ const StepsSection = () => {
             Uwagi do planu ogólnego
           </h2>
         </div>
-        <p className="text-base md:text-lg text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+        <p className="text-base md:text-lg text-muted-foreground text-center mb-3 max-w-2xl mx-auto">
           Złożyliśmy około{" "}
           <span className="font-serif italic font-extrabold text-foreground text-xl md:text-2xl underline decoration-foreground/30 decoration-2 underline-offset-4 mx-1">
             tysiąca
           </span>{" "}
           uwag!
+        </p>
+        <p className="text-sm md:text-base text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+          A w 2019 r. w ankiecie rady osiedla 99% z 474 mieszkańców biorących udział w badaniu sprzeciwiło się zabudowie wielorodzinnej.
         </p>
 
         <div className="grid md:grid-cols-2 gap-4">
