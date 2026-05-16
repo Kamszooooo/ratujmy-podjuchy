@@ -97,25 +97,37 @@ const ArgumentsInfographic = () => {
                 wzrost o aż <span className="font-bold md:text-lg text-amber-600 text-xl">40%!</span>
               </span>
             </div>
-            <div className="relative h-4 bg-muted rounded-full overflow-hidden">
-              <div
-                className="absolute inset-y-0 left-0 bg-slate-700 rounded-full"
-                style={{ width: "72%" }}
-                title="Obecni mieszkańcy"
-              />
-              <div
-                className="absolute inset-y-0 bg-amber-500"
-                style={{ left: "72%", width: "28%" }}
-                title="Nowi mieszkańcy"
-              />
-            </div>
-            <div className="flex justify-between mt-2 text-xs text-muted-foreground">
-              <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-slate-700" /> obecni mieszkańcy
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-amber-500" /> nowi mieszkańcy
-              </span>
+
+            <div className="space-y-3">
+              <div>
+                <div className="flex items-center justify-between mb-1 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-slate-700" /> obecni mieszkańcy
+                  </span>
+                  <span className="font-semibold text-foreground">7 592</span>
+                </div>
+                <div className="relative h-4 bg-muted rounded-full overflow-hidden">
+                  <div
+                    className="absolute inset-y-0 left-0 bg-slate-700 rounded-full"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-between mb-1 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-amber-500" /> nowi mieszkańcy
+                  </span>
+                  <span className="font-semibold text-foreground">~3 000</span>
+                </div>
+                <div className="relative h-4 bg-muted rounded-full overflow-hidden">
+                  <div
+                    className="absolute inset-y-0 left-0 bg-amber-500 rounded-full"
+                    style={{ width: "40%" }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
