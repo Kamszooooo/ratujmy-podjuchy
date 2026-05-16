@@ -26,7 +26,11 @@ const StepsSection = () => {
           </h2>
         </div>
         <p className="text-base md:text-lg text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          Złożyliśmy około <span className="font-bold text-destructive text-xl md:text-2xl">tysiąca</span> uwag!
+          Złożyliśmy około{" "}
+          <span className="font-serif italic font-extrabold text-destructive text-3xl md:text-5xl underline decoration-destructive/40 decoration-4 underline-offset-4 mx-1">
+            tysiąca
+          </span>{" "}
+          uwag!
         </p>
 
         <div className="grid md:grid-cols-2 gap-4">
