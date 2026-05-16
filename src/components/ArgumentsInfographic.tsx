@@ -135,7 +135,7 @@ const ArgumentsInfographic = () => {
               <Train className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">25 min</div>
+              <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">25 min pieszo</div>
               <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
                 do przystanku SKM Podjuchy
               </p>
@@ -147,7 +147,7 @@ const ArgumentsInfographic = () => {
               <Bus className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">21 min</div>
+              <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">21 min pieszo</div>
               <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
                 do przystanku autobusu linii 61 Szlamowa
               </p>
