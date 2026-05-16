@@ -11,30 +11,36 @@ const ArgumentsInfographic = () => {
       {/* Trzy filary argumentów */}
       <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8">
         <div className="bg-card border border-border rounded-2xl p-6">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-            <Home className="w-6 h-6 text-primary" />
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Home className="w-6 h-6 text-primary" />
+            </div>
+            <h4 className="font-bold text-foreground text-2xl">Ład przestrzenny</h4>
           </div>
-          <h4 className="font-bold text-foreground mb-2 text-2xl">Ład przestrzenny</h4>
           <p className="text-muted-foreground leading-relaxed text-base">
             Otoczenie to zabudowa jednorodzinna. Projekt planu ogólnego przewiduje zabudowę o intensywności aż <span className="font-bold">1.6</span>, podczas gdy w okolicy wskaźnik ten wynosi <span className="font-bold">0.9</span>.
           </p>
         </div>
 
         <div className="bg-card border border-border rounded-2xl p-6">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-            <Trees className="w-6 h-6 text-primary" />
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Trees className="w-6 h-6 text-primary" />
+            </div>
+            <h4 className="font-bold text-foreground text-2xl">Przyroda</h4>
           </div>
-          <h4 className="font-bold text-foreground mb-2 text-2xl">Przyroda</h4>
           <p className="text-muted-foreground leading-relaxed text-base">
             Teren jest pagórkowaty, zajmują go łąki i lasy. Częściowo podmokły, ze źródłami i strumieniem. Położony w otulinie SPK „Puszcza Bukowa”.
           </p>
         </div>
 
         <div className="bg-card border border-border rounded-2xl p-6">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-            <Car className="w-6 h-6 text-primary" />
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Car className="w-6 h-6 text-primary" />
+            </div>
+            <h4 className="font-bold text-foreground text-2xl">Infrastruktura</h4>
           </div>
-          <h4 className="font-bold text-foreground mb-2 text-2xl">Infrastruktura</h4>
           <p className="text-muted-foreground leading-relaxed text-base">
             Słaby dostęp do komunikacji publicznej. Wąskie ulice osiedlowe nie udźwigną wzmożonego ruchu i jeszcze bardziej zakorkuje się wjazd do Podjuch.
           </p>
