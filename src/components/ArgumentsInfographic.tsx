@@ -137,7 +137,7 @@ const ArgumentsInfographic = () => {
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">25 min</div>
               <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
-                do przystanku SKM Podjuchy
+                pieszo do przystanku SKM Podjuchy
               </p>
             </div>
           </div>
@@ -149,7 +149,7 @@ const ArgumentsInfographic = () => {
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">21 min</div>
               <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
-                do przystanku autobusu linii 61 Szlamowa
+                pieszo do najbliższego przystanku bezpośredniego autobusu do centrum Szczecina (linii 61, przystanek Szlamowa)
               </p>
             </div>
           </div>
