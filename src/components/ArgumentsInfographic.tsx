@@ -136,7 +136,17 @@ const ArgumentsInfographic = () => {
             </div>
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">25 min pieszo</div>
-...
+              <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
+                do przystanku SKM Podjuchy
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Bus className="w-5 h-5 text-primary" />
+            </div>
+            <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">21 min pieszo</div>
               <p className="text-xs text-muted-foreground leading-tight mt-1 md:text-lg">
                 do przystanku autobusu linii 61 Szlamowa
