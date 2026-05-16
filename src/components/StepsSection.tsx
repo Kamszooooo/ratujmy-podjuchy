@@ -32,8 +32,8 @@ const StepsSection = () => {
           </span>{" "}
           uwag!
         </p>
-        <p className="text-sm md:text-base text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          A w 2019 r. w ankiecie rady osiedla 99% z 474 mieszkańców biorących udział w badaniu sprzeciwiło się zabudowie wielorodzinnej.
+        <p className="text-sm text-muted-foreground text-center mb-10 max-w-2xl mx-auto md:text-sm">
+          A w 2019 r. w ankiecie rady osiedla 99% z 474 badanych mieszkańców sprzeciwiło się zabudowie wielorodzinnej.
         </p>
 
         <div className="grid md:grid-cols-2 gap-4">
