@@ -30,7 +30,7 @@ const ArgumentsInfographic = () => {
             <h4 className="font-bold text-foreground text-2xl">Przyroda</h4>
           </div>
           <p className="text-muted-foreground leading-relaxed text-base">
-            Teren jest pagórkowaty, zajmują go łąki i lasy. Częściowo podmokły, ze źródłami i strumieniem. Położony w otulinie parku krajobrazowego „Puszcza Bukowa”.
+            Teren jest pagórkowaty, zajmują go łąki i lasy. Częściowo podmokły, ze źródłami i strumieniem. Położony w otulinie Szczecińskiego Parku Krajobrazowego „Puszcza Bukowa”.
           </p>
         </div>
 
