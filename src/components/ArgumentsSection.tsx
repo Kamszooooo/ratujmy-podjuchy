@@ -83,7 +83,7 @@ const ArgumentsSection = () => {
                 Przeznaczenie całości przedmiotowego terenu pod zabudowę wielorodzinną spowodowałoby komunikacyjny paraliż tej części miasta. Szczecińskie TBS planuje budowę osiedla na 560 mieszkań. Obsługę komunikacyjną wzmożonego ruchu samochodowego miałyby zapewniać ul.&nbsp;Sąsiedzka, ul.&nbsp;Wschodnia oraz ul.&nbsp;Żeliwna – lokalne ulice osiedlowe. Wtłoczenie do nich wzmożonego ruchu (zwłaszcza w&nbsp;godzinach szczytu) prowadziłoby do zatorów drogowych.
               </p>
               <p>
-                Położenie terenu w&nbsp;górnej części Podjuch sprawia, że jest on słabo skomunikowany z&nbsp;centrum miasta komunikacją publiczną. Dojście ze stacji SKM Podjuchy zajmuje ok.&nbsp;25 minut, natomiast z&nbsp;przystanku Szlamowa ok.&nbsp;21 minut. W&nbsp;pobliżu kursuje autobus 904, jednak ma on charakter transportu „na żądanie".
+                Położenie terenu w&nbsp;górnej części Podjuch sprawia, że jest on słabo skomunikowany z&nbsp;centrum miasta komunikacją publiczną. Dojście ze stacji SKM Podjuchy zajmuje ok.&nbsp;25 minut pieszo, natomiast z&nbsp;przystanku Szlamowa ok.&nbsp;21 minut pieszo. W&nbsp;pobliżu kursuje autobus 904, jednak ma on charakter transportu „na żądanie".
               </p>
               <p>
                 Wątpliwości budzi też gotowość infrastruktury przesyłowej do przyjęcia presji ze strony dużej liczby nowych mieszkańców. W&nbsp;szczególności dotyczy to infrastruktury wodociągowej i&nbsp;kanalizacyjnej Podjuch, która w&nbsp;dużej części pochodzi z&nbsp;połowy ubiegłego stulecia.
