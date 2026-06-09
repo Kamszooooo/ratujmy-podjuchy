@@ -50,6 +50,7 @@ const StepsSection = () => {
             Teraz czas na podpisanie petycji
           </p>
           <a
+            id="petition-cta-target"
             href="https://www.petycjeonline.com/petycja_w_sprawie_uwzgldnienia_wnioskow_mieszkacow_do_planu_ogolnego_miasta_szczecin_dla_obszaru_podjuch"
             target="_blank"
             rel="noopener noreferrer"
