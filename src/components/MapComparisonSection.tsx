@@ -16,8 +16,10 @@ const MapComparisonSection = () => {
   const allLoaded = imagesLoaded >= 2;
 
   const MOVE_THRESHOLD = 8; // px before we decide direction
-  // tolerance 5%: horizontal must dominate vertical by 5%
-  const H_DOMINANCE = 1.05;
+  // tolerance 5%: only let the page scroll when the gesture is essentially
+  // vertical (horizontal component ≤ 5% of vertical). Any diagonal motion
+  // counts as slider interaction.
+  const H_MIN_RATIO = 0.05;
 
   const updatePosition = useCallback((clientX: number) => {
     if (!containerRef.current) return;
@@ -65,7 +67,7 @@ const MapComparisonSection = () => {
 
     if (absX < MOVE_THRESHOLD && absY < MOVE_THRESHOLD) return;
 
-    if (absX >= absY * H_DOMINANCE) {
+    if (absX >= absY * H_MIN_RATIO) {
       // Horizontal gesture — engage slider.
       g.decided = true;
       isDragging.current = true;
