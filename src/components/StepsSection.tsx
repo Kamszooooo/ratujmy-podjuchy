@@ -18,7 +18,7 @@ const StepsSection = () => {
     <section className="px-4 bg-card py-[40px]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-3">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground whitespace-nowrap">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Złożyliśmy około <span className="italic underline decoration-primary decoration-2 underline-offset-4 font-semibold">tysiąca</span> uwag do planu ogólnego!
           </h2>
         </div>
