@@ -52,6 +52,11 @@ const StepsSection = () => {
             </div>
           ))}
         </div>
+        <div className="text-center mt-10">
+          <span className="inline-block px-3 py-1 rounded-full bg-destructive/10 text-destructive text-xs font-semibold uppercase tracking-wide">
+            Walczymy dalej!
+          </span>
+        </div>
       </div>
     </section>
   );
