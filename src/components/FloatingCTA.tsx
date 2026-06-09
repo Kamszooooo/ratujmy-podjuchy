@@ -55,7 +55,7 @@ const FloatingCTA = () => {
     <div
       ref={ref}
       style={{ transform }}
-      className={`fixed bottom-4 right-4 z-50 transition-all duration-500 ease-out ${
+      className={`fixed bottom-6 right-4 sm:bottom-4 z-50 transition-all duration-500 ease-out ${
         visible
           ? merging
             ? "opacity-0 pointer-events-none"
@@ -67,10 +67,10 @@ const FloatingCTA = () => {
         href={PETITION_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-5 py-3 md:px-6 md:py-4 rounded-full bg-primary text-primary-foreground font-bold text-base md:text-lg shadow-2xl hover:scale-105 transition-transform"
+        className="inline-flex items-center gap-1.5 sm:gap-2 px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-4 rounded-full bg-primary text-primary-foreground font-bold text-sm sm:text-base md:text-lg shadow-2xl hover:scale-105 transition-transform whitespace-nowrap"
         aria-label="Podpisz petycję"
       >
-        <FileSignature className="w-5 h-5 md:w-6 md:h-6" />
+        <FileSignature className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
         <span>Podpisz petycję</span>
       </a>
     </div>
