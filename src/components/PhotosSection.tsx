@@ -16,7 +16,7 @@ const photos: MediaItem[] = [
   { src: "/images/teren_04.jpg", alt: "Górne Podjuchy — leśna ścieżka wśród starych drzew" },
   { src: "/images/teren_05.jpg", alt: "Górne Podjuchy — gęsty las liściasty" },
   { src: "/images/teren_06.jpg", alt: "Górne Podjuchy — panorama wzgórz i zieleni o zachodzie słońca" },
-  { src: "/images/teren_07.jpg", alt: "Górne Podjuchy — łąka i drzewa pod wieczornym niebem" },
+  
   { src: "/images/teren_08.jpg", alt: "Górne Podjuchy — zielony teren z kwitnącymi krzewami" },
   { src: "/images/teren_09.jpg", alt: "Górne Podjuchy — sarna w wysokiej trawie na skraju lasu" },
 ];
