@@ -14,6 +14,7 @@ const NotFound = () => {
       <Helmet>
         <title>Strona nie znaleziona — Ratujmy Podjuchy</title>
         <meta name="description" content="Strona, której szukasz, nie istnieje." />
+        <link rel="canonical" href={typeof window !== "undefined" ? window.location.href : "https://ratujmypodjuchy.pl"} />
         <meta property="og:url" content={typeof window !== "undefined" ? window.location.href : "https://ratujmypodjuchy.pl"} />
         <meta property="og:title" content="Strona nie znaleziona — Ratujmy Podjuchy" />
         <meta property="og:description" content="Strona, której szukasz, nie istnieje." />
