@@ -17,18 +17,11 @@ const StepsSection = () => {
   return (
     <section className="px-4 bg-card py-[40px]">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-3">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Uwagi do planu ogólnego
+            Złożyliśmy około tysiąca uwag do planu ogólnego!
           </h2>
         </div>
-        <p className="text-base md:text-lg text-muted-foreground text-center mb-3 max-w-2xl mx-auto">
-          Złożyliśmy około{" "}
-          <span className="font-serif italic font-extrabold text-foreground text-xl md:text-2xl underline decoration-foreground/30 decoration-2 underline-offset-4 mx-1">
-            tysiąca
-          </span>{" "}
-          uwag!
-        </p>
         <p className="text-sm text-muted-foreground text-center mb-10 max-w-3xl mx-auto md:text-xs md:whitespace-nowrap">
           A w 2019 r. w ankiecie rady osiedla 99% z 474 badanych mieszkańców sprzeciwiło się zabudowie wielorodzinnej.
         </p>
