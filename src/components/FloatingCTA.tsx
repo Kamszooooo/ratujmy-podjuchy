@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FileSignature } from "lucide-react";
 
 const PETITION_URL =
@@ -6,18 +6,61 @@ const PETITION_URL =
 
 const FloatingCTA = () => {
   const [visible, setVisible] = useState(false);
+  const [offset, setOffset] = useState<{ x: number; y: number } | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 400);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const update = () => {
+      setVisible(window.scrollY > 400);
+
+      const target = document.getElementById("petition-cta-target");
+      const self = ref.current;
+      if (!target || !self) {
+        setOffset(null);
+        return;
+      }
+      const targetRect = target.getBoundingClientRect();
+      const inView =
+        targetRect.top < window.innerHeight && targetRect.bottom > 0;
+
+      if (inView) {
+        const selfRect = self.getBoundingClientRect();
+        // Move floating button's center to target's center
+        const dx =
+          targetRect.left + targetRect.width / 2 -
+          (selfRect.left + selfRect.width / 2);
+        const dy =
+          targetRect.top + targetRect.height / 2 -
+          (selfRect.top + selfRect.height / 2);
+        setOffset({ x: dx, y: dy });
+      } else {
+        setOffset(null);
+      }
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, []);
+
+  const merging = offset !== null;
+  const transform = offset
+    ? `translate(${offset.x}px, ${offset.y}px) scale(0.85)`
+    : undefined;
 
   return (
     <div
-      className={`fixed bottom-4 right-4 z-50 transition-all duration-300 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+      ref={ref}
+      style={{ transform }}
+      className={`fixed bottom-4 right-4 z-50 transition-all duration-500 ease-out ${
+        visible
+          ? merging
+            ? "opacity-0 pointer-events-none"
+            : "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
       <a
