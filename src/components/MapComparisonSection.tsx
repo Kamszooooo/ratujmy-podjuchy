@@ -5,7 +5,19 @@ const MapComparisonSection = () => {
   const [imagesLoaded, setImagesLoaded] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
+  const gestureRef = useRef<{
+    pointerId: number;
+    pointerType: string;
+    startX: number;
+    startY: number;
+    decided: boolean;
+    cancelled: boolean;
+  } | null>(null);
   const allLoaded = imagesLoaded >= 2;
+
+  const MOVE_THRESHOLD = 8; // px before we decide direction
+  // tolerance 5%: horizontal must dominate vertical by 5%
+  const H_DOMINANCE = 1.05;
 
   const updatePosition = useCallback((clientX: number) => {
     if (!containerRef.current) return;
@@ -15,19 +27,69 @@ const MapComparisonSection = () => {
   }, []);
 
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
-    isDragging.current = true;
-    (e.target as HTMLElement).setPointerCapture(e.pointerId);
-    updatePosition(e.clientX);
+    gestureRef.current = {
+      pointerId: e.pointerId,
+      pointerType: e.pointerType,
+      startX: e.clientX,
+      startY: e.clientY,
+      decided: false,
+      cancelled: false,
+    };
+
+    if (e.pointerType !== "touch") {
+      // Mouse / pen: behave as before — grab immediately.
+      isDragging.current = true;
+      gestureRef.current.decided = true;
+      (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      updatePosition(e.clientX);
+    }
+    // For touch: wait until move direction is clear; do not capture yet,
+    // so the browser can still scroll the page vertically (touch-pan-y).
   }, [updatePosition]);
 
   const handlePointerMove = useCallback((e: React.PointerEvent) => {
-    if (!isDragging.current) return;
-    updatePosition(e.clientX);
+    const g = gestureRef.current;
+    if (!g || g.pointerId !== e.pointerId) return;
+
+    if (isDragging.current) {
+      updatePosition(e.clientX);
+      return;
+    }
+
+    if (g.cancelled || g.decided) return;
+
+    const dx = e.clientX - g.startX;
+    const dy = e.clientY - g.startY;
+    const absX = Math.abs(dx);
+    const absY = Math.abs(dy);
+
+    if (absX < MOVE_THRESHOLD && absY < MOVE_THRESHOLD) return;
+
+    if (absX >= absY * H_DOMINANCE) {
+      // Horizontal gesture — engage slider.
+      g.decided = true;
+      isDragging.current = true;
+      try {
+        (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      } catch {
+        // ignore — capture may fail if element changed
+      }
+      updatePosition(e.clientX);
+    } else {
+      // Vertical (or near-vertical) gesture — let the page scroll.
+      g.cancelled = true;
+    }
   }, [updatePosition]);
 
-  const handlePointerUp = useCallback(() => {
+  const endGesture = useCallback((e: React.PointerEvent) => {
+    const g = gestureRef.current;
+    if (g && g.pointerId === e.pointerId && !g.decided && !g.cancelled) {
+      // Tap without significant movement — treat like a click and move slider there.
+      updatePosition(e.clientX);
+    }
     isDragging.current = false;
-  }, []);
+    gestureRef.current = null;
+  }, [updatePosition]);
 
   return (
     <section className="pb-12 pt-0 px-4" id="mapa">
@@ -51,10 +113,11 @@ const MapComparisonSection = () => {
 
           <div
             ref={containerRef}
-            className={`relative w-full overflow-hidden rounded-2xl border border-border shadow-lg cursor-col-resize select-none touch-none transition-opacity duration-500 ${allLoaded ? 'opacity-100' : 'opacity-0 absolute inset-0'}`}
+            className={`relative w-full overflow-hidden rounded-2xl border border-border shadow-lg cursor-col-resize select-none touch-pan-y transition-opacity duration-500 ${allLoaded ? 'opacity-100' : 'opacity-0 absolute inset-0'}`}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
-            onPointerUp={handlePointerUp}
+            onPointerUp={endGesture}
+            onPointerCancel={endGesture}
           >
             {/* Right image (full, behind) */}
             <img
