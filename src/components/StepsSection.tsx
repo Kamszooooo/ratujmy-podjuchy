@@ -46,7 +46,7 @@ const StepsSection = () => {
           ))}
         </div>
         <div className="text-center mt-10 space-y-3">
-          <p className="text-lg font-semibold text-foreground">
+          <p className="text-3xl md:text-4xl font-bold text-foreground">
             Teraz czas na podpisanie petycji
           </p>
           <p className="text-sm text-muted-foreground">
