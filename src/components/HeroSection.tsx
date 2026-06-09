@@ -14,7 +14,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/images/hero-bg.jpg";
+    img.src = "/images/hero-bg.webp";
     if (img.complete) {
       setImageLoaded(true);
     } else {
@@ -131,7 +131,7 @@ const HeroSection = () => {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-bottom"
-        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        style={{ backgroundImage: "url('/images/hero-bg.webp')" }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
