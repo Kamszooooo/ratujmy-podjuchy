@@ -18,9 +18,6 @@ const StepsSection = () => {
     <section className="px-4 bg-card py-[40px]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
-          <span className="inline-block px-3 py-1 rounded-full bg-destructive/10 text-destructive text-xs font-semibold uppercase tracking-wide mb-3">
-            Czas konsultacji minął, ale walczymy dalej!
-          </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             Uwagi do planu ogólnego
           </h2>
