@@ -49,9 +49,6 @@ const StepsSection = () => {
           <p className="text-3xl md:text-4xl font-bold text-foreground">
             Teraz czas na podpisanie petycji
           </p>
-          <p className="text-sm text-muted-foreground">
-            przeciwko osiedlu TBS i bazie paliw
-          </p>
           <a
             href="https://www.petycjeonline.com/petycja_w_sprawie_uwzgldnienia_wnioskow_mieszkacow_do_planu_ogolnego_miasta_szczecin_dla_obszaru_podjuch"
             target="_blank"
