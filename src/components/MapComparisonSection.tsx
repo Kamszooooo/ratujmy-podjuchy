@@ -58,7 +58,7 @@ const MapComparisonSection = () => {
           >
             {/* Right image (full, behind) */}
             <img
-              src="/images/mapa_right.jpg"
+              src="/images/mapa_right.webp"
               alt="Alternatywny plan - zabudowa jednorodzinna"
               className="block w-full h-auto"
               draggable={false}
@@ -71,7 +71,7 @@ const MapComparisonSection = () => {
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
               <img
-                src="/images/mapa_left.jpg"
+                src="/images/mapa_left.webp"
                 alt="Propozycja miasta - blokowisko"
                 className="block w-full h-auto"
                 draggable={false}
