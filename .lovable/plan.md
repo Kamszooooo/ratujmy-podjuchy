@@ -1,28 +1,28 @@
-Plan: sticky CTA, SEO, optymalizacja obrazów i skan.
+# Mapa-porównywarka: nie blokuj pionowego scrollowania na mobile
 
-1. **Sticky CTA "Podpisz petycję" na wszystkich urządzeniach**
-   - Nowy komponent pływającego przycisku (`FloatingCTA.tsx`), widoczny na wszystkich breakpointach (mobile, tablet, desktop).
-   - Umieszczony fixed na dole ekranu, linkuje do petycjeonline.
-   - Pokazuje się dopiero po przewinięciu poza hero (np. po 200px scrollu), żeby nie zasłaniał nagłówka.
+## Problem
+Komponent `MapComparisonSection` ma `touch-none` i od razu przejmuje gest dotyku (`setPointerCapture` w `pointerdown`). Każde dotknięcie mapy blokuje scroll strony, nawet jeśli użytkownik chciał tylko przesunąć ekran w pionie.
 
-2. **SEO — meta tagi i structured data**
-   - Dodać `<link rel="canonical" href="https://ratujmypodjuchy.pl/" />` w `index.html`.
-   - Dodać `<meta property="og:url" content="https://ratujmypodjuchy.pl/" />` w `index.html`.
-   - Dodać JSON-LD `WebSite` schema (nazwa, URL, description) w `index.html`.
+## Rozwiązanie
+Zmiana wyłącznie w `src/components/MapComparisonSection.tsx` — logika gestów dotyku, bez ruszania wyglądu ani innej logiki.
 
-3. **SEO — robots.txt i sitemap.xml**
-   - Stworzyć `public/robots.txt` z `Allow: /`.
-   - Stworzyć `scripts/generate-sitemap.ts` z jednym entry `/`.
-   - Dodać `predev` i `prebuild` do `package.json` żeby generator uruchamiał się automatycznie.
+1. **CSS**: zamienić `touch-none` na `touch-pan-y`. Dzięki temu przeglądarka domyślnie pozwala na pionowy scroll, a my zatrzymujemy tylko poziome gesty (przesuwanie suwaka).
 
-4. **Optymalizacja obrazów (WebP)**
-   - Skonwertować wszystkie JPG z `public/images/` do WebP z jakością ~80%.
-   - Zaktualizować ścieżki w komponentach (`HeroSection`, `MapSection`, `PhotosSection`, `index.html` preload) z `.jpg` na `.webp`.
-   - Usunąć oryginalne pliki JPG po konwersji.
+2. **Logika pointerów**:
+   - Dla `pointerType === "mouse"` / `"pen"` — zachowanie bez zmian (od razu chwytamy suwak i pozwalamy klikać).
+   - Dla `pointerType === "touch"` — wprowadzić stan „pending”:
+     - W `pointerdown` zapisujemy `startX`, `startY`, `startPos = sliderPosition`, NIE robimy `setPointerCapture`, NIE zmieniamy pozycji suwaka.
+     - W `pointermove` liczymy `dx = clientX − startX`, `dy = clientY − startY`. Dopóki ruch jest mniejszy niż ~8 px w dowolną stronę — czekamy.
+     - Po przekroczeniu progu decydujemy:
+       - jeżeli `|dx| > |dy|` z tolerancją 5% (tzn. `|dx| ≥ |dy| × 1.05`) → użytkownik przesuwa suwak: `setPointerCapture`, ustawiamy `isDragging`, aktualizujemy pozycję od tego momentu.
+       - w przeciwnym razie → gest pionowy, ustawiamy flagę „cancelled” i ignorujemy resztę zdarzeń aż do `pointerup`. Strona scrolluje się normalnie (bo `touch-pan-y` na to pozwala i nie wywołujemy `preventDefault`).
+   - `pointerup` / `pointercancel` resetuje wszystkie flagi.
 
-5. **Skan SEO**
-   - Uruchomić `seo_chat--trigger_scan` po zakończeniu powyższych zmian.
+3. **Tap (klik bez ruchu)**: jeśli użytkownik tylko stuknie w mapę (brak ruchu powyżej progu do `pointerup`), traktujemy to jak na desktopie i ustawiamy suwak w miejscu kliknięcia — żeby mapa nadal odczuwalnie reagowała na dotyk.
 
-**Zakładane decyzje:**
-- `public/og-image.jpg` już istnieje w poprawnym rozmiarze 1200×630 — zostawiamy bez zmian.
-- Wszystkie zdjęcia terenu konwertujemy do WebP dla spójności i najlepszej wydajności.
+## Pliki
+- `src/components/MapComparisonSection.tsx` — przepisać handlery `handlePointerDown/Move/Up` zgodnie z powyższym; dodać `pointercancel`; zamienić klasę `touch-none` → `touch-pan-y`.
+
+## Weryfikacja
+- Mobile (390×844) w preview: pionowy swipe rozpoczęty na mapie scrolluje stronę; poziomy swipe przesuwa suwak; tap przeskakuje suwak; obrazki nadal się ładują i pozycja startowa 80% zostaje.
+- Desktop: bez regresji — przeciąganie myszą działa jak wcześniej.
