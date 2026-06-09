@@ -18,8 +18,8 @@ const StepsSection = () => {
     <section className="px-4 bg-card py-[40px]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-3">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Złożyliśmy około tysiąca uwag do planu ogólnego!
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground whitespace-nowrap">
+            Złożyliśmy około <span className="italic underline decoration-primary decoration-2 underline-offset-4 font-semibold">tysiąca</span> uwag do planu ogólnego!
           </h2>
         </div>
         <p className="text-sm text-muted-foreground text-center mb-10 max-w-3xl mx-auto md:text-xs md:whitespace-nowrap">
