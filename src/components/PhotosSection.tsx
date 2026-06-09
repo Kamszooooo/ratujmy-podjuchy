@@ -9,15 +9,16 @@ type MediaItem = {
 };
 
 const photos: MediaItem[] = [
-  { src: "/images/teren_new_video.mp4", alt: "Górne Podjuchy — film z terenu", type: "video", poster: "/images/teren_new_video_poster.jpg" },
-  { src: "/images/teren_new_2.jpg", alt: "Górne Podjuchy — leśny zakątek z bujną zielenią" },
-  { src: "/images/teren_5.jpg", alt: "Górne Podjuchy — kwitnący bez i drzewa" },
-  { src: "/images/teren_new_3.jpg", alt: "Górne Podjuchy — wysokie brzozy i bujny las" },
-  { src: "/images/teren_new_4.jpg", alt: "Górne Podjuchy — leśna ścieżka wśród starych drzew" },
-  { src: "/images/teren_new_5.jpg", alt: "Górne Podjuchy — gęsty las liściasty" },
-  { src: "/images/teren_6.jpg", alt: "Górne Podjuchy — panorama wzgórz i zieleni o zachodzie słońca" },
-  { src: "/images/teren_8.jpg", alt: "Górne Podjuchy — łąka i drzewa pod wieczornym niebem" },
-  { src: "/images/teren_9.jpg", alt: "Górne Podjuchy — zielony teren z kwitnącymi krzewami" },
+  { src: "/images/teren_video.mp4", alt: "Górne Podjuchy — film z terenu", type: "video", poster: "/images/teren_video_poster.jpg" },
+  { src: "/images/teren_01.jpg", alt: "Górne Podjuchy — leśny zakątek z bujną zielenią" },
+  { src: "/images/teren_02.jpg", alt: "Górne Podjuchy — kwitnący bez i drzewa" },
+  { src: "/images/teren_03.jpg", alt: "Górne Podjuchy — wysokie brzozy i bujny las" },
+  { src: "/images/teren_04.jpg", alt: "Górne Podjuchy — leśna ścieżka wśród starych drzew" },
+  { src: "/images/teren_05.jpg", alt: "Górne Podjuchy — gęsty las liściasty" },
+  { src: "/images/teren_06.jpg", alt: "Górne Podjuchy — panorama wzgórz i zieleni o zachodzie słońca" },
+  { src: "/images/teren_07.jpg", alt: "Górne Podjuchy — łąka i drzewa pod wieczornym niebem" },
+  { src: "/images/teren_08.jpg", alt: "Górne Podjuchy — zielony teren z kwitnącymi krzewami" },
+  { src: "/images/teren_09.jpg", alt: "Górne Podjuchy — sarna w wysokiej trawie na skraju lasu" },
 ];
 
 const useColumns = () => {
