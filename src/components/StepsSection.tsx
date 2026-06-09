@@ -37,7 +37,7 @@ const StepsSection = () => {
               <a
                 href={d.href}
                 download
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold transition-transform hover:scale-105 self-start"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-primary text-primary font-semibold transition-transform hover:scale-105 self-start"
               >
                 <Download className="w-5 h-5" />
                 Pobierz szkic
@@ -53,7 +53,7 @@ const StepsSection = () => {
             href="https://www.petycjeonline.com/petycja_w_sprawie_uwzgldnienia_wnioskow_mieszkacow_do_planu_ogolnego_miasta_szczecin_dla_obszaru_podjuch"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold transition-transform hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground text-lg font-bold transition-transform hover:scale-105 shadow-lg"
           >
             Podpisz petycję
           </a>
