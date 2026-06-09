@@ -45,10 +45,21 @@ const StepsSection = () => {
             </div>
           ))}
         </div>
-        <div className="text-center mt-10">
-          <span className="inline-block px-3 py-1 rounded-full bg-destructive/10 text-destructive text-xs font-semibold uppercase tracking-wide">
-            Walczymy dalej!
-          </span>
+        <div className="text-center mt-10 space-y-3">
+          <p className="text-lg font-semibold text-foreground">
+            Teraz czas na podpisanie petycji
+          </p>
+          <p className="text-sm text-muted-foreground">
+            przeciwko osiedlu TBS i bazie paliw
+          </p>
+          <a
+            href="https://www.petycjeonline.com/petycja_w_sprawie_uwzgldnienia_wnioskow_mieszkacow_do_planu_ogolnego_miasta_szczecin_dla_obszaru_podjuch"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold transition-transform hover:scale-105"
+          >
+            Podpisz petycję
+          </a>
         </div>
       </div>
     </section>
