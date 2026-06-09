@@ -67,7 +67,7 @@ const MapComparisonSection = () => {
 
     if (absX < MOVE_THRESHOLD && absY < MOVE_THRESHOLD) return;
 
-    if (absX >= absY * H_DOMINANCE) {
+    if (absX >= absY * H_MIN_RATIO) {
       // Horizontal gesture — engage slider.
       g.decided = true;
       isDragging.current = true;
