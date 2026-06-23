@@ -45,20 +45,6 @@ const StepsSection = () => {
             </div>
           ))}
         </div>
-        <div className="text-center mt-10 space-y-3">
-          <p className="text-3xl md:text-4xl font-bold text-foreground">
-            Teraz czas na podpisanie petycji
-          </p>
-          <a
-            id="petition-cta-target"
-            href="https://www.petycjeonline.com/petycja_w_sprawie_uwzgldnienia_wnioskow_mieszkacow_do_planu_ogolnego_miasta_szczecin_dla_obszaru_podjuch"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground text-lg font-bold transition-transform hover:scale-105 shadow-lg"
-          >
-            Podpisz petycję
-          </a>
-        </div>
       </div>
     </section>
   );

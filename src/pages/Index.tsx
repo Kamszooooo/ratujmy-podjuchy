@@ -6,7 +6,7 @@ import ThreatSection from "@/components/ThreatSection";
 import PhotosSection from "@/components/PhotosSection";
 import StepsSection from "@/components/StepsSection";
 import AboutFooter from "@/components/AboutFooter";
-import FloatingCTA from "@/components/FloatingCTA";
+
 
 const Index = () => {
   return (
@@ -25,7 +25,7 @@ const Index = () => {
       <PhotosSection />
       <StepsSection />
       <AboutFooter />
-      <FloatingCTA />
+      
     </div>
   );
 };
