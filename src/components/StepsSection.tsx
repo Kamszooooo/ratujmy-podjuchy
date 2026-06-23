@@ -92,7 +92,7 @@ const StepsSection = () => {
                 cy="18"
                 r="15.9155"
                 fill="none"
-                className="stroke-muted"
+                className="stroke-destructive"
                 strokeWidth="3.5"
               />
               <circle
