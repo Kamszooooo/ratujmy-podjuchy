@@ -30,6 +30,9 @@ const CityResponseSection = () => {
               className="w-full h-auto block"
             />
           </figure>
+          <p className="mt-4 text-sm md:text-base font-bold text-foreground leading-snug">
+            Wzywamy Radę Miasta do skierowania projektu planu ogólnego do dalszych prac i uwzględnienia naszych postulatów!
+          </p>
         </div>
       </div>
     </section>
