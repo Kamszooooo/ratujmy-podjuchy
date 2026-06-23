@@ -1,4 +1,5 @@
-import { Download, FileText, Users, BarChart3 } from "lucide-react";
+import { Download, FileText, Users, BarChart3, AlertTriangle } from "lucide-react";
+import uwagaNieuwzgledniona from "@/assets/uwaga-nieuwzgledniona.png.asset.json";
 
 const drafts = [
   {
