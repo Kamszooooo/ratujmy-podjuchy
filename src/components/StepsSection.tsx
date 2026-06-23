@@ -117,7 +117,7 @@ const StepsSection = () => {
               Ankieta rady osiedla
             </div>
             <div className="text-sm text-foreground/80 leading-snug">
-              z <span className="font-bold text-foreground">474</span> mieszkańców Podjuch sprzeciwiło się zabudowie wielorodzinnej
+              z <span className="font-bold text-foreground">474</span> mieszkańców Podjuch biorących udział w badaniu sprzeciwiło się zabudowie wielorodzinnej
             </div>
         </div>
 
