@@ -11,7 +11,7 @@ const CityResponseSection = () => {
               <AlertTriangle className="w-5 h-5" />
             </div>
             <p className="text-sm md:text-base text-foreground/90 leading-snug">
-              Władze miasta planują całkowicie zignorować głos mieszkańców w sprawie TBS-ów (
+              Władze miasta <strong className="font-extrabold text-destructive">planują całkowicie zignorować głos mieszkańców</strong> w sprawie TBS-ów (
               <a
                 href="https://cdn.um.szczecin.pl/httpfiles/projekt_133.pdf"
                 target="_blank"
