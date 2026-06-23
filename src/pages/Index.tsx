@@ -5,6 +5,7 @@ import ArgumentsSection from "@/components/ArgumentsSection";
 import ThreatSection from "@/components/ThreatSection";
 import PhotosSection from "@/components/PhotosSection";
 import StepsSection from "@/components/StepsSection";
+import CityResponseSection from "@/components/CityResponseSection";
 import AboutFooter from "@/components/AboutFooter";
 
 
