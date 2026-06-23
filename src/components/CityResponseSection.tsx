@@ -9,7 +9,7 @@ const CityResponseSection = () => {
           <div className="flex items-center gap-2 mb-5">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive text-destructive-foreground text-xs font-bold uppercase tracking-widest">
               <AlertTriangle className="w-3.5 h-3.5" />
-              Pilne
+              Już w środę, 24 czerwca
             </span>
           </div>
 
