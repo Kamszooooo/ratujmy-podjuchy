@@ -60,60 +60,55 @@ const StepsSection = () => {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 mt-4">
-          {/* Petition signatures */}
-          <div className="rounded-2xl p-6 border border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center gap-4">
-            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary/15 text-primary shrink-0">
-              <Users className="w-7 h-7" />
+        {/* Petition signatures */}
+        <div className="mt-4 rounded-2xl p-6 border border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center gap-4">
+          <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary/15 text-primary shrink-0">
+            <Users className="w-7 h-7" />
+          </div>
+          <div className="min-w-0">
+            <div className="text-4xl font-extrabold text-primary leading-none">
+              1971
             </div>
-            <div className="min-w-0">
-              <div className="text-4xl font-extrabold text-primary leading-none">
-                1971
-              </div>
-              <div className="text-sm text-foreground/80 mt-2 leading-snug">
-                podpisów pod petycją przeciwko zabudowie wielorodzinnej na górkach
-              </div>
+            <div className="text-sm text-foreground/80 mt-2 leading-snug">
+              podpisów pod petycją przeciwko zabudowie wielorodzinnej na górkach
             </div>
           </div>
+        </div>
 
-          {/* 99% survey */}
-          <div className="rounded-2xl p-6 border border-border bg-muted/50">
-            <div className="flex items-center gap-4">
-              {/* Circular progress */}
-              <div className="relative w-20 h-20 shrink-0">
-                <svg viewBox="0 0 36 36" className="w-20 h-20 -rotate-90">
-                  <circle
-                    cx="18"
-                    cy="18"
-                    r="15.9155"
-                    fill="none"
-                    className="stroke-muted"
-                    strokeWidth="3.5"
-                  />
-                  <circle
-                    cx="18"
-                    cy="18"
-                    r="15.9155"
-                    fill="none"
-                    className="stroke-primary"
-                    strokeWidth="3.5"
-                    strokeDasharray="99, 100"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xl font-extrabold text-primary">99%</span>
-                </div>
-              </div>
-              <div className="min-w-0">
-                <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground mb-1">
-                  <BarChart3 className="w-3.5 h-3.5" />
-                  Ankieta rady osiedla
-                </div>
-                <div className="text-sm text-foreground/80 leading-snug">
-                  z <span className="font-bold text-foreground">474</span> mieszkańców Podjuch sprzeciwiło się zabudowie wielorodzinnej
-                </div>
-              </div>
+        {/* 99% survey */}
+        <div className="mt-4 rounded-2xl p-6 border border-border bg-muted/50 flex items-center gap-4">
+          <div className="relative w-20 h-20 shrink-0">
+            <svg viewBox="0 0 36 36" className="w-20 h-20 -rotate-90">
+              <circle
+                cx="18"
+                cy="18"
+                r="15.9155"
+                fill="none"
+                className="stroke-muted"
+                strokeWidth="3.5"
+              />
+              <circle
+                cx="18"
+                cy="18"
+                r="15.9155"
+                fill="none"
+                className="stroke-primary"
+                strokeWidth="3.5"
+                strokeDasharray="99, 100"
+                strokeLinecap="round"
+              />
+            </svg>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-xl font-extrabold text-primary">99%</span>
+            </div>
+          </div>
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground mb-1">
+              <BarChart3 className="w-3.5 h-3.5" />
+              Ankieta rady osiedla
+            </div>
+            <div className="text-sm text-foreground/80 leading-snug">
+              z <span className="font-bold text-foreground">474</span> mieszkańców Podjuch sprzeciwiło się zabudowie wielorodzinnej
             </div>
           </div>
         </div>
