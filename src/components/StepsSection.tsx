@@ -33,8 +33,26 @@ const StepsSection = () => {
               key={d.href}
               className="bg-muted/50 rounded-2xl p-6 border border-border flex flex-col"
             >
-              <h3 className="text-base font-bold text-muted-foreground mb-2">{d.title}</h3>
+              {/* Top: stat */}
+              <div className="flex items-center gap-3 pb-4 mb-4 border-b border-border">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary shrink-0">
+                  <FileText className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-3xl font-extrabold tracking-tight text-primary leading-none">
+                    {d.count.toLocaleString("pl-PL")}
+                  </div>
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">
+                    złożonych uwag
+                  </div>
+                </div>
+              </div>
+
+              {/* Middle: context */}
+              <h3 className="text-base font-bold text-foreground mb-2">{d.title}</h3>
               <p className="text-sm text-muted-foreground mb-5 flex-1">{d.description}</p>
+
+              {/* Bottom: action */}
               <a
                 href={d.href}
                 download
@@ -43,19 +61,6 @@ const StepsSection = () => {
                 <Download className="w-5 h-5" />
                 Pobierz szkic
               </a>
-              <div className="mt-4 flex items-center gap-3 pt-4 border-t border-border">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary shrink-0">
-                  <FileText className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary leading-none">
-                    {d.count.toLocaleString("pl-PL")}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    złożonych uwag
-                  </div>
-                </div>
-              </div>
             </div>
           ))}
         </div>
@@ -66,7 +71,10 @@ const StepsSection = () => {
             <Users className="w-7 h-7" />
           </div>
           <div className="min-w-0">
-            <div className="text-4xl font-extrabold text-primary leading-none">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-primary/80 mb-1">
+              Petycja mieszkańców
+            </div>
+            <div className="text-5xl md:text-6xl font-extrabold tracking-tight text-primary leading-none">
               1971
             </div>
             <div className="text-sm text-foreground/80 mt-2 leading-snug">
@@ -76,9 +84,9 @@ const StepsSection = () => {
         </div>
 
         {/* 99% survey */}
-        <div className="mt-4 rounded-2xl p-6 border border-border bg-muted/50 flex items-center gap-4">
-          <div className="relative w-20 h-20 shrink-0">
-            <svg viewBox="0 0 36 36" className="w-20 h-20 -rotate-90">
+        <div className="mt-4 rounded-2xl p-6 border border-border bg-muted/40 flex items-center gap-4">
+          <div className="relative w-24 h-24 shrink-0">
+            <svg viewBox="0 0 36 36" className="w-24 h-24 -rotate-90">
               <circle
                 cx="18"
                 cy="18"
@@ -99,7 +107,7 @@ const StepsSection = () => {
               />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-xl font-extrabold text-primary">99%</span>
+              <span className="text-2xl font-extrabold tracking-tight text-primary">99%</span>
             </div>
           </div>
           <div className="min-w-0">
