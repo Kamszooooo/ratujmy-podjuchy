@@ -7,6 +7,7 @@ import PhotosSection from "@/components/PhotosSection";
 import StepsSection from "@/components/StepsSection";
 import CityResponseSection from "@/components/CityResponseSection";
 import AboutFooter from "@/components/AboutFooter";
+import FloatingCityReplyBanner from "@/components/FloatingCityReplyBanner";
 
 
 const Index = () => {
