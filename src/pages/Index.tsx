@@ -28,7 +28,7 @@ const Index = () => {
       <CityResponseSection />
       <PhotosSection />
       <AboutFooter />
-      
+      <FloatingCityReplyBanner />
     </div>
   );
 };
