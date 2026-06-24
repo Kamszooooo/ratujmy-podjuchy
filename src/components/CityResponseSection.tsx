@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } 
 
 const CityResponseSection = () => {
   return (
-    <section className="px-4 bg-background py-[60px]">
+    <section id="city-reply" className="px-4 bg-background py-[60px]">
       <div className="max-w-4xl mx-auto">
         <div className="rounded-3xl p-6 md:p-10 border-2 border-destructive/60 bg-destructive/5 shadow-xl shadow-destructive/10">
           <div className="flex items-center gap-2 mb-5">
