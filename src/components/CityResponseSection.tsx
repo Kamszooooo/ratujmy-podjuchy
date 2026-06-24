@@ -50,15 +50,13 @@ const CityResponseSection = () => {
               </figure>
             </DialogTrigger>
             <DialogContent className="max-w-3xl">
-              <DialogTitle className="text-xl md:text-2xl font-extrabold text-destructive">
-                Uwaga nieuwzględniona.
-              </DialogTitle>
+              <DialogTitle className="sr-only">Uwaga nieuwzględniona</DialogTitle>
               <DialogDescription className="sr-only">
                 Pełna treść odpowiedzi władz miasta na uwagę dotyczącą terenu TBS-ów.
               </DialogDescription>
               <div className="text-base md:text-lg text-foreground leading-relaxed">
                 <p>
-                  Zachowuje się strefę SW – strefa wielofunkcyjna z zabudową mieszkaniową wielorodzinną. STBS na przedmiotowym terenie od 2005r. planuje realizację potrzeb mieszkaniowych miasta w ramach prowadzenia statutowej dzielności niekomercyjnego mieszkalnictwa społecznego. STBS planuje kontynuować proces budowlany w partnerstwie z Miastem w formule Zintegrowanego Planu inwestycyjnego (ZPI), który jest szczególną formą planu miejscowego — pozwalającego na przeprowadzenie wszelkich niezbędnych uzgodnień i konsultacji społecznych oraz wypracowania funkcji i docelowych parametrów zabudowy mieszczących się w przedziałach wskazanych w planie ogólnym.
+                  „<span className="font-bold">Uwaga nieuwzględniona.</span> Zachowuje się strefę SW – strefa wielofunkcyjna z zabudową mieszkaniową wielorodzinną. STBS na przedmiotowym terenie od 2005r. planuje realizację potrzeb mieszkaniowych miasta w ramach prowadzenia statutowej dzielności niekomercyjnego mieszkalnictwa społecznego. STBS planuje kontynuować proces budowlany w partnerstwie z Miastem w formule Zintegrowanego Planu inwestycyjnego (ZPI), który jest szczególną formą planu miejscowego — pozwalającego na przeprowadzenie wszelkich niezbędnych uzgodnień i konsultacji społecznych oraz wypracowania funkcji i docelowych parametrów zabudowy mieszczących się w przedziałach wskazanych w planie ogólnym.”
                 </p>
               </div>
             </DialogContent>
