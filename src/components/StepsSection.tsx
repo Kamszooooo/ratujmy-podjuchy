@@ -110,10 +110,9 @@ const StepsSection = () => {
                 r="15.9155"
                 fill="none"
                 className="stroke-destructive"
-                strokeWidth="5"
-                strokeDasharray="1.2, 100"
+                strokeWidth="3.5"
+                strokeDasharray="1, 100"
                 strokeDashoffset="-99"
-                strokeLinecap="round"
               />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center">
