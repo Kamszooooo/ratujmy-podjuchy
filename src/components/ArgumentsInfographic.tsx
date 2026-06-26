@@ -18,7 +18,7 @@ const ArgumentsInfographic = () => {
             <h4 className="font-bold text-foreground text-2xl">Ład przestrzenny</h4>
           </div>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            Otoczenie to zabudowa jednorodzinna. Troska o ład przestrzenny wymaga, by wszelka zabudowa kontynuowała skalę i parametry budynków dookoła.
+            Otoczenie to zabudowa jednorodzinna. Troska o ład przestrzenny wymaga, by wszelka zabudowa kontynuowała skalę i parametry budynków w pobliżu.
           </p>
         </div>
 
