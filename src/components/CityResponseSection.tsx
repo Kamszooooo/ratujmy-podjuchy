@@ -67,8 +67,11 @@ const CityResponseSection = () => {
           </Dialog>
 
           <div className="mt-8 p-5 md:p-6 rounded-2xl bg-destructive text-destructive-foreground">
-            <p className="text-lg md:text-2xl font-extrabold leading-snug text-center">
-              Wzywamy Radę Miasta do skierowania projektu planu ogólnego do dalszych prac i uwzględnienia naszych postulatów!
+            <p className="text-lg md:text-2xl font-extrabold leading-snug text-center mb-2">
+              Nie odpuszczamy. Bloki na górkach jeszcze nie są przesądzone.
+            </p>
+            <p className="text-sm md:text-base leading-relaxed text-center text-destructive-foreground/90">
+              Plan ogólny <strong>dopuszcza</strong> zabudowę wielorodzinną, ale jej <strong>nie nakazuje</strong>. Dla strefy 1386SW możliwa jest też zabudowa jednorodzinna albo tereny zieleni. To od siły naszego sprzeciwu zależy, co tu powstanie.
             </p>
           </div>
         </div>
