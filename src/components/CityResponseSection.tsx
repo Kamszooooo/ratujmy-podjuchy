@@ -84,7 +84,7 @@ const CityResponseSection = () => {
                 Powiększ
               </div>
               <figcaption className="px-4 py-3 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-destructive/20">
-                Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać Górki w Podjuchach przy maksymalnym wykorzystaniu możliwości zabudowy o intensywności 1,2 przewidzianej przyjętym planem ogólnym.
+                Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać Górki w Podjuchach przy maksymalnym wykorzystaniu możliwości zabudowy o intensywności 1,2, którą dopuszcza przyjęty planem ogólnym.
               </figcaption>
             </figure>
           </DialogTrigger>
