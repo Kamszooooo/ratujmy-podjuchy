@@ -134,8 +134,9 @@ const ArgumentsInfographic = () => {
 
         <div className="mt-6 pt-6 border-t border-border grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-              <Train className="w-5 h-5 text-primary" />
+            <div className="w-10 h-10 rounded-xl bg-muted text-muted-foreground flex items-center justify-center shrink-0">
+              <Train className="w-5 h-5" />
+
             </div>
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">25 min</div>
