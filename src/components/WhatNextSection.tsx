@@ -44,7 +44,7 @@ const WhatNextSection = () => {
             <div className="w-16 h-1 bg-muted-foreground/40 mx-auto mt-4 rounded-full" />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {items.map(({ icon: Icon, title, body }) => (
               <div key={title} className="bg-card rounded-2xl p-6 border border-border flex flex-col">
                 <div className="flex items-center gap-3 mb-3">
