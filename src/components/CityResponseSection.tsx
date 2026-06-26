@@ -75,7 +75,7 @@ const CityResponseSection = () => {
             <ChevronDown className="w-5 h-5 animate-bounce" aria-hidden="true" />
           </div>
           <p className="text-lg md:text-2xl font-bold leading-tight text-foreground text-center">
-            Nie odpuszczamy. <span className="text-destructive">Bloki na górkach jeszcze nie są przesądzone!</span><br />Co dalej?
+            Nie odpuszczamy. <span className="text-destructive">Bloki na górkach jeszcze nie są przesądzone!</span><br /><span className="text-2xl md:text-4xl">Co dalej?</span>
           </p>
         </div>
 
