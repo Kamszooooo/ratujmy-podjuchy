@@ -66,6 +66,12 @@ const CityResponseSection = () => {
             </DialogContent>
           </Dialog>
 
+          <p className="mt-6 text-base md:text-lg text-foreground/80 leading-relaxed">
+            Obniżenie wskaźnika intensywności zabudowy z 1,6 do 1,2 jest bez znaczenia — nawet oryginalny projekt TBS ma niższą intensywność, a i tak jest on niedopasowany do okolicy z domami jednorodzinnymi.
+          </p>
+
+
+
           <div className="mt-8 p-5 md:p-6 rounded-2xl bg-destructive text-destructive-foreground">
             <p className="text-lg md:text-2xl font-extrabold leading-snug text-center">
               Nie odpuszczamy. Bloki na górkach jeszcze nie są przesądzone!
