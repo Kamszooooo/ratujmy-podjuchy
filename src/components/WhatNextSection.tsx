@@ -36,7 +36,7 @@ const WhatNextSection = () => {
   return (
     <section className="px-4 bg-background pt-0 pb-[60px]">
       <div className="max-w-4xl mx-auto">
-        <div className="rounded-3xl p-6 md:p-10 border-2 border-border bg-muted/40 shadow-xl shadow-foreground/5">
+        <div>
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-4xl font-extrabold leading-tight text-foreground">
               Co dalej?
