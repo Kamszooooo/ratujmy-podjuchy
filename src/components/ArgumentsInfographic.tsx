@@ -48,7 +48,7 @@ const ArgumentsInfographic = () => {
       </div>
 
       {/* Skala inwestycji */}
-      <div className="bg-gradient-to-br from-primary/5 via-card to-accent/5 border border-border rounded-2xl p-6 md:p-8">
+      <div className="bg-muted/40 border border-border rounded-2xl p-6 md:p-8">
         <div className="flex items-center gap-2 mb-5">
           <TrendingUp className="w-5 h-5 text-destructive" />
           <h4 className="font-bold text-lg text-foreground">Skala planowanej zabudowy</h4>
@@ -134,8 +134,9 @@ const ArgumentsInfographic = () => {
 
         <div className="mt-6 pt-6 border-t border-border grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-              <Train className="w-5 h-5 text-primary" />
+            <div className="w-10 h-10 rounded-xl bg-muted text-muted-foreground flex items-center justify-center shrink-0">
+              <Train className="w-5 h-5" />
+
             </div>
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">25 min</div>
@@ -146,8 +147,9 @@ const ArgumentsInfographic = () => {
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-              <Bus className="w-5 h-5 text-primary" />
+            <div className="w-10 h-10 rounded-xl bg-muted text-muted-foreground flex items-center justify-center shrink-0">
+              <Bus className="w-5 h-5" />
+
             </div>
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">21 min</div>
@@ -161,8 +163,9 @@ const ArgumentsInfographic = () => {
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-              <Mountain className="w-5 h-5 text-primary" />
+            <div className="w-10 h-10 rounded-xl bg-muted text-muted-foreground flex items-center justify-center shrink-0">
+              <Mountain className="w-5 h-5" />
+
             </div>
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">50–75 m</div>
