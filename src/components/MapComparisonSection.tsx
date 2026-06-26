@@ -96,14 +96,24 @@ const MapComparisonSection = () => {
   return (
     <section className="pb-12 pt-0 px-4" id="mapa">
       <div className="max-w-xl mx-auto">
-        {/* Captions */}
-        <div className="flex justify-between mb-4 gap-4">
-          <p className="text-xs md:text-base font-bold text-destructive max-w-[45%]">
-            Miasto proponuje blokowisko
-          </p>
-          <p className="text-xs md:text-base font-bold text-primary text-right w-[55%]">
-            Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na&nbsp;zabudowę jednorodzinną!
-          </p>
+        {/* Captions with arrows pointing toward each side of the map */}
+        <div className="flex justify-between items-stretch mb-3 gap-3">
+          <div className="flex items-start gap-2 max-w-[45%]">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-destructive shrink-0 mt-1" aria-hidden="true">
+              <path d="M14 10L2 10M2 10L7 5M2 10L7 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <p className="text-xs md:text-base font-bold text-destructive leading-tight">
+              Miasto proponuje blokowisko
+            </p>
+          </div>
+          <div className="flex items-start gap-2 w-[55%] justify-end">
+            <p className="text-xs md:text-base font-bold text-primary text-right leading-tight">
+              Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na&nbsp;zabudowę jednorodzinną!
+            </p>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-1" aria-hidden="true">
+              <path d="M6 10L18 10M18 10L13 5M18 10L13 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
         </div>
 
         <div className="relative">
@@ -144,6 +154,18 @@ const MapComparisonSection = () => {
               />
             </div>
 
+            {/* Corner labels on the map itself */}
+            {allLoaded && (
+              <>
+                <div className="absolute top-3 left-3 px-2 py-1 rounded-md bg-destructive text-destructive-foreground text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-md pointer-events-none">
+                  Plan miasta
+                </div>
+                <div className="absolute top-3 right-3 px-2 py-1 rounded-md bg-primary text-primary-foreground text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-md pointer-events-none">
+                  Nasza propozycja
+                </div>
+              </>
+            )}
+
             {/* Slider line */}
             <div
               className="absolute top-0 bottom-0 w-1 bg-primary shadow-md -translate-x-1/2 pointer-events-none"
@@ -158,7 +180,14 @@ const MapComparisonSection = () => {
               </div>
             </div>
           </div>
+
+          {allLoaded && (
+            <p className="text-center text-xs text-muted-foreground mt-3">
+              Przeciągnij suwak w lewo lub w prawo, aby porównać
+            </p>
+          )}
         </div>
+
       </div>
     </section>
   );
