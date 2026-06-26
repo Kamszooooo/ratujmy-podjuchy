@@ -27,6 +27,7 @@ const Index = () => {
       <ArgumentsSection />
       <StepsSection />
       <CityResponseSection />
+      <WhatNextSection />
       <PhotosSection />
       <AboutFooter />
       <FloatingCityReplyBanner />
