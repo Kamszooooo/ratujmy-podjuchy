@@ -141,7 +141,7 @@ const HeroSection = () => {
           Ratujmy Podjuchy
         </h1>
         <p className="text-base md:text-xl text-white/90 max-w-2xl mx-auto mb-8 drop-shadow">
-          NIE dla osiedla TBS na Górkach w Podjuchach!
+          NIE dla osiedla TBS na górkach w Podjuchach!
         </p>
         <a
           href="https://www.facebook.com/people/Ratujmy-Podjuchy/61574321447466/"

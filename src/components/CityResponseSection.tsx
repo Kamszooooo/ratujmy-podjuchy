@@ -84,7 +84,7 @@ const CityResponseSection = () => {
                 Powiększ
               </div>
               <figcaption className="px-4 py-3 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-destructive/20">
-                Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać Górki w Podjuchach przy maksymalnym wykorzystaniu możliwości zabudowy o intensywności 1,2, którą dopuszcza przyjęty plan ogólny.
+                Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach przy maksymalnym wykorzystaniu możliwości zabudowy o intensywności 1,2, którą dopuszcza przyjęty plan ogólny.
               </figcaption>
             </figure>
           </DialogTrigger>
@@ -99,7 +99,7 @@ const CityResponseSection = () => {
               className="w-full h-auto block rounded-md"
             />
             <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-              Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać Górki w Podjuchach przy maksymalnym wykorzystaniu możliwości zabudowy o intensywności 1,2, którą dopuszcza przyjęty plan ogólny.
+              Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach przy maksymalnym wykorzystaniu możliwości zabudowy o intensywności 1,2, którą dopuszcza przyjęty plan ogólny.
             </p>
           </DialogContent>
         </Dialog>
@@ -110,7 +110,7 @@ const CityResponseSection = () => {
             <ChevronDown className="w-5 h-5 animate-bounce" aria-hidden="true" />
           </div>
           <p className="text-lg md:text-2xl font-bold leading-tight text-foreground text-center">
-            Nie odpuszczamy. <span className="text-destructive">Bloki na Górkach jeszcze nie są przesądzone!</span><br /><span className="inline-block mt-3 text-2xl md:text-4xl">Co dalej?</span>
+            Nie odpuszczamy. <span className="text-destructive">Bloki na górkach jeszcze nie są przesądzone!</span><br /><span className="inline-block mt-3 text-2xl md:text-4xl">Co dalej?</span>
           </p>
         </div>
 
