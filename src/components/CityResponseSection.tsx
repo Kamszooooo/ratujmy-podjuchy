@@ -71,12 +71,12 @@ const CityResponseSection = () => {
 
         {/* Pomost wizualny łączący sekcję z "Co dalej?" */}
         <div className="mt-10 px-6 md:px-8 py-6 border-t border-destructive/20">
-          <p className="text-lg md:text-2xl font-bold leading-tight text-foreground text-center">
-            Nie odpuszczamy. <span className="text-destructive">Bloki na górkach jeszcze nie są przesądzone!</span>
-          </p>
-          <div className="flex justify-center mt-3 text-muted-foreground">
+          <div className="flex justify-center mb-3 text-muted-foreground">
             <ChevronDown className="w-5 h-5 animate-bounce" aria-hidden="true" />
           </div>
+          <p className="text-lg md:text-2xl font-bold leading-tight text-foreground text-center">
+            Nie odpuszczamy. <span className="text-destructive">Bloki na górkach jeszcze nie są przesądzone!</span> Co dalej?
+          </p>
         </div>
 
 

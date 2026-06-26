@@ -37,12 +37,6 @@ const WhatNextSection = () => {
     <section className="px-4 bg-background pt-0 pb-[60px]">
       <div className="max-w-4xl mx-auto">
         <div>
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-4xl font-extrabold leading-tight text-foreground">
-              Co dalej?
-            </h2>
-            <div className="w-16 h-1 bg-muted-foreground/40 mx-auto mt-4 rounded-full" />
-          </div>
 
           <div className="grid md:grid-cols-2 gap-4">
             {items.map(({ icon: Icon, title, body }) => (
