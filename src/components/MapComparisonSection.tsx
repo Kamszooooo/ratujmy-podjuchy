@@ -96,6 +96,26 @@ const MapComparisonSection = () => {
   return (
     <section className="pb-12 pt-0 px-4" id="mapa">
       <div className="max-w-xl mx-auto">
+        {/* Captions with arrows pointing toward each side of the map */}
+        <div className="flex justify-between items-stretch mb-3 gap-3">
+          <div className="flex items-start gap-2 max-w-[45%]">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-destructive shrink-0 mt-1" aria-hidden="true">
+              <path d="M14 10L2 10M2 10L7 5M2 10L7 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <p className="text-xs md:text-base font-bold text-destructive leading-tight">
+              Miasto proponuje blokowisko
+            </p>
+          </div>
+          <div className="flex items-start gap-2 w-[55%] justify-end">
+            <p className="text-xs md:text-base font-bold text-primary text-right leading-tight">
+              Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na&nbsp;zabudowę jednorodzinną!
+            </p>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-1" aria-hidden="true">
+              <path d="M6 10L18 10M18 10L13 5M18 10L13 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
         <div className="relative">
           {!allLoaded && (
             <div className="flex items-center justify-center rounded-2xl border border-border bg-muted/30 aspect-[379/443]">
@@ -162,32 +182,11 @@ const MapComparisonSection = () => {
           </div>
 
           {allLoaded && (
-            <div className="mt-4 space-y-3">
-              <p className="text-center text-xs text-muted-foreground">
-                ← Przeciągnij suwak, aby porównać →
-              </p>
-              <div className="flex justify-between items-start gap-3">
-                <div className="flex items-start gap-2 max-w-[45%]">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-destructive shrink-0 mt-1" aria-hidden="true">
-                    <path d="M14 10L2 10M2 10L7 5M2 10L7 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <p className="text-xs md:text-base font-bold text-destructive leading-tight">
-                    Miasto proponuje blokowisko
-                  </p>
-                </div>
-                <div className="flex items-start gap-2 w-[55%] justify-end">
-                  <p className="text-xs md:text-base font-bold text-primary text-right leading-tight">
-                    Zamiast tego zachowajmy wzgórza i&nbsp;lasy, pozwólmy na&nbsp;zabudowę jednorodzinną!
-                  </p>
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-1" aria-hidden="true">
-                    <path d="M6 10L18 10M18 10L13 5M18 10L13 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
+            <p className="text-center text-xs text-muted-foreground mt-3">
+              Przeciągnij suwak w lewo lub w prawo, aby porównać
+            </p>
           )}
         </div>
-
 
       </div>
     </section>
