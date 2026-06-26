@@ -14,7 +14,7 @@ const items = [
   {
     icon: Megaphone,
     title: "Nie odpuszczamy",
-    body: "Działamy dalej przeciwko budowie blokowiska TBS na górkach w Podjuchach. Wkrótce poinformujemy o naszych kolejnych inicjatywach.",
+    body: "Działamy dalej przeciwko budowie blokowiska TBS na górkach w Podjuchach. W dalszym ciągu opowiadamy się za zabudową jednorodzinną i strefą zieleni. Wkrótce poinformujemy o naszych kolejnych inicjatywach.",
   },
   {
     icon: Eye,
