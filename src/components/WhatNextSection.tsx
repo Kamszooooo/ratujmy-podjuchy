@@ -13,7 +13,7 @@ const items = [
   },
   {
     icon: Megaphone,
-    title: "Nie odpuszczamy",
+    title: "Działamy dalej",
     body: (
       <>
         Działamy dalej przeciwko budowie blokowiska TBS na Górkach w Podjuchach. <strong className="font-semibold text-foreground">W dalszym ciągu opowiadamy się za zabudową jednorodzinną i strefą zieleni.</strong> Wkrótce poinformujemy o naszych kolejnych inicjatywach.
