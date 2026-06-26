@@ -23,7 +23,7 @@ const CityResponseSection = () => {
           </h2>
 
           <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
-            Na nic się zdało <strong>1971 podpisów</strong> pod petycją i <strong>734 uwagi</strong> złożone do projektu planu. Cały obszar między ul. Wschodnią, Olkuską, Sąsiedzką i autostradą dalej jest przewidziany pod strefę z zabudową wielorodzinną (1386SW). Obniżenie wskaźnika intensywności zabudowy z 1,6 do 1,2 jest bez znaczenia — nawet oryginalny projekt TBS ma niższą intensywność, a i tak jest zdecydowanie za duży jak na okolicę domów jednorodzinnych.
+            Na nic się zdało <strong>1971 podpisów</strong> pod petycją i <strong>734 uwagi</strong> złożone do projektu planu. Nasze uwagi mają oficjalny status całkowicie nieuwzględnionych. Cały obszar między ul. Wschodnią, Olkuską, Sąsiedzką i autostradą został przewidziany w planie ogólnym pod strefę z zabudową wielorodzinną (1386SW). Obniżenie wskaźnika intensywności zabudowy z 1,6 do 1,2 jest bez znaczenia — nawet oryginalny projekt TBS ma niższą intensywność, a i tak jest zdecydowanie za duży jak na okolicę domów jednorodzinnych.
           </p>
 
           <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
