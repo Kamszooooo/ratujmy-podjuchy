@@ -157,10 +157,10 @@ const MapComparisonSection = () => {
             {/* Corner labels on the map itself */}
             {allLoaded && (
               <>
-                <div className="absolute top-3 left-3 px-2 py-1 rounded-md bg-destructive text-destructive-foreground text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-md pointer-events-none">
+                <div className="absolute bottom-3 left-3 px-2 py-1 rounded-md bg-destructive text-destructive-foreground text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-md pointer-events-none">
                   Plan miasta
                 </div>
-                <div className="absolute top-3 right-3 px-2 py-1 rounded-md bg-primary text-primary-foreground text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-md pointer-events-none">
+                <div className="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-primary text-primary-foreground text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-md pointer-events-none">
                   Nasza propozycja
                 </div>
               </>
