@@ -84,7 +84,7 @@ const CityResponseSection = () => {
                 Powiększ
               </div>
               <figcaption className="px-4 py-3 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-destructive/20">
-                Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach przy maksymalnym wykorzystaniu możliwości zabudowy o intensywności 1,2, którą dopuszcza przyjęty plan ogólny.
+                Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach (przy maksymalnej dopuszczonej planem ogólnym intensywności zabudowy 1,2 na całym obszarze strefy 1386SW).
               </figcaption>
             </figure>
           </DialogTrigger>
@@ -99,7 +99,7 @@ const CityResponseSection = () => {
               className="w-full h-auto block rounded-md"
             />
             <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-              Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach przy maksymalnym wykorzystaniu możliwości zabudowy o intensywności 1,2, którą dopuszcza przyjęty plan ogólny.
+              Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach (przy maksymalnej dopuszczonej planem ogólnym intensywności zabudowy 1,2 na całym obszarze strefy 1386SW).
             </p>
           </DialogContent>
         </Dialog>
