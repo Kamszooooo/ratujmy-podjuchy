@@ -67,7 +67,7 @@ const CityResponseSection = () => {
           </Dialog>
 
           <p className="mt-6 text-base md:text-lg text-foreground/80 leading-relaxed">
-            Obniżenie wskaźnika intensywności zabudowy z 1,6 do 1,2 jest bez znaczenia — nawet oryginalny projekt TBS ma niższą intensywność, a i tak jest on niedopasowany do okolicy z domami jednorodzinnymi.
+            Obniżenie wskaźnika intensywności zabudowy z 1,6 do 1,2 w przyjętej wersji planu jest bez znaczenia — nawet oryginalny projekt TBS ma intensywność niższą niż 1,2, a i tak jest on niedopasowany do okolicy z domami jednorodzinnymi.
           </p>
 
 
