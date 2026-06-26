@@ -9,12 +9,12 @@ const items = [
   {
     icon: Building2,
     title: "Plan dopuszcza, nie nakazuje",
-    body: "Strefa 1386SW pozwala na zabudowę wielorodzinną, ale dopuszcza też zabudowę jednorodzinną i tereny zieleni. O tym, co naprawdę powstanie, zdecyduje plan miejscowy — a o jego kształcie zdecyduje siła naszego nacisku.",
+    body: "Profil funkcjonalny strefy 1386SW w przyjętym planie ogólnym pozwala na zabudowę wielorodzinną, ale ale jej nie nakazuje! Dopuszcza też zabudowę jednorodzinną i tereny zieleni. O tym, co naprawdę powstanie, zdecyduje plan miejscowy (MPZP bądź ZPI), a o jego kształcie zdecyduje siła naszego nacisku.",
   },
   {
     icon: Trees,
     title: "Drobny sukces za autostradą",
-    body: "Nasze 247 uwag w sprawie terenów za autostradą A6 dało efekt: wykreślono z nich funkcję składów i magazynów. To jednak za mało — dalej walczymy o strefę zieleni z usługami sportu i rekreacji zamiast strefy usługowej.",
+    body: "Nasze 247 uwag w sprawie terenów za autostradą A6 dało efekt: wykreślono z nich funkcję składów i magazynów. Niestety pozostawiono strefę usług zamiast strefy zieleni z usługami sportu i rekreacji.",
   },
 ];
 
