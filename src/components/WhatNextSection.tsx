@@ -25,15 +25,12 @@ const items = [
 
 const WhatNextSection = () => {
   return (
-    <section className="px-4 bg-card py-[60px]">
+    <section className="px-4 bg-background pt-6 pb-[60px]">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Co dalej?
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Przegrana bitwa to nie przegrana wojna. Tak walczymy o Podjuchy dalej.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4">
