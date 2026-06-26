@@ -72,9 +72,9 @@ const CityResponseSection = () => {
 
         </div>
 
-        <div className="mt-10 rounded-2xl border-2 border-primary bg-primary/10 px-6 py-6 md:px-8 md:py-8 shadow-lg shadow-primary/10">
+        <div className="mt-10 rounded-2xl border-2 border-foreground/15 bg-muted/40 px-6 py-6 md:px-8 md:py-8">
           <p className="text-xl md:text-3xl font-extrabold leading-tight text-foreground text-center">
-            Nie odpuszczamy. <span className="text-primary">Bloki na górkach jeszcze nie są przesądzone!</span>
+            Nie odpuszczamy. <span className="text-destructive">Bloki na górkach jeszcze nie są przesądzone!</span>
           </p>
         </div>
         <div className="flex justify-center pt-4 pb-2 text-muted-foreground">
