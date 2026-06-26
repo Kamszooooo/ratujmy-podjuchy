@@ -99,7 +99,7 @@ const CityResponseSection = () => {
               className="w-full h-auto block rounded-md"
             />
             <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-              Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać Górki w Podjuchach przy dopuszczonej w planie ogólnym intensywności zabudowy 1,2.
+              Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać Górki w Podjuchach przy maksymalnym wykorzystaniu możliwości zabudowy o intensywności 1,2, którą dopuszcza przyjęty plan ogólny.
             </p>
           </DialogContent>
         </Dialog>
