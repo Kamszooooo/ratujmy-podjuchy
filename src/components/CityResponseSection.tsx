@@ -105,12 +105,12 @@ const CityResponseSection = () => {
         </Dialog>
 
         {/* Pomost wizualny łączący sekcję z "Co dalej?" */}
-        <div className="mt-10 px-6 md:px-8 py-6">
-          <div className="flex justify-center mb-3 text-muted-foreground">
+        <div className="mt-4 px-6 md:px-8 pt-2 pb-6">
+          <div className="flex justify-center mb-6 text-muted-foreground">
             <ChevronDown className="w-5 h-5 animate-bounce" aria-hidden="true" />
           </div>
           <p className="text-lg md:text-2xl font-bold leading-tight text-foreground text-center">
-            Nie odpuszczamy. <span className="text-destructive">Bloki na Górkach jeszcze nie są przesądzone!</span><br /><span className="text-2xl md:text-4xl">Co dalej?</span>
+            Nie odpuszczamy. <span className="text-destructive">Bloki na Górkach jeszcze nie są przesądzone!</span><br /><span className="inline-block mt-3 text-2xl md:text-4xl">Co dalej?</span>
           </p>
         </div>
 
