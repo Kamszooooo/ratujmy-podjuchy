@@ -9,7 +9,12 @@ const items = [
   {
     icon: Building2,
     title: "Plan dopuszcza, nie nakazuje",
-    body: "Profil funkcjonalny strefy 1386SW w przyjętym planie ogólnym pozwala na zabudowę wielorodzinną, ale ale jej nie nakazuje! Dopuszcza też zabudowę jednorodzinną i tereny zieleni. O tym, co naprawdę powstanie, zdecyduje plan miejscowy (MPZP bądź ZPI), a o jego kształcie zdecyduje siła naszego nacisku.",
+    body: (
+      <>
+        Profil funkcjonalny strefy 1386SW w przyjętym planie ogólnym pozwala na zabudowę wielorodzinną,{" "}
+        <strong className="font-semibold text-foreground">ale jej nie nakazuje!</strong> Dopuszcza też zabudowę jednorodzinną i tereny zieleni. O tym, co naprawdę powstanie, zdecyduje plan miejscowy (MPZP bądź ZPI), a o jego kształcie zdecyduje siła naszego nacisku.
+      </>
+    ),
   },
   {
     icon: Trees,
