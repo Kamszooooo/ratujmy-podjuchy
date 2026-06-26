@@ -1,10 +1,10 @@
-import { AlertTriangle, ZoomIn } from "lucide-react";
+import { AlertTriangle, ZoomIn, ChevronDown } from "lucide-react";
 import uwagaNieuwzgledniona from "@/assets/uwaga-nieuwzgledniona.png.asset.json";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const CityResponseSection = () => {
   return (
-    <section id="city-reply" className="px-4 bg-background py-[60px]">
+    <section id="city-reply" className="px-4 bg-background pt-[60px] pb-0">
       <div className="max-w-4xl mx-auto">
         <div className="rounded-3xl p-6 md:p-10 border-2 border-destructive/60 bg-destructive/5 shadow-xl shadow-destructive/10">
           <div className="flex items-center gap-2 mb-5">
@@ -67,13 +67,17 @@ const CityResponseSection = () => {
           </Dialog>
 
           <div className="mt-8 p-5 md:p-6 rounded-2xl bg-destructive text-destructive-foreground">
-            <p className="text-lg md:text-2xl font-extrabold leading-snug text-center mb-2">
+            <p className="text-lg md:text-2xl font-extrabold leading-snug text-center">
               Nie odpuszczamy. Bloki na górkach jeszcze nie są przesądzone.
             </p>
-            <p className="text-sm md:text-base leading-relaxed text-center text-destructive-foreground/90">
-              Plan ogólny <strong>dopuszcza</strong> zabudowę wielorodzinną, ale jej <strong>nie nakazuje</strong>. Dla strefy 1386SW możliwa jest też zabudowa jednorodzinna albo tereny zieleni. To od siły naszego sprzeciwu zależy, co tu powstanie.
-            </p>
           </div>
+        </div>
+
+        <div className="flex flex-col items-center pt-10 pb-2 text-muted-foreground">
+          <p className="text-sm md:text-base font-semibold uppercase tracking-widest mb-2">
+            Przegrana bitwa to nie przegrana wojna
+          </p>
+          <ChevronDown className="w-6 h-6 animate-bounce" aria-hidden="true" />
         </div>
       </div>
     </section>
