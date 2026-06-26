@@ -163,8 +163,9 @@ const ArgumentsInfographic = () => {
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-              <Mountain className="w-5 h-5 text-primary" />
+            <div className="w-10 h-10 rounded-xl bg-muted text-muted-foreground flex items-center justify-center shrink-0">
+              <Mountain className="w-5 h-5" />
+
             </div>
             <div>
               <div className="text-2xl font-bold text-foreground leading-tight md:text-2xl">50–75 m</div>
