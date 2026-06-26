@@ -1,4 +1,4 @@
-import { Handshake, Building2, Trees } from "lucide-react";
+import { Eye, Building2, Trees } from "lucide-react";
 
 const items = [
   {
