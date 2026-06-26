@@ -16,7 +16,7 @@ const ThreatSection = () => {
             Władze Szczecina chcą budowy bloków wielorodzinnych w górnej części Podjuch, na terenie między ul.&nbsp;Sąsiedzką a ul.&nbsp;Wschodnią. Szczecińskie TBS ogłosiło nawet niedawno wyniki konkursu architektonicznego na zabudowę większości tego obszaru.
           </p>
           <p>
-            To absurdalny pomysł! Ta część Podjuch ma w przeważającej mierze charakter jednorodzinny. Teren jest cenny przyrodniczo — pagórkowaty i częściowo lesisty. W konsultacjach społecznych planu ogólnego Miasta Szczecin złożyliśmy prawie tysiąc uwag. Miasto je zignorowało, ale walka o Podjuchy się nie kończy.
+            To absurdalny pomysł! Ta część Podjuch ma w przeważającej mierze charakter jednorodzinny. Teren jest cenny przyrodniczo — pagórkowaty i częściowo lesisty. W konsultacjach społecznych planu ogólnego Miasta Szczecin złożyliśmy prawie tysiąc uwag. Miasto je zignorowało, ale walka o Podjuchy trwa dalej.
           </p>
         </div>
       </div>
