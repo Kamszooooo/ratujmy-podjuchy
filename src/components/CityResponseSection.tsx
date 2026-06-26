@@ -76,7 +76,7 @@ const CityResponseSection = () => {
             <figure className="group relative mt-8 mx-auto w-full max-w-[45%] min-w-[280px] rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
               <img
                 src={gorkiMaksZabudowa.url}
-                alt="Wizualizacja maksymalnej zabudowy Górek w Podjuchach według przyjętego planu ogólnego"
+                alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
                 className="w-full h-auto block"
               />
               <div className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-background/90 backdrop-blur text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
@@ -89,13 +89,13 @@ const CityResponseSection = () => {
             </figure>
           </DialogTrigger>
           <DialogContent className="max-w-5xl">
-            <DialogTitle className="sr-only">Maksymalna zabudowa Górek w Podjuchach</DialogTitle>
+            <DialogTitle className="sr-only">Maksymalna zabudowa górek w Podjuchach</DialogTitle>
             <DialogDescription className="sr-only">
-              Wizualizacja maksymalnej zabudowy Górek w Podjuchach według przyjętego planu ogólnego.
+              Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego.
             </DialogDescription>
             <img
               src={gorkiMaksZabudowa.url}
-              alt="Wizualizacja maksymalnej zabudowy Górek w Podjuchach według przyjętego planu ogólnego"
+              alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
               className="w-full h-auto block rounded-md"
             />
             <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
