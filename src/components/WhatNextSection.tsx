@@ -38,7 +38,7 @@ const WhatNextSection = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map(({ icon: Icon, title, body }) => (
             <div key={title} className="bg-card rounded-2xl p-6 border border-border flex flex-col">
               <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4">
