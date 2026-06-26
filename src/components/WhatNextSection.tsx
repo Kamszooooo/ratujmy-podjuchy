@@ -1,4 +1,4 @@
-import { Eye, Map, Trees } from "lucide-react";
+import { Eye, Map, Sprout } from "lucide-react";
 
 const items = [
   {
@@ -17,7 +17,7 @@ const items = [
     body: "Przed przyjęciem planu, próbując uzasadnić odrzucenie naszej propozycji, politycy i urzędnicy deklarowali, że skala osiedla TBS zostanie znacznie ograniczona względem pierwotnego projektu. Padały zapowiedzi ograniczenia liczby mieszkań nawet o połowę. Obiecywano też zachowanie korytarza ekologicznego między ul. Ukośną a ul. Olkuską.",
   },
   {
-    icon: Trees,
+    icon: Sprout,
     title: "Drobny sukces za autostradą",
     body: "Nasze 247 uwag w sprawie terenów za autostradą A6 przyniosło efekt wykreślenia z nich funkcji składów i magazynów. Niestety pozostawiono strefę usług zamiast strefy zieleni z usługami sportu i rekreacji.",
   },
