@@ -27,7 +27,7 @@ const CityResponseSection = () => {
           </p>
 
           <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
-            Fragment{" "}
+            Fragment przyjętego{"\u00A0"}
             <a
               href="https://cdn.um.szczecin.pl/httpfiles/projekt_133.pdf"
               target="_blank"
