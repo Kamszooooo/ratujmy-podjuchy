@@ -1,8 +1,8 @@
-import { Eye, Building2, Trees } from "lucide-react";
+import { Eye, Map, Trees } from "lucide-react";
 
 const items = [
   {
-    icon: Building2,
+    icon: Map,
     title: "Plan ogólny dopuszcza, ale nie nakazuje",
     body: (
       <>
