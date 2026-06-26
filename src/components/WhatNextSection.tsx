@@ -32,12 +32,12 @@ const WhatNextSection = () => {
   return (
     <section className="px-4 bg-background pt-0 pb-[60px]">
       <div className="max-w-4xl mx-auto">
-        <div className="rounded-3xl p-6 md:p-10 border-2 border-primary/40 bg-primary/5 shadow-xl shadow-primary/10">
+        <div className="rounded-3xl p-6 md:p-10 border-2 border-border bg-muted/40 shadow-xl shadow-foreground/5">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-4xl font-extrabold leading-tight text-foreground">
               Co dalej?
             </h2>
-            <div className="w-16 h-1 bg-primary mx-auto mt-4 rounded-full" />
+            <div className="w-16 h-1 bg-muted-foreground/40 mx-auto mt-4 rounded-full" />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
