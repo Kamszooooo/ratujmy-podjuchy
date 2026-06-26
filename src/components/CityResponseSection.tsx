@@ -16,7 +16,7 @@ const CityResponseSection = () => {
 
           <h2 className="text-2xl md:text-4xl font-extrabold leading-tight text-foreground mb-6">
             Prezydent i radni{" "}
-            <span className="text-destructive underline decoration-destructive/60 decoration-4 underline-offset-4">
+            <span className="underline decoration-destructive decoration-4 underline-offset-4">
               zignorowali głos mieszkańców
             </span>{" "}
             w{"\u00A0"}sprawie TBS-ów.
