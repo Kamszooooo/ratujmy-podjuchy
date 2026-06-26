@@ -3,7 +3,7 @@ import { Eye, Building2, Trees } from "lucide-react";
 const items = [
   {
     icon: Building2,
-    title: "Plan dopuszcza, nie nakazuje",
+    title: "Plan ogólny dopuszcza, ale nie nakazuje",
     body: (
       <>
         Profil funkcjonalny strefy 1386SW w przyjętym planie ogólnym pozwala na zabudowę wielorodzinną,{" "}
