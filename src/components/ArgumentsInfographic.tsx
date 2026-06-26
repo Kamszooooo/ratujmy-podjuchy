@@ -48,7 +48,7 @@ const ArgumentsInfographic = () => {
       </div>
 
       {/* Skala inwestycji */}
-      <div className="bg-gradient-to-br from-primary/5 via-card to-accent/5 border border-border rounded-2xl p-6 md:p-8">
+      <div className="bg-muted/40 border border-border rounded-2xl p-6 md:p-8">
         <div className="flex items-center gap-2 mb-5">
           <TrendingUp className="w-5 h-5 text-destructive" />
           <h4 className="font-bold text-lg text-foreground">Skala planowanej zabudowy</h4>
