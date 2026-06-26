@@ -1,4 +1,4 @@
-import { Eye, Map, Sprout } from "lucide-react";
+import { Eye, Map, Sprout, Megaphone } from "lucide-react";
 
 const items = [
   {
@@ -10,6 +10,11 @@ const items = [
         <strong className="font-semibold text-foreground">ale jej nie nakazuje!</strong> Dopuszcza też zabudowę jednorodzinną i tereny zieleni. O tym, co naprawdę powstanie, zdecyduje plan miejscowy (MPZP bądź ZPI), <strong className="font-semibold text-foreground">a o jego kształcie zdecyduje siła naszego nacisku</strong>.
       </>
     ),
+  },
+  {
+    icon: Megaphone,
+    title: "Nie odpuszczamy",
+    body: "Działamy dalej przeciwko budowie blokowiska TBS na górkach w Podjuchach. Wkrótce poinformujemy o naszych kolejnych inicjatywach.",
   },
   {
     icon: Eye,
