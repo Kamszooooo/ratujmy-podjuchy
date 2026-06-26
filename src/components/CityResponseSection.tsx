@@ -72,10 +72,12 @@ const CityResponseSection = () => {
 
         </div>
 
-        <div className="flex flex-col items-center pt-10 pb-2 text-muted-foreground">
-          <p className="text-sm md:text-base font-semibold uppercase tracking-widest mb-2">
-            Nie odpuszczamy. Bloki na górkach jeszcze nie są przesądzone!
+        <div className="mt-10 rounded-2xl border-2 border-primary bg-primary/10 px-6 py-6 md:px-8 md:py-8 shadow-lg shadow-primary/10">
+          <p className="text-xl md:text-3xl font-extrabold leading-tight text-foreground text-center">
+            Nie odpuszczamy. <span className="text-primary">Bloki na górkach jeszcze nie są przesądzone!</span>
           </p>
+        </div>
+        <div className="flex justify-center pt-4 pb-2 text-muted-foreground">
           <ChevronDown className="w-6 h-6 animate-bounce" aria-hidden="true" />
         </div>
       </div>
