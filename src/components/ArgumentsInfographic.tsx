@@ -66,14 +66,14 @@ const ArgumentsInfographic = () => {
             <div className="text-center md:text-left md:border-l md:border-border md:pl-6">
             <div className="text-2xl font-bold text-foreground md:text-2xl">560 <span className="text-lg md:text-xl">mieszkań</span></div>
               <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-                planuje wybudować TBS między ul. Ukośną a autostradą
+                planuje wybudować TBS między ul. Ukośną a autostradą
               </p>
             </div>
 
             <div className="text-center md:text-left border-l border-border pl-4 md:pl-6">
               <div className="text-2xl font-bold text-foreground md:text-2xl">~500 <span className="text-lg md:text-xl">mieszkań</span></div>
               <p className="text-xs md:text-sm text-muted-foreground leading-tight">
-                może dodatkowo powstać między ul. Ukośną a Olkuską
+                może dodatkowo powstać między ul. Ukośną a Olkuską
               </p>
             </div>
           </div>

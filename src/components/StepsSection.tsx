@@ -2,8 +2,8 @@ import { Download, FileText, Users, BarChart3 } from "lucide-react";
 
 const drafts = [
   {
-    title: "Teren między ul. Sąsiedzką a ul. Wschodnią (TBS-y)",
-    description: "Sprzeciw wobec strefy zabudowy wielorodzinnej, obejmującej planowane osiedle TBS i miejską działkę między ul. Ukośną a ul. Olkuską.",
+    title: "Teren między ul. Sąsiedzką a ul. Wschodnią (TBS-y)",
+    description: "Sprzeciw wobec strefy zabudowy wielorodzinnej, obejmującej planowane osiedle TBS i miejską działkę między ul. Ukośną a ul. Olkuską.",
     href: "/files/Szkic_uwagi.pdf",
     count: 734,
     countLabel: "uwagi",
