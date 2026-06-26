@@ -47,7 +47,7 @@ const FloatingCityReplyBanner = () => {
       >
         <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
         <span className="text-sm sm:text-base md:text-lg font-extrabold leading-snug text-left">
-          Wzywamy Radę Miasta do skierowania projektu planu ogólnego do dalszych prac i uwzględnienia naszych postulatów!
+          Plan ogólny przyjęty. Nie odpuszczamy — przeczytaj, co dalej.
         </span>
       </a>
     </div>

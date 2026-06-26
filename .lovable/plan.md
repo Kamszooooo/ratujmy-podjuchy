@@ -1,28 +1,36 @@
-## Cel
+## Kontekst
 
-Zachować obecny układ (2 karty pobrania + szeroka karta petycji + szeroka karta ankiety), tylko ujednolicić rytm wizualny i poprawić logikę hierarchii w `src/components/StepsSection.tsx`.
+Rada Miasta przyjęła plan ogólny. Strona w obecnej formie jest „przedwyborcza" — mówi o nadchodzącej sesji (24 czerwca), wzywa Radę do skierowania planu do dalszych prac, pokazuje uwagi miasta jako zapowiedź. To wszystko jest już nieaktualne. Trzeba przestawić narrację z „zatrzymajmy to" na „nie odpuszczamy — walka trwa".
 
-## Zmiany
+## Co zmieniam
 
-1. **Wspólny język liczb** — wszystkie cztery statystyki (734, 247, 1971, 99%) dostają ten sam styl: `font-extrabold tracking-tight text-primary`, ten sam wzór "duża liczba + drobna etykieta pod nią". Dziś każda wygląda inaczej.
+### 1. `CityResponseSection.tsx` — z „zignorują" na „zignorowali"
+- Czerwony badge „Już w środę, 24 czerwca" → **„Plan ogólny przyjęty"** (lub data sesji, jeśli ją znamy — domyślnie zostawiam ogólny komunikat).
+- Nagłówek: „Władze miasta **planują całkowicie zignorować**…" → **„Prezydent i radni całkowicie zignorowali głos mieszkańców** w sprawie TBS-ów."
+- Pod cytatem z projektu uchwały dodaję krótki akapit: uwagi nieuwzględnione, strefa 1386SW utrzymana, obniżenie wskaźnika z 1,6 do 1,2 bez znaczenia (oryginalny projekt TBS i tak ma niższą intensywność).
+- Dolny czerwony pasek „Wzywamy Radę Miasta…" zmieniam na **„Nie odpuszczamy. Kontynuujemy sprzeciw — bloki na górkach jeszcze nie są przesądzone."** + krótkie wyjaśnienie, że plan dopuszcza zabudowę wielorodzinną, ale jej nie nakazuje (możliwa też zabudowa jednorodzinna / zieleń).
 
-2. **Karty pobrania (734 / 247)** — przestawiam wewnętrzną kolejność na bardziej logiczną:
-   - na górze duża liczba + etykieta "złożonych uwag" (dziś jest na dole, schowana pod przyciskiem),
-   - w środku tytuł terenu + krótki opis,
-   - na dole przycisk "Pobierz szkic" jako jasna akcja.
-   
-   Dzięki temu każda karta opowiada: "tyle już złożyliśmy → o co chodzi → dołóż swoje".
+### 2. Nowa sekcja „Co dalej?" (między `CityResponseSection` a `PhotosSection`)
+Trzy bloki:
+- **Trzymamy polityków za słowo** — przypominamy publiczne deklaracje (ograniczenie skali osiedla TBS nawet o połowę, zachowanie korytarza ekologicznego Ukośna–Olkuska).
+- **Plan dopuszcza, nie nakazuje** — strefa 1386SW pozwala też na zabudowę jednorodzinną i tereny zieleni; o tym, co powstanie, zdecyduje plan miejscowy i nasz nacisk.
+- **Drobny sukces za autostradą** — 247 uwag dało efekt: wykreślono składy i magazyny. Dalej walczymy o strefę zieleni z usługami sportu i rekreacji zamiast strefy usługowej.
 
-3. **Karta petycji (1971)** — zostaje pełna szerokość i obecny gradient. Powiększam liczbę, dorzucam małą etykietę "Petycja mieszkańców" nad nią dla kontekstu. Ikona ludzi zostaje.
+### 3. `FloatingCityReplyBanner.tsx`
+Tekst „Wzywamy Radę Miasta…" → **„Plan ogólny przyjęty. Nie odpuszczamy — czytaj, co dalej."** Klik dalej scrolluje do `#city-reply`.
 
-4. **Karta ankiety (99%)** — zostaje pełna szerokość i kółko postępu. Wyrównuję wielkość liczby do karty petycji, lekko stonowuję tło (`bg-muted/40`), żeby petycja pozostała wizualnym akcentem, a ankieta wyglądała jak jej spokojniejsze uzupełnienie.
+### 4. `ThreatSection.tsx` — drobna aktualizacja czasu
+„W konsultacjach społecznych… złożyliśmy prawie tysiąc uwag. Możemy jeszcze uratować Podjuchy!" → przeformułowanie tak, by nie sugerowało, że konsultacje trwają: „Złożyliśmy prawie tysiąc uwag — miasto je zignorowało, ale walka o Podjuchy się nie kończy."
 
-5. **Rytm** — ujednolicam `gap-4` między wszystkimi blokami, takie same zaokrąglenia `rounded-2xl`, jednolite obramowania `border-border` (poza kartą petycji, która zostaje akcentowa).
+### 5. `StepsSection.tsx` — tytuł
+„Złożyliśmy około **tysiąca** uwag do planu ogólnego!" zostawiam — liczby (734, 247, 1971, 99%) są nadal aktualne i mocne. Bez zmian poza ewentualną drobną korektą podtytułu, jeśli będzie potrzebna po zmianach w sekcji powyżej.
 
-## Czego nie ruszam
+## Czego NIE ruszam
 
-- Palety (forest-green tokeny z `index.css`).
-- Nagłówka "Złożyliśmy około tysiąca uwag…".
-- Liczby i kolejności bloków.
-- Tekstów PL i linków do PDF.
-- Innych sekcji strony.
+- Hero, mapa, argumenty, zdjęcia, stopka — bez zmian.
+- Liczby, linki do PDF-ów, petycji, ankiety.
+- Tokenów kolorów / typografii.
+
+## Pytanie do Ciebie
+
+Czy chcesz, żebym **usunął przyciski „Pobierz szkic uwagi"** z `StepsSection` (konsultacje się skończyły, więc szkice nie służą już do składania), czy **zostawić je jako archiwum / dowód tego, co złożyliśmy**? Domyślnie zostawiam — pokazują skalę akcji.
