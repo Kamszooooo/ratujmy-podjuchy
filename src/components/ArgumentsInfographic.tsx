@@ -4,7 +4,7 @@ const ArgumentsInfographic = () => {
   return (
     <div className="max-w-5xl mx-auto">
       <h3 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-2">
-        Dlaczego tak proponujemy?
+        Dlaczego mówimy <span className="text-destructive">NIE</span>?
       </h3>
       <div className="w-16 h-1 bg-primary mx-auto mb-8 rounded-full" />
 
