@@ -12,7 +12,7 @@ const items = [
     ),
   },
   {
-    icon: Handshake,
+    icon: Eye,
     title: "Pamiętam o obietnicach",
     body: "Przed przyjęciem planu, próbując uzasadnić odrzucenie naszej propozycji, politycy i urzędnicy deklarowali, że skala osiedla TBS zostanie znacznie ograniczona względem pierwotnego projektu. Padały zapowiedzi ograniczenia liczby mieszkań nawet o połowę. Obiecywano też zachowanie korytarza ekologicznego między ul. Ukośną a ul. Olkuską.",
   },
