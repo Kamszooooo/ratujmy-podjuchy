@@ -3,8 +3,8 @@ import { Handshake, Building2, Trees } from "lucide-react";
 const items = [
   {
     icon: Handshake,
-    title: "Trzymamy polityków za słowo",
-    body: "Przed głosowaniem politycy i urzędnicy publicznie deklarowali, że skala osiedla TBS zostanie znacznie ograniczona względem pierwotnego projektu — padały zapowiedzi ograniczenia nawet o połowę. Obiecano też zachowanie korytarza ekologicznego między ul. Ukośną a ul. Olkuską. Będziemy z tych deklaracji rozliczać.",
+    title: "Trzymamy polityków za słowo, choć oni nas nie słuchają",
+    body: "Przed przyjęciem planu, próbując uzasadnić odrzucenie naszej propozycji, politycy i urzędnicy deklarowali, że skala osiedla TBS zostanie znacznie ograniczona względem pierwotnego projektu. Padały zapowiedzi ograniczenia liczby mieszkań nawet o połowę. Obiecywano też zachowanie korytarza ekologicznego między ul. Ukośną a ul. Olkuską.",
   },
   {
     icon: Building2,
@@ -19,7 +19,7 @@ const items = [
   {
     icon: Trees,
     title: "Drobny sukces za autostradą",
-    body: "Nasze 247 uwag w sprawie terenów za autostradą A6 dało efekt: wykreślono z nich funkcję składów i magazynów. Niestety pozostawiono strefę usług zamiast strefy zieleni z usługami sportu i rekreacji.",
+    body: "Nasze 247 uwag w sprawie terenów za autostradą A6 przyniosło efekt wykreślenia z nich funkcji składów i magazynów. Niestety pozostawiono strefę usług zamiast strefy zieleni z usługami sportu i rekreacji.",
   },
 ];
 
