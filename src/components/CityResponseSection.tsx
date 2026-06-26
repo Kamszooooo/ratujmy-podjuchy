@@ -72,14 +72,24 @@ const CityResponseSection = () => {
 
         </div>
 
-        <div className="mt-10 rounded-2xl border-2 border-foreground/15 bg-muted/40 px-6 py-6 md:px-8 md:py-8">
-          <p className="text-xl md:text-3xl font-extrabold leading-tight text-foreground text-center">
-            Nie odpuszczamy. <span className="text-destructive">Bloki na górkach jeszcze nie są przesądzone!</span>
-          </p>
+        {/* Pomost wizualny łączący sekcję z "Co dalej?" */}
+        <div className="relative mt-10">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-destructive text-destructive-foreground text-[11px] md:text-xs font-bold uppercase tracking-widest shadow-md shadow-destructive/20 whitespace-nowrap">
+              <AlertTriangle className="w-3.5 h-3.5" />
+              Nasza odpowiedź
+            </span>
+          </div>
+          <div className="rounded-2xl border-2 border-destructive/30 bg-gradient-to-b from-destructive/[0.08] via-background to-muted/60 px-6 pt-9 pb-5 md:px-8 md:pt-10 md:pb-6 shadow-lg shadow-destructive/10">
+            <p className="text-xl md:text-3xl font-extrabold leading-tight text-foreground text-center">
+              Nie odpuszczamy. <span className="text-destructive">Bloki na górkach jeszcze nie są przesądzone!</span>
+            </p>
+            <div className="flex justify-center mt-4 text-muted-foreground">
+              <ChevronDown className="w-6 h-6 animate-bounce" aria-hidden="true" />
+            </div>
+          </div>
         </div>
-        <div className="flex justify-center pt-4 pb-2 text-muted-foreground">
-          <ChevronDown className="w-6 h-6 animate-bounce" aria-hidden="true" />
-        </div>
+
       </div>
     </section>
   );
