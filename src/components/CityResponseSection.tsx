@@ -10,17 +10,21 @@ const CityResponseSection = () => {
           <div className="flex items-center gap-2 mb-5">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive text-destructive-foreground text-xs font-bold uppercase tracking-widest">
               <AlertTriangle className="w-3.5 h-3.5" />
-              Już w środę, 24 czerwca
+              Plan ogólny przyjęty
             </span>
           </div>
 
           <h2 className="text-2xl md:text-4xl font-extrabold leading-tight text-foreground mb-6">
-            Władze miasta{" "}
+            Prezydent i radni{" "}
             <span className="text-destructive underline decoration-destructive/60 decoration-4 underline-offset-4">
-              planują całkowicie zignorować głos mieszkańców
+              całkowicie zignorowali głos mieszkańców
             </span>{" "}
             w sprawie TBS-ów.
           </h2>
+
+          <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
+            Na nic się zdało <strong>1971 podpisów</strong> pod petycją i <strong>734 uwagi</strong> złożone do projektu planu. Cały obszar między ul. Wschodnią, Olkuską, Sąsiedzką i autostradą dalej jest przewidziany pod strefę z zabudową wielorodzinną (1386SW). Obniżenie wskaźnika intensywności zabudowy z 1,6 do 1,2 jest bez znaczenia — nawet oryginalny projekt TBS ma niższą intensywność, a i tak jest zdecydowanie za duży jak na okolicę domów jednorodzinnych.
+          </p>
 
           <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
             Fragment{" "}
