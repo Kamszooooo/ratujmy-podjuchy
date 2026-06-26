@@ -78,7 +78,7 @@ const StepsSection = () => {
               1971
             </div>
             <div className="text-sm text-foreground/80 mt-2 leading-snug">
-              podpisów pod <a href="https://www.petycjeonline.com/petycja_w_sprawie_uwzgldnienia_wnioskow_mieszkacow_do_planu_ogolnego_miasta_szczecin_dla_obszaru_podjuch" target="_blank" rel="noopener noreferrer" className="underline decoration-primary decoration-2 underline-offset-2 font-semibold text-primary hover:opacity-80">petycją</a> przeciwko zabudowie wielorodzinnej na Górkach
+              podpisów pod <a href="https://www.petycjeonline.com/petycja_w_sprawie_uwzgldnienia_wnioskow_mieszkacow_do_planu_ogolnego_miasta_szczecin_dla_obszaru_podjuch" target="_blank" rel="noopener noreferrer" className="underline decoration-primary decoration-2 underline-offset-2 font-semibold text-primary hover:opacity-80">petycją</a> przeciwko zabudowie wielorodzinnej na górkach
             </div>
           </div>
         </div>
