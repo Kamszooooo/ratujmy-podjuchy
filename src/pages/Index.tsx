@@ -19,7 +19,7 @@ const Index = () => {
         <link rel="canonical" href="https://ratujmypodjuchy.pl/" />
         <meta property="og:url" content="https://ratujmypodjuchy.pl/" />
         <meta property="og:title" content="Ratujmy Podjuchy — NIE dla TBS na górkach!" />
-        <meta property="og:description" content="Władze Szczecina chcą budowy bloków wielorodzinnych w górnej części Podjuch, na terenie między ul. Sąsiedzką a ul. Wschodnią. To absurdalny pomysł!" />
+        <meta property="og:description" content="Władze Szczecina chcą budowy bloków wielorodzinnych w górnej części Podjuch, na terenie między ul. Sąsiedzką a ul. Wschodnią. To absurdalny pomysł!" />
       </Helmet>
       <HeroSection />
       <ThreatSection />
