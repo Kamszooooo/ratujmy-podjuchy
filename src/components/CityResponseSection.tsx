@@ -21,7 +21,7 @@ const CityResponseSection = () => {
           </h2>
 
           <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
-            Na nic się zdało <strong>1971 podpisów</strong> pod petycją i <strong>734 uwagi</strong> złożone do projektu planu. Nasze uwagi mają oficjalny status <strong className="relative inline-block bg-destructive/25 px-1.5 py-0.5 -rotate-1 [box-decoration-break:clone] [-webkit-box-decoration-break:clone] rounded-sm">całkowicie nieuwzględnionych</strong>. Cały obszar między ul. Wschodnią, Olkuską, Sąsiedzką i autostradą został przewidziany w planie ogólnym pod strefę z zabudową wielorodzinną (1386SW).
+            Na nic się zdało <strong>1971 podpisów</strong> pod petycją i <strong>734 uwagi</strong> złożone do projektu planu ogólnego. Nasze uwagi mają oficjalny status <strong className="relative inline-block bg-destructive/25 px-1.5 py-0.5 -rotate-1 [box-decoration-break:clone] [-webkit-box-decoration-break:clone] rounded-sm">całkowicie nieuwzględnionych</strong>. Cały obszar między ul. Wschodnią, Olkuską, Sąsiedzką i autostradą został przewidziany w przyjętym planie pod strefę z zabudową wielorodzinną (1386SW).
           </p>
 
           <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
