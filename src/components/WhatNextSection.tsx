@@ -2,11 +2,6 @@ import { Handshake, Building2, Trees } from "lucide-react";
 
 const items = [
   {
-    icon: Handshake,
-    title: "Pamiętam o obietnicach",
-    body: "Przed przyjęciem planu, próbując uzasadnić odrzucenie naszej propozycji, politycy i urzędnicy deklarowali, że skala osiedla TBS zostanie znacznie ograniczona względem pierwotnego projektu. Padały zapowiedzi ograniczenia liczby mieszkań nawet o połowę. Obiecywano też zachowanie korytarza ekologicznego między ul. Ukośną a ul. Olkuską.",
-  },
-  {
     icon: Building2,
     title: "Plan dopuszcza, nie nakazuje",
     body: (
@@ -15,6 +10,11 @@ const items = [
         <strong className="font-semibold text-foreground">ale jej nie nakazuje!</strong> Dopuszcza też zabudowę jednorodzinną i tereny zieleni. O tym, co naprawdę powstanie, zdecyduje plan miejscowy (MPZP bądź ZPI), a o jego kształcie zdecyduje siła naszego nacisku.
       </>
     ),
+  },
+  {
+    icon: Handshake,
+    title: "Pamiętam o obietnicach",
+    body: "Przed przyjęciem planu, próbując uzasadnić odrzucenie naszej propozycji, politycy i urzędnicy deklarowali, że skala osiedla TBS zostanie znacznie ograniczona względem pierwotnego projektu. Padały zapowiedzi ograniczenia liczby mieszkań nawet o połowę. Obiecywano też zachowanie korytarza ekologicznego między ul. Ukośną a ul. Olkuską.",
   },
   {
     icon: Trees,
