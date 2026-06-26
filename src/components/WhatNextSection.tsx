@@ -1,4 +1,4 @@
-import { Eye, Map, Sprout } from "lucide-react";
+import { Eye, Map, Sprout, Megaphone } from "lucide-react";
 
 const items = [
   {
@@ -10,6 +10,11 @@ const items = [
         <strong className="font-semibold text-foreground">ale jej nie nakazuje!</strong> Dopuszcza też zabudowę jednorodzinną i tereny zieleni. O tym, co naprawdę powstanie, zdecyduje plan miejscowy (MPZP bądź ZPI), <strong className="font-semibold text-foreground">a o jego kształcie zdecyduje siła naszego nacisku</strong>.
       </>
     ),
+  },
+  {
+    icon: Megaphone,
+    title: "Nie odpuszczamy",
+    body: "Działamy dalej przeciwko budowie blokowiska TBS na górkach w Podjuchach. Wkrótce poinformujemy o naszych kolejnych inicjatywach.",
   },
   {
     icon: Eye,
@@ -33,7 +38,7 @@ const WhatNextSection = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map(({ icon: Icon, title, body }) => (
             <div key={title} className="bg-card rounded-2xl p-6 border border-border flex flex-col">
               <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4">
