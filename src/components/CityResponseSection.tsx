@@ -68,7 +68,7 @@ const CityResponseSection = () => {
 
           <div className="mt-8 p-5 md:p-6 rounded-2xl bg-destructive text-destructive-foreground">
             <p className="text-lg md:text-2xl font-extrabold leading-snug text-center">
-              Nie odpuszczamy. Bloki na górkach jeszcze nie są przesądzone.
+              Nie odpuszczamy. Bloki na górkach jeszcze nie są przesądzone!
             </p>
           </div>
         </div>
