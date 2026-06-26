@@ -70,18 +70,11 @@ const CityResponseSection = () => {
             Obniżenie wskaźnika intensywności zabudowy z 1,6 do 1,2 w przyjętej wersji planu jest bez znaczenia — nawet oryginalny projekt TBS ma intensywność niższą niż 1,2, a i tak jest on niedopasowany do okolicy z domami jednorodzinnymi.
           </p>
 
-
-
-          <div className="mt-8 p-5 md:p-6 rounded-2xl bg-destructive text-destructive-foreground">
-            <p className="text-lg md:text-2xl font-extrabold leading-snug text-center">
-              Nie odpuszczamy. Bloki na górkach jeszcze nie są przesądzone!
-            </p>
-          </div>
         </div>
 
         <div className="flex flex-col items-center pt-10 pb-2 text-muted-foreground">
           <p className="text-sm md:text-base font-semibold uppercase tracking-widest mb-2">
-            Przegrana bitwa to nie przegrana wojna
+            Nie odpuszczamy. Bloki na górkach jeszcze nie są przesądzone!
           </p>
           <ChevronDown className="w-6 h-6 animate-bounce" aria-hidden="true" />
         </div>
