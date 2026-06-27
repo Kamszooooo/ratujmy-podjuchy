@@ -269,6 +269,7 @@ const FacebookFeedSection = () => {
         )}
 
         {!loading && hasPosts && (
+          <>
           <Carousel
             opts={{
               align: "start",
@@ -331,6 +332,7 @@ const FacebookFeedSection = () => {
               ))}
             </div>
           )}
+          </>
         )}
 
         {!loading && !hasPosts && (
