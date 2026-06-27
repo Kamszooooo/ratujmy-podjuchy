@@ -108,6 +108,27 @@ function PostImages({ urls, href }: { urls: string[]; href: string }) {
   );
 }
 
+function PostBody({ full, shown, truncated }: { full: string; shown: string; truncated: boolean }) {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line mb-4 flex-1">
+      {expanded || !truncated ? full : shown}
+      {truncated && (
+        <>
+          {" "}
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="text-primary hover:underline font-medium"
+          >
+            {expanded ? "zwiń" : "czytaj dalej"}
+          </button>
+        </>
+      )}
+    </p>
+  );
+}
+
 const FacebookFeedSection = () => {
   const [posts, setPosts] = useState<FbPost[] | null>(null);
   const [loading, setLoading] = useState(true);
@@ -191,7 +212,8 @@ const FacebookFeedSection = () => {
         {!loading && hasPosts && (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {posts!.map((p) => {
-              const { shown, truncated } = truncate(p.message ?? "");
+              const full = p.message ?? "";
+              const { shown, truncated } = truncate(full);
               return (
                 <article
                   key={p.id}
@@ -204,24 +226,7 @@ const FacebookFeedSection = () => {
                     <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
                       {formatRelative(p.created_time)}
                     </div>
-                    {shown && (
-                      <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line mb-4 flex-1">
-                        {shown}
-                        {truncated && p.permalink_url && (
-                          <>
-                            {" "}
-                            <a
-                              href={p.permalink_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary hover:underline font-medium"
-                            >
-                              czytaj dalej
-                            </a>
-                          </>
-                        )}
-                      </p>
-                    )}
+                    {full && <PostBody full={full} shown={shown} truncated={truncated} />}
                     {p.permalink_url && (
                       <a
                         href={p.permalink_url}
