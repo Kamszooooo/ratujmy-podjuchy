@@ -9,6 +9,7 @@ import CityResponseSection from "@/components/CityResponseSection";
 import AboutFooter from "@/components/AboutFooter";
 import FloatingCityReplyBanner from "@/components/FloatingCityReplyBanner";
 import WhatNextSection from "@/components/WhatNextSection";
+import FacebookFeedSection from "@/components/FacebookFeedSection";
 
 
 
@@ -30,6 +31,7 @@ const Index = () => {
       <CityResponseSection />
       <WhatNextSection />
       <PhotosSection />
+      <FacebookFeedSection />
       <AboutFooter />
       <FloatingCityReplyBanner />
     </div>

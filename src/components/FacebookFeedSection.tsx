@@ -161,16 +161,18 @@ const FacebookFeedSection = () => {
     <section className="px-4 py-16 bg-gradient-to-b from-background to-primary/5">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide mb-4">
-            <Facebook className="w-3.5 h-3.5" />
-            Aktualności
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Posty z naszego profilu
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Posty z Facebooka
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Najnowsze wpisy z profilu „Ratujmy Podjuchy" na Facebooku — bez śledzących wtyczek i&nbsp;ciasteczek Meta.
-          </p>
+          <a
+            href={PAGE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary text-sm font-medium transition-colors"
+          >
+            <Facebook className="w-4 h-4" />
+            Ratujmy Podjuchy na Facebooku
+          </a>
         </div>
 
         {loading && (
