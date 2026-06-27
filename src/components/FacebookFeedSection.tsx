@@ -275,6 +275,7 @@ const FacebookFeedSection = () => {
               loop: posts!.length > 1,
             }}
             plugins={[WheelGesturesPlugin()]}
+            setApi={setApi}
             className="w-full"
           >
             <CarouselContent className="-ml-4">
