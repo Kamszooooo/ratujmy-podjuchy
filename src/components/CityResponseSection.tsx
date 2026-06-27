@@ -46,10 +46,6 @@ const CityResponseSection = () => {
                   alt="Fragment projektu uchwały: Uwaga nieuwzględniona. Zachowuje się strefę SW – strefa wielofunkcyjna z zabudową mieszkaniową wielorodzinną."
                   className="w-full h-auto block"
                 />
-                <div className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-background/90 backdrop-blur text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
-                  <ZoomIn className="w-3.5 h-3.5" />
-                  Powiększ
-                </div>
               </figure>
             </DialogTrigger>
             <DialogContent className="max-w-3xl">
