@@ -1,4 +1,4 @@
-import { Eye, Map, Contrast, Megaphone } from "lucide-react";
+import { Eye, Map, Contrast, Megaphone, ExternalLink } from "lucide-react";
 
 const items = [
   {
@@ -30,9 +30,10 @@ const items = [
           href="https://wiadomosci.szczecin.eu/artykul/mieszkalnictwo/wiemy-juz-jak-bedzie-wygladalo-nowe-osiedle-w-podjuchach"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-2 font-semibold text-foreground hover:opacity-80"
+          className="inline-flex items-center gap-1 underline underline-offset-2 font-semibold text-foreground hover:opacity-80"
         >
           zwycięskiego projektu
+          <ExternalLink className="w-3 h-3" />
         </a>{" "}
         (padały zapowiedzi ograniczenia liczby mieszkań o prawie połowę, z 560 do około 300). Mówiono też o zachowaniu korytarza ekologicznego w postaci zadrzewionego terenu między ul.{" "}Ukośną a ul.{" "}Olkuską.
       </>

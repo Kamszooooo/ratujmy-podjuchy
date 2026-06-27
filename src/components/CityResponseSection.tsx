@@ -1,4 +1,4 @@
-import { AlertTriangle, ZoomIn, ChevronDown } from "lucide-react";
+import { AlertTriangle, ZoomIn, ChevronDown, ExternalLink } from "lucide-react";
 import uwagaNieuwzgledniona from "@/assets/uwaga-nieuwzgledniona.png.asset.json";
 import gorkiMaksZabudowa from "@/assets/symulacja-zabudowy-cropped.jpg.asset.json";
 import projektTbsCropped from "@/assets/projekt-tbs-cropped.png.asset.json";
@@ -31,9 +31,10 @@ const CityResponseSection = () => {
               href="https://cdn.um.szczecin.pl/httpfiles/projekt_133.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 font-semibold hover:opacity-80"
+              className="inline-flex items-center gap-1 underline underline-offset-2 font-semibold hover:opacity-80"
             >
               projektu uchwały w sprawie planu ogólnego
+              <ExternalLink className="w-3 h-3" />
             </a>{" "}
             (s. 112):
           </p>
