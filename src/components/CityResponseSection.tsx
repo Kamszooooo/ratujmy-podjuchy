@@ -126,7 +126,7 @@ const CityResponseSection = () => {
             <DialogContent className="max-w-5xl">
               <DialogTitle className="sr-only">Projekt osiedla TBS autorstwa 22Architekci</DialogTitle>
               <DialogDescription className="sr-only">
-                Makieta przedstawiająca zwycięski projekt osiedla TBS z naniesionymi granicami strefy 1386SW i terenów TBS.
+                Zwycięski projekt osiedla TBS z naniesionymi granicami strefy 1386SW i terenów TBS.
               </DialogDescription>
               <img
                 src={projektTbsCropped.url}
