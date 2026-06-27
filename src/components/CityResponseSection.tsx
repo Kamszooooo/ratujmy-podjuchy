@@ -108,7 +108,7 @@ const CityResponseSection = () => {
 
           <Dialog>
             <DialogTrigger asChild>
-              <figure className="group relative w-full h-full flex flex-col rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
+              <figure className="group relative w-full rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
                 <img
                   src={projektTbsCropped.url}
                   alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów TBS"
