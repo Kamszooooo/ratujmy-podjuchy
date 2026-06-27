@@ -242,10 +242,14 @@ const AdminPage = () => {
 
   async function handleDelete(id: string) {
     if (!confirm("Na pewno usunąć ten post?")) return;
+    const post = posts.find((p) => p.id === id);
     const { error } = await supabase.from("fb_posts").delete().eq("id", id);
     if (error) {
       toast({ title: "Błąd usuwania", description: error.message, variant: "destructive" });
     } else {
+      if (post?.image_url && !isHttpUrl(post.image_url)) {
+        await supabase.storage.from(IMAGE_BUCKET).remove([post.image_url]);
+      }
       toast({ title: "Usunięto" });
       void loadPosts();
     }
