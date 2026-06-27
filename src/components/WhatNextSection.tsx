@@ -41,7 +41,7 @@ const items = [
   {
     icon: Contrast,
     title: "Drobny sukces za autostradą",
-    body: "Nasze 247 uwag w sprawie terenów za autostradą A6 przyniosło efekt wykreślenia z nich funkcji składów i magazynów. Niestety pozostawiono strefę usług zamiast strefy zieleni z usługami sportu i rekreacji.",
+    body: "Nasze uwagi w sprawie terenów za autostradą A6 przyniosły efekt w postaci wykreślenia z nich funkcji składów i magazynów. Niestety pozostawiono strefę usług zamiast strefy zieleni z usługami sportu i rekreacji.",
   },
 ];
 
