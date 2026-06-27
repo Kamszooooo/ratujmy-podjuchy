@@ -223,6 +223,7 @@ const FacebookFeedSection = () => {
               align: "start",
               loop: posts!.length > 1,
             }}
+            plugins={[WheelGesturesPlugin()]}
             className="w-full"
           >
             <CarouselContent className="-ml-4">
