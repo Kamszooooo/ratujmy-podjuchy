@@ -108,6 +108,27 @@ function PostImages({ urls, href }: { urls: string[]; href: string }) {
   );
 }
 
+function PostBody({ full, shown, truncated }: { full: string; shown: string; truncated: boolean }) {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line mb-4 flex-1">
+      {expanded || !truncated ? full : shown}
+      {truncated && (
+        <>
+          {" "}
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="text-primary hover:underline font-medium"
+          >
+            {expanded ? "zwiń" : "czytaj dalej"}
+          </button>
+        </>
+      )}
+    </p>
+  );
+}
+
 const FacebookFeedSection = () => {
   const [posts, setPosts] = useState<FbPost[] | null>(null);
   const [loading, setLoading] = useState(true);
