@@ -371,14 +371,43 @@ const AdminPage = () => {
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="image_url">URL zdjęcia (opcjonalnie)</Label>
-                  <Input
-                    id="image_url"
-                    type="url"
-                    value={draft.image_url}
-                    onChange={(e) => setDraft({ ...draft, image_url: e.target.value })}
-                    placeholder="https://…"
-                  />
+                  <Label htmlFor="image_file">Zdjęcie (opcjonalnie)</Label>
+                  {imagePreview ? (
+                    <div className="mt-1.5 flex items-start gap-3">
+                      <img
+                        src={imagePreview}
+                        alt="Podgląd"
+                        className="w-32 h-32 object-cover rounded-lg border border-border"
+                      />
+                      <Button type="button" variant="outline" size="sm" onClick={handleImageRemove}>
+                        <X className="w-3.5 h-3.5 mr-1.5" /> Usuń zdjęcie
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="mt-1.5">
+                      <label
+                        htmlFor="image_file"
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-dashed border-border bg-muted/30 hover:bg-muted cursor-pointer text-sm ${uploading ? "opacity-60 pointer-events-none" : ""}`}
+                      >
+                        <Upload className="w-4 h-4" />
+                        {uploading ? "Wgrywanie…" : "Wgraj zdjęcie"}
+                      </label>
+                      <input
+                        id="image_file"
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={(e) => {
+                          const f = e.target.files?.[0];
+                          if (f) void handleImageUpload(f);
+                          e.target.value = "";
+                        }}
+                      />
+                      <p className="text-xs text-muted-foreground mt-1.5">
+                        Zdjęcie jest wgrywane na nasz serwer — bez zewnętrznych adresów.
+                      </p>
+                    </div>
+                  )}
                 </div>
                 <div className="flex gap-2">
                   <Button type="submit" disabled={saving}>
