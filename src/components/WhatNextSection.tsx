@@ -33,6 +33,7 @@ const items = [
           className="inline-flex items-center gap-1 underline underline-offset-2 font-semibold text-foreground hover:opacity-80"
         >
           zwycięskiego projektu
+          <ExternalLink className="w-3 h-3" />
         </a>{" "}
         (padały zapowiedzi ograniczenia liczby mieszkań o prawie połowę, z 560 do około 300). Mówiono też o zachowaniu korytarza ekologicznego w postaci zadrzewionego terenu między ul.{" "}Ukośną a ul.{" "}Olkuską.
       </>

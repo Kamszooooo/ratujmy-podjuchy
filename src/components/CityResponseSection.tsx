@@ -34,6 +34,7 @@ const CityResponseSection = () => {
               className="inline-flex items-center gap-1 underline underline-offset-2 font-semibold hover:opacity-80"
             >
               projektu uchwały w sprawie planu ogólnego
+              <ExternalLink className="w-3 h-3" />
             </a>{" "}
             (s. 112):
           </p>
