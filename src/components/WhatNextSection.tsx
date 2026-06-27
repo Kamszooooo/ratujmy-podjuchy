@@ -47,7 +47,7 @@ const items = [
 
 const WhatNextSection = () => {
   return (
-    <section className="px-4 bg-background pt-0 pb-[60px]">
+    <section className="px-4 bg-background pt-0 pb-8">
       <div className="max-w-4xl mx-auto">
         <div>
 

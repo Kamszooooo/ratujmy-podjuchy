@@ -225,7 +225,7 @@ const FacebookFeedSection = () => {
   const hasPosts = posts && posts.length > 0;
 
   return (
-    <section className="px-4 py-16 bg-gradient-to-b from-background to-primary/5">
+    <section className="px-4 pt-8 pb-16 bg-gradient-to-b from-background to-primary/5">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
