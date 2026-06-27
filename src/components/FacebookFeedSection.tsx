@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Facebook, ExternalLink, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import {
   Carousel,
   CarouselContent,
