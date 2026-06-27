@@ -1,6 +1,6 @@
 import { AlertTriangle, ZoomIn, ChevronDown } from "lucide-react";
 import uwagaNieuwzgledniona from "@/assets/uwaga-nieuwzgledniona.png.asset.json";
-import gorkiMaksZabudowa from "@/assets/gorki-maks-zabudowa.png.asset.json";
+import gorkiMaksZabudowa from "@/assets/gorki-maks-zabudowa.jpg.asset.json";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const CityResponseSection = () => {
