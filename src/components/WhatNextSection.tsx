@@ -51,8 +51,8 @@ const WhatNextSection = () => {
       <div className="max-w-4xl mx-auto">
         <div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            {items.map(({ icon: Icon, title, body }) => (
+      <div className="grid md:grid-cols-2 gap-4">
+        {items.map(({ icon: Icon, title, body }) => (
               <div key={title} className="bg-card rounded-2xl p-6 border border-border flex flex-col">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-muted text-muted-foreground shrink-0">
