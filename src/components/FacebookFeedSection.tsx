@@ -331,7 +331,6 @@ const FacebookFeedSection = () => {
               ))}
             </div>
           )}
-        )}
 
         {!loading && !hasPosts && (
           <div className="bg-card border border-border rounded-2xl p-8 text-center max-w-xl mx-auto">
