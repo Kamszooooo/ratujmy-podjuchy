@@ -112,7 +112,7 @@ const CityResponseSection = () => {
                 <img
                   src={projektTbsCropped.url}
                   alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów TBS"
-                  className="w-full flex-1 object-cover min-h-0 block"
+                  className="w-full aspect-[3/2] object-cover block"
                 />
                 <div className="absolute top-2 right-2 md:top-3 md:right-3 inline-flex items-center gap-1 px-1.5 py-1 md:gap-1.5 md:px-2.5 md:py-1.5 rounded-full bg-background/90 backdrop-blur text-[10px] md:text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
                   <ZoomIn className="w-3 h-3 md:w-3.5 md:h-3.5" />
