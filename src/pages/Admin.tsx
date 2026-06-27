@@ -111,9 +111,46 @@ const AdminPage = () => {
     if (error) {
       toast({ title: "Błąd ładowania", description: error.message, variant: "destructive" });
     } else {
-      setPosts((data ?? []) as Post[]);
+      const list = (data ?? []) as Post[];
+      setPosts(list);
+      const entries = await Promise.all(
+        list
+          .filter((p) => p.image_url)
+          .map(async (p) => [p.id, await resolveImageSrc(p.image_url)] as const),
+      );
+      setThumbs(Object.fromEntries(entries.filter(([, v]) => v)) as Record<string, string>);
     }
     setLoadingPosts(false);
+  }
+
+  async function handleImageUpload(file: File) {
+    setUploading(true);
+    const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const path = `posts/${crypto.randomUUID()}.${ext}`;
+    const { error } = await supabase.storage
+      .from(IMAGE_BUCKET)
+      .upload(path, file, { contentType: file.type, upsert: false });
+    if (error) {
+      toast({ title: "Błąd wgrywania", description: error.message, variant: "destructive" });
+      setUploading(false);
+      return;
+    }
+    // delete old upload if replacing a storage-hosted image
+    if (draft.image_url && !isHttpUrl(draft.image_url)) {
+      await supabase.storage.from(IMAGE_BUCKET).remove([draft.image_url]);
+    }
+    setDraft((d) => ({ ...d, image_url: path }));
+    const preview = await resolveImageSrc(path);
+    setImagePreview(preview);
+    setUploading(false);
+  }
+
+  async function handleImageRemove() {
+    if (draft.image_url && !isHttpUrl(draft.image_url)) {
+      await supabase.storage.from(IMAGE_BUCKET).remove([draft.image_url]);
+    }
+    setDraft((d) => ({ ...d, image_url: "" }));
+    setImagePreview(null);
   }
 
   async function handleAuth(e: FormEvent) {
