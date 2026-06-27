@@ -28,7 +28,7 @@ const AboutFooter = () => {
               <p className="text-base text-muted-foreground leading-relaxed flex flex-wrap items-baseline gap-x-2 gap-y-0">
                 <span className="text-lg font-bold text-foreground whitespace-nowrap">Kamil Szostak</span>
                 <span className="text-border hidden sm:inline">·</span>
-                <span className="uppercase tracking-wider font-bold text-primary text-sm whitespace-nowrap">Autor uwag do planu ogólnego</span>
+                <span className="uppercase tracking-wider font-bold text-primary text-sm whitespace-nowrap">AUTOR STRONY I UWAG DO PLANU OGÓLNEGO</span>
               </p>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed mt-2">
                 Dzieciństwo spędziłem w&nbsp;Podjuchach i&nbsp;już od najmłodszych lat pamiętam oburzenie społeczne, jakie wywoływał plan budowy osiedla TBS. Z&nbsp;wykształcenia jestem prawnikiem, a także informatykiem. Obecnie robię doktorat w&nbsp;Law and Tech Lab na Maastricht University.
