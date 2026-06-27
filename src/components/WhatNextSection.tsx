@@ -32,7 +32,7 @@ const items = [
           rel="noopener noreferrer"
           className="underline underline-offset-2 font-semibold text-foreground hover:opacity-80"
         >
-          pierwotnego projektu
+          zwycięskiego projektu
         </a>{" "}
         (padały zapowiedzi ograniczenia liczby mieszkań o połowę). Mówiono też o zachowaniu korytarza ekologicznego w postaci zadrzewionego terenu między ul.{" "}Ukośną a ul.{" "}Olkuską.
       </>
