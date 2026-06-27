@@ -72,7 +72,7 @@ const CityResponseSection = () => {
 
         </div>
 
-        <div className="grid grid-cols-2 gap-3 md:gap-4 mt-8">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 mt-8 auto-rows-[1fr]">
           <Dialog>
             <DialogTrigger asChild>
               <figure className="group relative w-full rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
