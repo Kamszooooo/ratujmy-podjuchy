@@ -111,7 +111,7 @@ const CityResponseSection = () => {
               <figure className="group relative w-full rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
                 <img
                   src={projektTbsCropped.url}
-                  alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów STBS"
+                  alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów TBS"
                   className="w-full h-auto block"
                 />
                 <div className="absolute top-2 right-2 md:top-3 md:right-3 inline-flex items-center gap-1 px-1.5 py-1 md:gap-1.5 md:px-2.5 md:py-1.5 rounded-full bg-background/90 backdrop-blur text-[10px] md:text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
@@ -126,11 +126,11 @@ const CityResponseSection = () => {
             <DialogContent className="max-w-5xl">
               <DialogTitle className="sr-only">Projekt osiedla TBS autorstwa 22Architekci</DialogTitle>
               <DialogDescription className="sr-only">
-                Makieta przedstawiająca zwycięski projekt osiedla TBS z naniesionymi granicami strefy 1386SW i terenów STBS.
+                Makieta przedstawiająca zwycięski projekt osiedla TBS z naniesionymi granicami strefy 1386SW i terenów TBS.
               </DialogDescription>
               <img
                 src={projektTbsCropped.url}
-                alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów STBS"
+                alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów TBS"
                 className="w-full h-auto block rounded-md"
               />
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
