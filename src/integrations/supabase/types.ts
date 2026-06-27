@@ -20,6 +20,7 @@ export type Database = {
           fetched_at: string
           id: string
           image_url: string | null
+          image_urls: string[]
           message: string | null
           permalink_url: string | null
         }
@@ -28,6 +29,7 @@ export type Database = {
           fetched_at?: string
           id: string
           image_url?: string | null
+          image_urls?: string[]
           message?: string | null
           permalink_url?: string | null
         }
@@ -36,6 +38,7 @@ export type Database = {
           fetched_at?: string
           id?: string
           image_url?: string | null
+          image_urls?: string[]
           message?: string | null
           permalink_url?: string | null
         }
