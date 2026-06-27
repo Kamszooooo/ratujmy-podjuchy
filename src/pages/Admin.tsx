@@ -64,6 +64,9 @@ const AdminPage = () => {
   const [draft, setDraft] = useState(emptyDraft);
   const [editing, setEditing] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [thumbs, setThumbs] = useState<Record<string, string>>({});
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => {
