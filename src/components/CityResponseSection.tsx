@@ -46,6 +46,10 @@ const CityResponseSection = () => {
                   alt="Fragment projektu uchwały: Uwaga nieuwzględniona. Zachowuje się strefę SW – strefa wielofunkcyjna z zabudową mieszkaniową wielorodzinną."
                   className="w-full h-auto block"
                 />
+                <div className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-background/90 backdrop-blur text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                  Powiększ
+                </div>
               </figure>
             </DialogTrigger>
             <DialogContent className="max-w-3xl">
@@ -77,6 +81,10 @@ const CityResponseSection = () => {
                   alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
                   className="w-full h-auto block"
                 />
+                <div className="absolute top-2 right-2 md:top-3 md:right-3 inline-flex items-center gap-1 px-1.5 py-1 md:gap-1.5 md:px-2.5 md:py-1.5 rounded-full bg-background/90 backdrop-blur text-[10px] md:text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
+                  <ZoomIn className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                  Powiększ
+                </div>
                 <figcaption className="px-3 py-2 md:px-4 md:py-3 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-destructive/20">
                   Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach (przy maksymalnej dopuszczonej planem ogólnym intensywności zabudowy 1,2 na całym obszarze strefy 1386SW).
                 </figcaption>
@@ -106,6 +114,10 @@ const CityResponseSection = () => {
                   alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów TBS"
                   className="w-full h-auto block"
                 />
+                <div className="absolute top-2 right-2 md:top-3 md:right-3 inline-flex items-center gap-1 px-1.5 py-1 md:gap-1.5 md:px-2.5 md:py-1.5 rounded-full bg-background/90 backdrop-blur text-[10px] md:text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
+                  <ZoomIn className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                  Powiększ
+                </div>
                 <figcaption className="px-3 py-2 md:px-4 md:py-3 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-destructive/20">
                   Makieta przedstawiająca zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do TBS (czarna linia przerywana). Rzeczywista intensywność zabudowy jest podobna do maksymalnie dopuszczonej (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz). Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi. Dolna część makiety (teren między ul. Ukośną a Olkuską) jest pusta, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
                 </figcaption>
