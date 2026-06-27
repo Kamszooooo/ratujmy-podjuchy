@@ -322,19 +322,6 @@ const FacebookFeedSection = () => {
           </div>
         )}
 
-        {!loading && hasPosts && (
-          <div className="flex justify-center mt-10">
-            <a
-              href={PAGE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary text-sm font-medium transition-colors"
-            >
-              <Facebook className="w-4 h-4" />
-              Wszystkie posty na Facebooku
-            </a>
-          </div>
-        )}
       </div>
     </section>
   );
