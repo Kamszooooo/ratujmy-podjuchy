@@ -54,9 +54,23 @@ const FacebookFeedSection = () => {
       if (cancelled) return;
       if (error) {
         setError(true);
-      } else {
-        setPosts((data ?? []) as FbPost[]);
+        setLoading(false);
+        return;
       }
+      const list = (data ?? []) as FbPost[];
+      // resolve storage paths into signed URLs
+      const resolved = await Promise.all(
+        list.map(async (p) => {
+          if (!p.image_url) return p;
+          if (/^https?:\/\//i.test(p.image_url)) return p;
+          const { data: signed } = await supabase.storage
+            .from("fb-post-images")
+            .createSignedUrl(p.image_url, 3600);
+          return { ...p, image_url: signed?.signedUrl ?? null };
+        }),
+      );
+      if (cancelled) return;
+      setPosts(resolved);
       setLoading(false);
     })();
     return () => {
