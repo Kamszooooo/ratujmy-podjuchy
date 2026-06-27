@@ -116,24 +116,62 @@ function PostImages({ urls, href }: { urls: string[]; href: string }) {
   );
 }
 
+function linkify(text: string) {
+  const urlRegex = /(https?:\/\/\S+)/g;
+  const parts: (string | JSX.Element)[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = urlRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const url = match[0];
+    parts.push(
+      <a
+        key={match.index}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary hover:underline break-all"
+      >
+        {url}
+      </a>
+    );
+    lastIndex = match.index + url.length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
+
 function PostBody({ full, shown, truncated }: { full: string; shown: string; truncated: boolean }) {
   const [expanded, setExpanded] = useState(false);
+  const text = (expanded || !truncated ? full : shown).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
   return (
-    <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line mb-4 flex-1">
-      {expanded || !truncated ? full : shown}
+    <div className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1">
+      {text.split("\n").map((line, i) => {
+        const trimmed = line.trim();
+        if (!trimmed) return <div key={i} className="h-2" />;
+        return (
+          <p key={i} className="mb-2 last:mb-0">
+            {linkify(trimmed)}
+          </p>
+        );
+      })}
       {truncated && (
-        <>
-          {" "}
-          <button
-            type="button"
-            onClick={() => setExpanded((v) => !v)}
-            className="text-primary hover:underline font-medium"
-          >
-            {expanded ? "zwiń" : "czytaj dalej"}
-          </button>
-        </>
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          className="text-primary hover:underline font-medium mt-1 inline"
+        >
+          {expanded ? "zwiń" : "czytaj dalej"}
+        </button>
       )}
-    </p>
+    </div>
   );
 }
 
