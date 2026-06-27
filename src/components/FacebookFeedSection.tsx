@@ -153,16 +153,15 @@ function PostBody({ full, shown, truncated }: { full: string; shown: string; tru
   const text = (expanded || !truncated ? full : shown).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
   return (
     <div className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1 space-y-3">
-      {text.split("\n\n").map((paragraph, i) => (
-        <p key={i}>
-          {paragraph.split("\n").map((line, j, arr) => (
-            <span key={j}>
-              {linkify(line)}
-              {j < arr.length - 1 && <br />}
-            </span>
-          ))}
-        </p>
-      ))}
+      {text.split("\n").map((line, i) => {
+        const trimmed = line.trim();
+        if (!trimmed) return <div key={i} className="h-2" />;
+        return (
+          <p key={i} className="mb-2 last:mb-0">
+            {linkify(trimmed)}
+          </p>
+        );
+      })}
       {truncated && (
         <button
           type="button"
