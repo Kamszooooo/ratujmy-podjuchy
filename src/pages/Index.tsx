@@ -30,7 +30,6 @@ const Index = () => {
       <CityResponseSection />
       <WhatNextSection />
       <PhotosSection />
-      <FacebookFeedSection />
       <AboutFooter />
       <FloatingCityReplyBanner />
     </div>
