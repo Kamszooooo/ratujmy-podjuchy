@@ -8,7 +8,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowLeft, LogOut, Pencil, Trash2, Plus } from "lucide-react";
+import { ArrowLeft, LogOut, Pencil, Trash2, Plus, Upload, X } from "lucide-react";
+
+const IMAGE_BUCKET = "fb-post-images";
+
+function isHttpUrl(v: string | null | undefined): boolean {
+  return !!v && /^https?:\/\//i.test(v);
+}
+
+async function resolveImageSrc(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  if (isHttpUrl(value)) return value;
+  const { data } = await supabase.storage.from(IMAGE_BUCKET).createSignedUrl(value, 3600);
+  return data?.signedUrl ?? null;
+}
 
 type Post = {
   id: string;
