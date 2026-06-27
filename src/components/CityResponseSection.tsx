@@ -119,14 +119,14 @@ const CityResponseSection = () => {
                   Powiększ
                 </div>
                 <figcaption className="px-3 py-2 md:px-4 md:py-3 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-destructive/20">
-                  Makieta przedstawiająca zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do TBS (czarna linia przerywana). Rzeczywista intensywność zabudowy jest podobna do maksymalnie dopuszczonej (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz). Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi. Dolna część makiety (teren między ul. Ukośną a Olkuską) jest pusta, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
+                  Zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do TBS (czarna linia przerywana). Rzeczywista intensywność zabudowy jest podobna do maksymalnie dopuszczonej (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz). Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi. Dolna część makiety (teren między ul. Ukośną a Olkuską) jest pusta, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
                 </figcaption>
               </figure>
             </DialogTrigger>
             <DialogContent className="max-w-5xl">
               <DialogTitle className="sr-only">Projekt osiedla TBS autorstwa 22Architekci</DialogTitle>
               <DialogDescription className="sr-only">
-                Makieta przedstawiająca zwycięski projekt osiedla TBS z naniesionymi granicami strefy 1386SW i terenów TBS.
+                Zwycięski projekt osiedla TBS z naniesionymi granicami strefy 1386SW i terenów TBS.
               </DialogDescription>
               <img
                 src={projektTbsCropped.url}
@@ -134,7 +134,7 @@ const CityResponseSection = () => {
                 className="w-full h-auto block rounded-md"
               />
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-                Makieta przedstawiająca zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do TBS (czarna linia przerywana). Rzeczywista intensywność zabudowy jest podobna do maksymalnie dopuszczonej (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz). Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi.
+                Zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do TBS (czarna linia przerywana). Rzeczywista intensywność zabudowy jest podobna do maksymalnie dopuszczonej (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz). Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi.
               </p>
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
                 Dolna część makiety (teren między ul. Ukośną a Olkuską) jest pusta, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
