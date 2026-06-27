@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { Facebook, ExternalLink, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 type FbPost = {
   id: string;
@@ -210,39 +217,51 @@ const FacebookFeedSection = () => {
         )}
 
         {!loading && hasPosts && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {posts!.map((p) => {
-              const full = p.message ?? "";
-              const { shown, truncated } = truncate(full);
-              return (
-                <article
-                  key={p.id}
-                  className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col"
-                >
-                  {p.image_urls.length > 0 && (
-                    <PostImages urls={p.image_urls} href={p.permalink_url ?? PAGE_URL} />
-                  )}
-                  <div className="p-5 flex flex-col flex-1">
-                    <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
-                      {formatRelative(p.created_time)}
-                    </div>
-                    {full && <PostBody full={full} shown={shown} truncated={truncated} />}
-                    {p.permalink_url && (
-                      <a
-                        href={p.permalink_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline mt-auto"
-                      >
-                        Zobacz na Facebooku
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    )}
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: posts!.length > 1,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {posts!.map((p) => {
+                const full = p.message ?? "";
+                const { shown, truncated } = truncate(full);
+                return (
+                  <CarouselItem
+                    key={p.id}
+                    className="pl-4 md:basis-1/2 lg:basis-1/3"
+                  >
+                    <article className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+                      {p.image_urls.length > 0 && (
+                        <PostImages urls={p.image_urls} href={p.permalink_url ?? PAGE_URL} />
+                      )}
+                      <div className="p-5 flex flex-col flex-1">
+                        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
+                          {formatRelative(p.created_time)}
+                        </div>
+                        {full && <PostBody full={full} shown={shown} truncated={truncated} />}
+                        {p.permalink_url && (
+                          <a
+                            href={p.permalink_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline mt-auto"
+                          >
+                            Zobacz na Facebooku
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
+                    </article>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 -translate-x-1/2" />
+            <CarouselNext className="right-0 translate-x-1/2" />
+          </Carousel>
         )}
 
         {!loading && !hasPosts && (
