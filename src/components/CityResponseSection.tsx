@@ -75,7 +75,7 @@ const CityResponseSection = () => {
         <div className="grid grid-cols-2 gap-3 md:gap-4 mt-8">
           <Dialog>
             <DialogTrigger asChild>
-              <figure className="group relative w-full h-full flex flex-col rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
+              <figure className="group relative w-full rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
                 <img
                   src={gorkiMaksZabudowa.url}
                   alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
