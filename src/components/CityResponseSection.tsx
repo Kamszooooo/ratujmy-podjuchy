@@ -119,7 +119,7 @@ const CityResponseSection = () => {
                   Powiększ
                 </div>
                 <figcaption className="px-3 py-2 md:px-4 md:py-3 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-destructive/20">
-                  Makieta przedstawiająca zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do STBS (czarna linia przerywana). Widać, że intensywność zabudowy jest podobna do maksymalnie dopuszczonej (STBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz, znajdującą się w granicach strefy 1386SW). Bryły budynków są całkowicie niedopasowane skalą do okolicznej zabudowy jednorodzinnej. Władze Szczecina zapowiedziały zmniejszenie skali osiedla, ale oficjalnie nie przedstawiły dotąd konkretów (niektórzy mówili o zmniejszeniu z 560 do około 300 mieszkań).<br /><br />Dolna część makiety, pomiędzy ul. Ukośną a Olkuską, na makiecie jest pusta. Teren ten nie należy do TBS, ale również tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
+                  Makieta przedstawiająca zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do TBS (czarna linia przerywana). Rzeczywista intensywność zabudowy jest podobna do maksymalnie dopuszczonej (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz). Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi. Dolna część makiety (teren między ul. Ukośną a Olkuską) jest pusta, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
                 </figcaption>
               </figure>
             </DialogTrigger>
@@ -134,10 +134,10 @@ const CityResponseSection = () => {
                 className="w-full h-auto block rounded-md"
               />
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-                Makieta przedstawiająca zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do STBS (czarna linia przerywana). Widać, że intensywność zabudowy jest podobna do maksymalnie dopuszczonej (STBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz, znajdującą się w granicach strefy 1386SW). Bryły budynków są całkowicie niedopasowane skalą do okolicznej zabudowy jednorodzinnej. Władze Szczecina zapowiedziały zmniejszenie skali osiedla, ale oficjalnie nie przedstawiły dotąd konkretów (niektórzy mówili o zmniejszeniu z 560 do około 300 mieszkań).
+                Makieta przedstawiająca zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do TBS (czarna linia przerywana). Rzeczywista intensywność zabudowy jest podobna do maksymalnie dopuszczonej (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz). Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi.
               </p>
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-                Dolna część makiety, pomiędzy ul. Ukośną a Olkuską, na makiecie jest pusta. Teren ten nie należy do TBS, ale również tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
+                Dolna część makiety (teren między ul. Ukośną a Olkuską) jest pusta, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
               </p>
             </DialogContent>
           </Dialog>
