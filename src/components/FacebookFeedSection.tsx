@@ -322,7 +322,6 @@ const FacebookFeedSection = () => {
           </div>
         )}
 
-        )}
       </div>
     </section>
   );
