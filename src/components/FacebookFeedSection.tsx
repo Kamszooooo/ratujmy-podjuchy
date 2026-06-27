@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { Facebook, ExternalLink, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 type FbPost = {
   id: string;
