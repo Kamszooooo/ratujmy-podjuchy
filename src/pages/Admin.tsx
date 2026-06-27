@@ -8,7 +8,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowLeft, LogOut, Pencil, Trash2, Plus } from "lucide-react";
+import { ArrowLeft, LogOut, Pencil, Trash2, Plus, Upload, X } from "lucide-react";
+
+const IMAGE_BUCKET = "fb-post-images";
+
+function isHttpUrl(v: string | null | undefined): boolean {
+  return !!v && /^https?:\/\//i.test(v);
+}
+
+async function resolveImageSrc(value: string | null): Promise<string | null> {
+  if (!value) return null;
+  if (isHttpUrl(value)) return value;
+  const { data } = await supabase.storage.from(IMAGE_BUCKET).createSignedUrl(value, 3600);
+  return data?.signedUrl ?? null;
+}
 
 type Post = {
   id: string;
@@ -51,6 +64,9 @@ const AdminPage = () => {
   const [draft, setDraft] = useState(emptyDraft);
   const [editing, setEditing] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [thumbs, setThumbs] = useState<Record<string, string>>({});
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => {
@@ -95,9 +111,46 @@ const AdminPage = () => {
     if (error) {
       toast({ title: "Błąd ładowania", description: error.message, variant: "destructive" });
     } else {
-      setPosts((data ?? []) as Post[]);
+      const list = (data ?? []) as Post[];
+      setPosts(list);
+      const entries = await Promise.all(
+        list
+          .filter((p) => p.image_url)
+          .map(async (p) => [p.id, await resolveImageSrc(p.image_url)] as const),
+      );
+      setThumbs(Object.fromEntries(entries.filter(([, v]) => v)) as Record<string, string>);
     }
     setLoadingPosts(false);
+  }
+
+  async function handleImageUpload(file: File) {
+    setUploading(true);
+    const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const path = `posts/${crypto.randomUUID()}.${ext}`;
+    const { error } = await supabase.storage
+      .from(IMAGE_BUCKET)
+      .upload(path, file, { contentType: file.type, upsert: false });
+    if (error) {
+      toast({ title: "Błąd wgrywania", description: error.message, variant: "destructive" });
+      setUploading(false);
+      return;
+    }
+    // delete old upload if replacing a storage-hosted image
+    if (draft.image_url && !isHttpUrl(draft.image_url)) {
+      await supabase.storage.from(IMAGE_BUCKET).remove([draft.image_url]);
+    }
+    setDraft((d) => ({ ...d, image_url: path }));
+    const preview = await resolveImageSrc(path);
+    setImagePreview(preview);
+    setUploading(false);
+  }
+
+  async function handleImageRemove() {
+    if (draft.image_url && !isHttpUrl(draft.image_url)) {
+      await supabase.storage.from(IMAGE_BUCKET).remove([draft.image_url]);
+    }
+    setDraft((d) => ({ ...d, image_url: "" }));
+    setImagePreview(null);
   }
 
   async function handleAuth(e: FormEvent) {
@@ -142,7 +195,7 @@ const AdminPage = () => {
     }
   }
 
-  function startEdit(p: Post) {
+  async function startEdit(p: Post) {
     setEditing(p.id);
     setDraft({
       id: p.id,
@@ -151,12 +204,14 @@ const AdminPage = () => {
       permalink_url: p.permalink_url ?? "",
       image_url: p.image_url ?? "",
     });
+    setImagePreview(await resolveImageSrc(p.image_url));
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function resetForm() {
     setEditing(null);
     setDraft({ ...emptyDraft, created_time: toLocalInput(new Date().toISOString()) });
+    setImagePreview(null);
   }
 
   async function handleSave(e: FormEvent) {
@@ -187,10 +242,14 @@ const AdminPage = () => {
 
   async function handleDelete(id: string) {
     if (!confirm("Na pewno usunąć ten post?")) return;
+    const post = posts.find((p) => p.id === id);
     const { error } = await supabase.from("fb_posts").delete().eq("id", id);
     if (error) {
       toast({ title: "Błąd usuwania", description: error.message, variant: "destructive" });
     } else {
+      if (post?.image_url && !isHttpUrl(post.image_url)) {
+        await supabase.storage.from(IMAGE_BUCKET).remove([post.image_url]);
+      }
       toast({ title: "Usunięto" });
       void loadPosts();
     }
@@ -312,14 +371,43 @@ const AdminPage = () => {
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="image_url">URL zdjęcia (opcjonalnie)</Label>
-                  <Input
-                    id="image_url"
-                    type="url"
-                    value={draft.image_url}
-                    onChange={(e) => setDraft({ ...draft, image_url: e.target.value })}
-                    placeholder="https://…"
-                  />
+                  <Label htmlFor="image_file">Zdjęcie (opcjonalnie)</Label>
+                  {imagePreview ? (
+                    <div className="mt-1.5 flex items-start gap-3">
+                      <img
+                        src={imagePreview}
+                        alt="Podgląd"
+                        className="w-32 h-32 object-cover rounded-lg border border-border"
+                      />
+                      <Button type="button" variant="outline" size="sm" onClick={handleImageRemove}>
+                        <X className="w-3.5 h-3.5 mr-1.5" /> Usuń zdjęcie
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="mt-1.5">
+                      <label
+                        htmlFor="image_file"
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-dashed border-border bg-muted/30 hover:bg-muted cursor-pointer text-sm ${uploading ? "opacity-60 pointer-events-none" : ""}`}
+                      >
+                        <Upload className="w-4 h-4" />
+                        {uploading ? "Wgrywanie…" : "Wgraj zdjęcie"}
+                      </label>
+                      <input
+                        id="image_file"
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={(e) => {
+                          const f = e.target.files?.[0];
+                          if (f) void handleImageUpload(f);
+                          e.target.value = "";
+                        }}
+                      />
+                      <p className="text-xs text-muted-foreground mt-1.5">
+                        Zdjęcie jest wgrywane na nasz serwer — bez zewnętrznych adresów.
+                      </p>
+                    </div>
+                  )}
                 </div>
                 <div className="flex gap-2">
                   <Button type="submit" disabled={saving}>
@@ -343,8 +431,8 @@ const AdminPage = () => {
               <ul className="space-y-3">
                 {posts.map((p) => (
                   <li key={p.id} className="bg-card border border-border rounded-xl p-4 flex gap-4">
-                    {p.image_url && (
-                      <img src={p.image_url} alt="" className="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+                    {p.image_url && thumbs[p.id] && (
+                      <img src={thumbs[p.id]} alt="" className="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
                     )}
                     <div className="flex-1 min-w-0">
                       <div className="text-xs text-muted-foreground mb-1">
