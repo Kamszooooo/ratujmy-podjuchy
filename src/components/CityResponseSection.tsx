@@ -134,7 +134,7 @@ const CityResponseSection = () => {
                 className="w-full h-auto block rounded-md"
               />
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-                Zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do TBS (czarna linia przerywana). Rzeczywista intensywność zabudowy jest podobna do maksymalnie dopuszczonej (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz). Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi.
+                Zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenu należącego do TBS (czarna linia przerywana). Rzeczywista intensywność zabudowy jest bliska do maksymalnie dopuszczonej (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych terenów wzgórz). Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi.
               </p>
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
                 Teren między ul. Ukośną a Olkuską jest na makiecie pusty, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
