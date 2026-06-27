@@ -431,8 +431,8 @@ const AdminPage = () => {
               <ul className="space-y-3">
                 {posts.map((p) => (
                   <li key={p.id} className="bg-card border border-border rounded-xl p-4 flex gap-4">
-                    {p.image_url && (
-                      <img src={p.image_url} alt="" className="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+                    {p.image_url && thumbs[p.id] && (
+                      <img src={thumbs[p.id]} alt="" className="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
                     )}
                     <div className="flex-1 min-w-0">
                       <div className="text-xs text-muted-foreground mb-1">
