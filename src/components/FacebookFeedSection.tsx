@@ -46,19 +46,18 @@ const FacebookFeedSection = () => {
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      try {
-        const { data, error } = await supabase.functions.invoke("get-fb-feed");
-        if (cancelled) return;
-        if (error || !data?.posts) {
-          setError(true);
-        } else {
-          setPosts(data.posts as FbPost[]);
-        }
-      } catch {
-        if (!cancelled) setError(true);
-      } finally {
-        if (!cancelled) setLoading(false);
+      const { data, error } = await supabase
+        .from("fb_posts")
+        .select("id, message, created_time, permalink_url, image_url")
+        .order("created_time", { ascending: false })
+        .limit(9);
+      if (cancelled) return;
+      if (error) {
+        setError(true);
+      } else {
+        setPosts((data ?? []) as FbPost[]);
       }
+      setLoading(false);
     })();
     return () => {
       cancelled = true;
