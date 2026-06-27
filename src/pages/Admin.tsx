@@ -195,7 +195,7 @@ const AdminPage = () => {
     }
   }
 
-  function startEdit(p: Post) {
+  async function startEdit(p: Post) {
     setEditing(p.id);
     setDraft({
       id: p.id,
@@ -204,12 +204,14 @@ const AdminPage = () => {
       permalink_url: p.permalink_url ?? "",
       image_url: p.image_url ?? "",
     });
+    setImagePreview(await resolveImageSrc(p.image_url));
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function resetForm() {
     setEditing(null);
     setDraft({ ...emptyDraft, created_time: toLocalInput(new Date().toISOString()) });
+    setImagePreview(null);
   }
 
   async function handleSave(e: FormEvent) {
