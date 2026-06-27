@@ -8,6 +8,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
 type FbPost = {
@@ -179,6 +180,18 @@ const FacebookFeedSection = () => {
   const [posts, setPosts] = useState<FbPost[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    api.on("select", onSelect);
+    onSelect();
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   useEffect(() => {
     let cancelled = false;
@@ -262,6 +275,7 @@ const FacebookFeedSection = () => {
               loop: posts!.length > 1,
             }}
             plugins={[WheelGesturesPlugin()]}
+            setApi={setApi}
             className="w-full"
           >
             <CarouselContent className="-ml-4">
@@ -302,6 +316,21 @@ const FacebookFeedSection = () => {
             <CarouselPrevious className="left-0 -translate-x-1/2" />
             <CarouselNext className="right-0 translate-x-1/2" />
           </Carousel>
+          {posts!.length > 1 && (
+            <div className="mt-5 flex justify-center gap-1.5">
+              {posts!.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => api?.scrollTo(i)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === current ? "w-5 bg-primary" : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  }`}
+                  aria-label={`Przejdź do postu ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
         )}
 
         {!loading && !hasPosts && (
