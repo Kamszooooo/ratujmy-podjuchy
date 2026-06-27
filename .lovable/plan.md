@@ -1,36 +1,48 @@
-## Kontekst
+# Feed z Facebooka — bez wtyczki Meta, przyjazny prywatności
 
-Rada Miasta przyjęła plan ogólny. Strona w obecnej formie jest „przedwyborcza" — mówi o nadchodzącej sesji (24 czerwca), wzywa Radę do skierowania planu do dalszych prac, pokazuje uwagi miasta jako zapowiedź. To wszystko jest już nieaktualne. Trzeba przestawić narrację z „zatrzymajmy to" na „nie odpuszczamy — walka trwa".
+Pobieramy posty oficjalnym Graph API po stronie serwera (Lovable Cloud), cache'ujemy je w bazie i serwujemy z naszego backendu. U czytelnika **żadnych skryptów ani ciasteczek Facebooka** — tylko nasze HTML/obrazy.
 
-## Co zmieniam
+## Co dostanie czytelnik
 
-### 1. `CityResponseSection.tsx` — z „zignorują" na „zignorowali"
-- Czerwony badge „Już w środę, 24 czerwca" → **„Plan ogólny przyjęty"** (lub data sesji, jeśli ją znamy — domyślnie zostawiam ogólny komunikat).
-- Nagłówek: „Władze miasta **planują całkowicie zignorować**…" → **„Prezydent i radni całkowicie zignorowali głos mieszkańców** w sprawie TBS-ów."
-- Pod cytatem z projektu uchwały dodaję krótki akapit: uwagi nieuwzględnione, strefa 1386SW utrzymana, obniżenie wskaźnika z 1,6 do 1,2 bez znaczenia (oryginalny projekt TBS i tak ma niższą intensywność).
-- Dolny czerwony pasek „Wzywamy Radę Miasta…" zmieniam na **„Nie odpuszczamy. Kontynuujemy sprzeciw — bloki na górkach jeszcze nie są przesądzone."** + krótkie wyjaśnienie, że plan dopuszcza zabudowę wielorodzinną, ale jej nie nakazuje (możliwa też zabudowa jednorodzinna / zieleń).
+Nowa sekcja **„Aktualności z Facebooka"** umieszczona między `WhatNextSection` a `PhotosSection` w `src/pages/Index.tsx`:
 
-### 2. Nowa sekcja „Co dalej?" (między `CityResponseSection` a `PhotosSection`)
-Trzy bloki:
-- **Trzymamy polityków za słowo** — przypominamy publiczne deklaracje (ograniczenie skali osiedla TBS nawet o połowę, zachowanie korytarza ekologicznego Ukośna–Olkuska).
-- **Plan dopuszcza, nie nakazuje** — strefa 1386SW pozwala też na zabudowę jednorodzinną i tereny zieleni; o tym, co powstanie, zdecyduje plan miejscowy i nasz nacisk.
-- **Drobny sukces za autostradą** — 247 uwag dało efekt: wykreślono składy i magazyny. Dalej walczymy o strefę zieleni z usługami sportu i rekreacji zamiast strefy usługowej.
+- Nagłówek + krótki opis + link do profilu.
+- Siatka 9 najnowszych postów (3 kolumny na desktopie, 1 na mobile):
+  - data (formatowana po polsku, „2 dni temu"),
+  - tekst posta (skrócony do ~280 znaków z „czytaj dalej" → link do FB),
+  - miniatura zdjęcia jeśli post je ma,
+  - link „Zobacz na Facebooku".
+- Spójna stylistyka z resztą strony (te same tokeny kolorów, zaokrąglenia, cienie co `MeetingSection`/karty).
+- Stan ładowania (skeleton) i czytelny fallback gdy backend nie zwróci postów („Zobacz najnowsze posty na profilu →").
 
-### 3. `FloatingCityReplyBanner.tsx`
-Tekst „Wzywamy Radę Miasta…" → **„Plan ogólny przyjęty. Nie odpuszczamy — czytaj, co dalej."** Klik dalej scrolluje do `#city-reply`.
+## Jak to działa pod spodem (część techniczna)
 
-### 4. `ThreatSection.tsx` — drobna aktualizacja czasu
-„W konsultacjach społecznych… złożyliśmy prawie tysiąc uwag. Możemy jeszcze uratować Podjuchy!" → przeformułowanie tak, by nie sugerowało, że konsultacje trwają: „Złożyliśmy prawie tysiąc uwag — miasto je zignorowało, ale walka o Podjuchy się nie kończy."
+1. **Lovable Cloud** zostaje włączony (potrzebny do edge functions + bazy + sekretów).
+2. **Sekret** `FACEBOOK_PAGE_ACCESS_TOKEN` — długoterminowy Page Access Token dla strony „Ratujmy Podjuchy". Instrukcję krok-po-kroku jak go wygenerować (Meta for Developers → aplikacja typu „Business" → Graph API Explorer → wymiana na long-lived token ~60 dni → ewentualnie never-expiring page token) dostaniesz w czacie zanim poproszę o wklejenie wartości przez bezpieczny formularz.
+3. **Tabela cache** `fb_posts` (publiczny SELECT dla `anon`, INSERT/UPDATE tylko dla `service_role`):
+   - `id` (FB post id, PK), `message` (text), `created_time` (timestamptz), `permalink_url`, `image_url`, `fetched_at`.
+4. **Edge function `refresh-fb-feed`** (chroniona — wywoływana z cronu / ręcznie):
+   - GET `https://graph.facebook.com/v21.0/me/posts?fields=id,message,created_time,permalink_url,full_picture&limit=15&access_token=…`
+   - upsert do `fb_posts`, usuwa rekordy starsze niż 30 pozycji.
+5. **Edge function `get-fb-feed`** (publiczna, `verify_jwt=false`): zwraca 9 najnowszych z tabeli. Frontend pobiera tylko stąd — Facebook nigdy nie jest wywoływany z przeglądarki czytelnika.
+6. **Cron** w Supabase (`pg_cron`) wywołuje `refresh-fb-feed` co 30 minut. Token długoterminowy odświeżany ręcznie raz na ~60 dni (powiadomienie w README + komentarz w funkcji).
+7. **Nowy komponent** `src/components/FacebookFeedSection.tsx` z fetchem do `get-fb-feed`, skeletonami i fallbackiem.
 
-### 5. `StepsSection.tsx` — tytuł
-„Złożyliśmy około **tysiąca** uwag do planu ogólnego!" zostawiam — liczby (734, 247, 1971, 99%) są nadal aktualne i mocne. Bez zmian poza ewentualną drobną korektą podtytułu, jeśli będzie potrzebna po zmianach w sekcji powyżej.
+## Prywatność
 
-## Czego NIE ruszam
+- Zero skryptów Meta, zero iframe'ów `facebook.com`, zero ciasteczek third-party.
+- Obrazy: domyślnie linkujemy bezpośrednio do `fbcdn.net` (lekki hit prywatności — FB widzi IP gdy obraz się ładuje). Jeśli wolisz pełną izolację, mogę dodać proxy obrazów przez edge function (cache w Supabase Storage) — daj znać.
 
-- Hero, mapa, argumenty, zdjęcia, stopka — bez zmian.
-- Liczby, linki do PDF-ów, petycji, ankiety.
-- Tokenów kolorów / typografii.
+## Pliki do zmiany / utworzenia
 
-## Pytanie do Ciebie
+- `src/pages/Index.tsx` — dodanie `<FacebookFeedSection />` między `WhatNextSection` a `PhotosSection`.
+- `src/components/FacebookFeedSection.tsx` — nowy.
+- `supabase/functions/refresh-fb-feed/index.ts` — nowy.
+- `supabase/functions/get-fb-feed/index.ts` — nowy.
+- Migracja: tabela `fb_posts` + GRANTy + RLS + cron.
 
-Czy chcesz, żebym **usunął przyciski „Pobierz szkic uwagi"** z `StepsSection` (konsultacje się skończyły, więc szkice nie służą już do składania), czy **zostawić je jako archiwum / dowód tego, co złożyliśmy**? Domyślnie zostawiam — pokazują skalę akcji.
+## Czego potrzebuję od Ciebie po zatwierdzeniu planu
+
+1. Zgoda na włączenie Lovable Cloud (jeśli jeszcze nie jest aktywne).
+2. Po moich instrukcjach — wklejenie `FACEBOOK_PAGE_ACCESS_TOKEN` w bezpieczny formularz (nie w czacie).
+3. Decyzja czy proxy'ujemy obrazy przez nasz backend (pełna prywatność, większe zużycie storage), czy linkujemy bezpośrednio do CDN Facebooka (prościej, drobny ślad prywatności).
