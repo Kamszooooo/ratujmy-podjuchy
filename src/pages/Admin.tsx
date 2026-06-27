@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowLeft, LogOut, Pencil, Trash2, Plus, Upload, X } from "lucide-react";
+import { ArrowLeft, LogOut, Pencil, Trash2, Plus, Upload, X, ChevronUp, ChevronDown } from "lucide-react";
 
 const IMAGE_BUCKET = "fb-post-images";
 
@@ -29,6 +29,7 @@ type Post = {
   created_time: string;
   permalink_url: string | null;
   image_url: string | null;
+  image_urls: string[];
 };
 
 function toLocalInput(iso: string): string {
@@ -37,13 +38,19 @@ function toLocalInput(iso: string): string {
   return new Date(d.getTime() - tz).toISOString().slice(0, 16);
 }
 
-const emptyDraft = {
-  id: "",
+type Draft = {
+  message: string;
+  created_time: string;
+  permalink_url: string;
+  image_urls: string[];
+};
+
+const emptyDraft = (): Draft => ({
   message: "",
   created_time: toLocalInput(new Date().toISOString()),
   permalink_url: "",
-  image_url: "",
-};
+  image_urls: [],
+});
 
 const AdminPage = () => {
   const { toast } = useToast();
@@ -54,24 +61,22 @@ const AdminPage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loadingPosts, setLoadingPosts] = useState(false);
 
-  // auth form
+  // auth
   const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [authBusy, setAuthBusy] = useState(false);
 
   // post form
-  const [draft, setDraft] = useState(emptyDraft);
+  const [draft, setDraft] = useState<Draft>(emptyDraft());
   const [editing, setEditing] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [thumbs, setThumbs] = useState<Record<string, string>>({});
+  const [previews, setPreviews] = useState<Record<string, string>>({});
+  const [thumbs, setThumbs] = useState<Record<string, string>>({}); // post.id -> first signed url
 
   useEffect(() => {
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => {
-      setSession(s);
-    });
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => setSession(s));
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
       setCheckingSession(false);
@@ -102,55 +107,43 @@ const AdminPage = () => {
     void loadPosts();
   }, [isAdmin]);
 
+  function normalizeImages(p: { image_url: string | null; image_urls: string[] | null }): string[] {
+    if (p.image_urls && p.image_urls.length > 0) return p.image_urls;
+    return p.image_url ? [p.image_url] : [];
+  }
+
   async function loadPosts() {
     setLoadingPosts(true);
     const { data, error } = await supabase
       .from("fb_posts")
-      .select("id, message, created_time, permalink_url, image_url")
+      .select("id, message, created_time, permalink_url, image_url, image_urls")
       .order("created_time", { ascending: false });
     if (error) {
       toast({ title: "Błąd ładowania", description: error.message, variant: "destructive" });
-    } else {
-      const list = (data ?? []) as Post[];
-      setPosts(list);
-      const entries = await Promise.all(
-        list
-          .filter((p) => p.image_url)
-          .map(async (p) => [p.id, await resolveImageSrc(p.image_url)] as const),
-      );
-      setThumbs(Object.fromEntries(entries.filter(([, v]) => v)) as Record<string, string>);
+      setLoadingPosts(false);
+      return;
     }
+    const list = (data ?? []).map((p) => ({
+      ...p,
+      image_urls: normalizeImages(p as Post),
+    })) as Post[];
+    setPosts(list);
+    const entries = await Promise.all(
+      list.map(async (p) => {
+        const first = p.image_urls[0];
+        if (!first) return [p.id, null] as const;
+        return [p.id, await resolveImageSrc(first)] as const;
+      }),
+    );
+    setThumbs(Object.fromEntries(entries.filter(([, v]) => v)) as Record<string, string>);
     setLoadingPosts(false);
   }
 
-  async function handleImageUpload(file: File) {
-    setUploading(true);
-    const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "");
-    const path = `posts/${crypto.randomUUID()}.${ext}`;
-    const { error } = await supabase.storage
-      .from(IMAGE_BUCKET)
-      .upload(path, file, { contentType: file.type, upsert: false });
-    if (error) {
-      toast({ title: "Błąd wgrywania", description: error.message, variant: "destructive" });
-      setUploading(false);
-      return;
-    }
-    // delete old upload if replacing a storage-hosted image
-    if (draft.image_url && !isHttpUrl(draft.image_url)) {
-      await supabase.storage.from(IMAGE_BUCKET).remove([draft.image_url]);
-    }
-    setDraft((d) => ({ ...d, image_url: path }));
-    const preview = await resolveImageSrc(path);
-    setImagePreview(preview);
-    setUploading(false);
-  }
-
-  async function handleImageRemove() {
-    if (draft.image_url && !isHttpUrl(draft.image_url)) {
-      await supabase.storage.from(IMAGE_BUCKET).remove([draft.image_url]);
-    }
-    setDraft((d) => ({ ...d, image_url: "" }));
-    setImagePreview(null);
+  async function refreshPreviews(paths: string[]) {
+    const entries = await Promise.all(
+      paths.map(async (p) => [p, await resolveImageSrc(p)] as const),
+    );
+    setPreviews(Object.fromEntries(entries.filter(([, v]) => v)) as Record<string, string>);
   }
 
   async function handleAuth(e: FormEvent) {
@@ -195,23 +188,64 @@ const AdminPage = () => {
     }
   }
 
+  async function handleFilesSelected(files: FileList | null) {
+    if (!files || files.length === 0) return;
+    setUploading(true);
+    const newPaths: string[] = [];
+    for (const file of Array.from(files)) {
+      const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "");
+      const path = `posts/${crypto.randomUUID()}.${ext}`;
+      const { error } = await supabase.storage
+        .from(IMAGE_BUCKET)
+        .upload(path, file, { contentType: file.type, upsert: false });
+      if (error) {
+        toast({ title: "Błąd wgrywania", description: error.message, variant: "destructive" });
+      } else {
+        newPaths.push(path);
+      }
+    }
+    if (newPaths.length > 0) {
+      const next = [...draft.image_urls, ...newPaths];
+      setDraft((d) => ({ ...d, image_urls: next }));
+      await refreshPreviews(next);
+    }
+    setUploading(false);
+  }
+
+  async function removeImageAt(idx: number) {
+    const path = draft.image_urls[idx];
+    if (path && !isHttpUrl(path)) {
+      await supabase.storage.from(IMAGE_BUCKET).remove([path]);
+    }
+    const next = draft.image_urls.filter((_, i) => i !== idx);
+    setDraft((d) => ({ ...d, image_urls: next }));
+  }
+
+  function moveImage(idx: number, dir: -1 | 1) {
+    const next = [...draft.image_urls];
+    const target = idx + dir;
+    if (target < 0 || target >= next.length) return;
+    [next[idx], next[target]] = [next[target], next[idx]];
+    setDraft((d) => ({ ...d, image_urls: next }));
+  }
+
   async function startEdit(p: Post) {
     setEditing(p.id);
+    const imgs = normalizeImages(p);
     setDraft({
-      id: p.id,
       message: p.message ?? "",
       created_time: toLocalInput(p.created_time),
       permalink_url: p.permalink_url ?? "",
-      image_url: p.image_url ?? "",
+      image_urls: imgs,
     });
-    setImagePreview(await resolveImageSrc(p.image_url));
+    await refreshPreviews(imgs);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function resetForm() {
     setEditing(null);
-    setDraft({ ...emptyDraft, created_time: toLocalInput(new Date().toISOString()) });
-    setImagePreview(null);
+    setDraft(emptyDraft());
+    setPreviews({});
   }
 
   async function handleSave(e: FormEvent) {
@@ -221,12 +255,14 @@ const AdminPage = () => {
       return;
     }
     setSaving(true);
+    const id = editing ?? (typeof crypto !== "undefined" && "randomUUID" in crypto ? crypto.randomUUID() : String(Date.now()));
     const row = {
-      id: editing ?? (typeof crypto !== "undefined" && "randomUUID" in crypto ? crypto.randomUUID() : String(Date.now())),
+      id,
       message: draft.message.trim(),
       created_time: new Date(draft.created_time).toISOString(),
       permalink_url: draft.permalink_url.trim() || null,
-      image_url: draft.image_url.trim() || null,
+      image_url: draft.image_urls[0] ?? null, // legacy mirror
+      image_urls: draft.image_urls,
       fetched_at: new Date().toISOString(),
     };
     const { error } = await supabase.from("fb_posts").upsert(row, { onConflict: "id" });
@@ -246,13 +282,14 @@ const AdminPage = () => {
     const { error } = await supabase.from("fb_posts").delete().eq("id", id);
     if (error) {
       toast({ title: "Błąd usuwania", description: error.message, variant: "destructive" });
-    } else {
-      if (post?.image_url && !isHttpUrl(post.image_url)) {
-        await supabase.storage.from(IMAGE_BUCKET).remove([post.image_url]);
-      }
-      toast({ title: "Usunięto" });
-      void loadPosts();
+      return;
     }
+    const toRemove = (post?.image_urls ?? []).filter((p) => p && !isHttpUrl(p));
+    if (toRemove.length > 0) {
+      await supabase.storage.from(IMAGE_BUCKET).remove(toRemove);
+    }
+    toast({ title: "Usunięto" });
+    void loadPosts();
   }
 
   return (
@@ -370,47 +407,85 @@ const AdminPage = () => {
                     />
                   </div>
                 </div>
+
                 <div>
-                  <Label htmlFor="image_file">Zdjęcie (opcjonalnie)</Label>
-                  {imagePreview ? (
-                    <div className="mt-1.5 flex items-start gap-3">
-                      <img
-                        src={imagePreview}
-                        alt="Podgląd"
-                        className="w-32 h-32 object-cover rounded-lg border border-border"
-                      />
-                      <Button type="button" variant="outline" size="sm" onClick={handleImageRemove}>
-                        <X className="w-3.5 h-3.5 mr-1.5" /> Usuń zdjęcie
-                      </Button>
-                    </div>
-                  ) : (
-                    <div className="mt-1.5">
-                      <label
-                        htmlFor="image_file"
-                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-dashed border-border bg-muted/30 hover:bg-muted cursor-pointer text-sm ${uploading ? "opacity-60 pointer-events-none" : ""}`}
-                      >
-                        <Upload className="w-4 h-4" />
-                        {uploading ? "Wgrywanie…" : "Wgraj zdjęcie"}
-                      </label>
-                      <input
-                        id="image_file"
-                        type="file"
-                        accept="image/*"
-                        className="hidden"
-                        onChange={(e) => {
-                          const f = e.target.files?.[0];
-                          if (f) void handleImageUpload(f);
-                          e.target.value = "";
-                        }}
-                      />
-                      <p className="text-xs text-muted-foreground mt-1.5">
-                        Zdjęcie jest wgrywane na nasz serwer — bez zewnętrznych adresów.
-                      </p>
+                  <Label>Zdjęcia (opcjonalnie, można dodać kilka)</Label>
+                  {draft.image_urls.length > 0 && (
+                    <div className="mt-1.5 grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
+                      {draft.image_urls.map((path, idx) => (
+                        <div
+                          key={path}
+                          className="relative group rounded-lg overflow-hidden border border-border bg-muted/30"
+                        >
+                          {previews[path] ? (
+                            <img src={previews[path]} alt="" className="w-full aspect-square object-cover" />
+                          ) : (
+                            <div className="w-full aspect-square animate-pulse bg-muted" />
+                          )}
+                          {idx === 0 && (
+                            <span className="absolute top-1.5 left-1.5 text-[10px] font-bold uppercase tracking-wide bg-primary text-primary-foreground px-1.5 py-0.5 rounded">
+                              Główne
+                            </span>
+                          )}
+                          <div className="absolute inset-x-0 bottom-0 p-1.5 flex items-center justify-between gap-1 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="flex gap-1">
+                              <button
+                                type="button"
+                                onClick={() => moveImage(idx, -1)}
+                                disabled={idx === 0}
+                                className="p-1 rounded bg-background/90 hover:bg-background disabled:opacity-40"
+                                aria-label="W górę"
+                              >
+                                <ChevronUp className="w-3.5 h-3.5" />
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => moveImage(idx, 1)}
+                                disabled={idx === draft.image_urls.length - 1}
+                                className="p-1 rounded bg-background/90 hover:bg-background disabled:opacity-40"
+                                aria-label="W dół"
+                              >
+                                <ChevronDown className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => removeImageAt(idx)}
+                              className="p-1 rounded bg-background/90 hover:bg-destructive hover:text-destructive-foreground"
+                              aria-label="Usuń zdjęcie"
+                            >
+                              <X className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   )}
+                  <label
+                    htmlFor="image_files"
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-dashed border-border bg-muted/30 hover:bg-muted cursor-pointer text-sm ${uploading ? "opacity-60 pointer-events-none" : ""}`}
+                  >
+                    <Upload className="w-4 h-4" />
+                    {uploading ? "Wgrywanie…" : draft.image_urls.length > 0 ? "Dodaj kolejne zdjęcia" : "Wgraj zdjęcia"}
+                  </label>
+                  <input
+                    id="image_files"
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    className="hidden"
+                    onChange={(e) => {
+                      void handleFilesSelected(e.target.files);
+                      e.target.value = "";
+                    }}
+                  />
+                  <p className="text-xs text-muted-foreground mt-1.5">
+                    Zdjęcia są wgrywane na nasz serwer — bez zewnętrznych adresów. Pierwsze zdjęcie jest „główne".
+                  </p>
                 </div>
+
                 <div className="flex gap-2">
-                  <Button type="submit" disabled={saving}>
+                  <Button type="submit" disabled={saving || uploading}>
                     {saving ? "Zapisywanie…" : editing ? "Zapisz zmiany" : "Dodaj post"}
                   </Button>
                   {editing && (
@@ -431,16 +506,21 @@ const AdminPage = () => {
               <ul className="space-y-3">
                 {posts.map((p) => (
                   <li key={p.id} className="bg-card border border-border rounded-xl p-4 flex gap-4">
-                    {p.image_url && thumbs[p.id] && (
-                      <img src={thumbs[p.id]} alt="" className="w-20 h-20 object-cover rounded-lg flex-shrink-0" />
+                    {thumbs[p.id] && (
+                      <div className="relative flex-shrink-0">
+                        <img src={thumbs[p.id]} alt="" className="w-20 h-20 object-cover rounded-lg" />
+                        {p.image_urls.length > 1 && (
+                          <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                            {p.image_urls.length}
+                          </span>
+                        )}
+                      </div>
                     )}
                     <div className="flex-1 min-w-0">
                       <div className="text-xs text-muted-foreground mb-1">
                         {new Date(p.created_time).toLocaleString("pl-PL")}
                       </div>
-                      <p className="text-sm text-foreground line-clamp-3 whitespace-pre-line">
-                        {p.message}
-                      </p>
+                      <p className="text-sm text-foreground line-clamp-3 whitespace-pre-line">{p.message}</p>
                     </div>
                     <div className="flex flex-col gap-2 flex-shrink-0">
                       <Button size="sm" variant="outline" onClick={() => startEdit(p)}>

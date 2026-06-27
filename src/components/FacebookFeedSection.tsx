@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Facebook, ExternalLink } from "lucide-react";
+import { Facebook, ExternalLink, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 type FbPost = {
@@ -7,11 +7,12 @@ type FbPost = {
   message: string | null;
   created_time: string;
   permalink_url: string | null;
-  image_url: string | null;
+  image_urls: string[]; // resolved URLs
 };
 
 const PAGE_URL = "https://www.facebook.com/people/Ratujmy-Podjuchy/61574321447466/";
 const MAX_CHARS = 280;
+const IMAGE_BUCKET = "fb-post-images";
 
 function formatRelative(iso: string): string {
   const date = new Date(iso);
@@ -19,16 +20,11 @@ function formatRelative(iso: string): string {
   const minutes = Math.round(diffMs / 60000);
   const hours = Math.round(diffMs / 3600000);
   const days = Math.round(diffMs / 86400000);
-
   if (minutes < 1) return "przed chwilą";
   if (minutes < 60) return `${minutes} min temu`;
   if (hours < 24) return `${hours} godz. temu`;
   if (days < 7) return `${days} ${days === 1 ? "dzień" : "dni"} temu`;
-  return date.toLocaleDateString("pl-PL", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  return date.toLocaleDateString("pl-PL", { day: "numeric", month: "long", year: "numeric" });
 }
 
 function truncate(text: string): { shown: string; truncated: boolean } {
@@ -36,6 +32,80 @@ function truncate(text: string): { shown: string; truncated: boolean } {
   const cut = text.slice(0, MAX_CHARS);
   const lastSpace = cut.lastIndexOf(" ");
   return { shown: cut.slice(0, lastSpace > 200 ? lastSpace : MAX_CHARS) + "…", truncated: true };
+}
+
+async function resolveOne(value: string): Promise<string | null> {
+  if (/^https?:\/\//i.test(value)) return value;
+  const { data } = await supabase.storage.from(IMAGE_BUCKET).createSignedUrl(value, 3600);
+  return data?.signedUrl ?? null;
+}
+
+function PostImages({ urls, href }: { urls: string[]; href: string }) {
+  const [idx, setIdx] = useState(0);
+  if (urls.length === 0) return null;
+  const current = urls[idx];
+  return (
+    <div className="relative bg-muted">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block aspect-video overflow-hidden"
+      >
+        <img
+          src={current}
+          alt=""
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+        />
+      </a>
+      {urls.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              setIdx((i) => (i - 1 + urls.length) % urls.length);
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-background/80 hover:bg-background shadow"
+            aria-label="Poprzednie zdjęcie"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              setIdx((i) => (i + 1) % urls.length);
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-background/80 hover:bg-background shadow"
+            aria-label="Następne zdjęcie"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+          <div className="absolute top-2 right-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-background/80 text-xs font-medium">
+            <Images className="w-3 h-3" />
+            {idx + 1}/{urls.length}
+          </div>
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {urls.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIdx(i);
+                }}
+                aria-label={`Zdjęcie ${i + 1}`}
+                className={`w-1.5 h-1.5 rounded-full transition-all ${i === idx ? "bg-foreground w-4" : "bg-foreground/40"}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
 }
 
 const FacebookFeedSection = () => {
@@ -48,7 +118,7 @@ const FacebookFeedSection = () => {
     (async () => {
       const { data, error } = await supabase
         .from("fb_posts")
-        .select("id, message, created_time, permalink_url, image_url")
+        .select("id, message, created_time, permalink_url, image_url, image_urls")
         .order("created_time", { ascending: false })
         .limit(9);
       if (cancelled) return;
@@ -57,16 +127,23 @@ const FacebookFeedSection = () => {
         setLoading(false);
         return;
       }
-      const list = (data ?? []) as FbPost[];
-      // resolve storage paths into signed URLs
+      const list = data ?? [];
       const resolved = await Promise.all(
         list.map(async (p) => {
-          if (!p.image_url) return p;
-          if (/^https?:\/\//i.test(p.image_url)) return p;
-          const { data: signed } = await supabase.storage
-            .from("fb-post-images")
-            .createSignedUrl(p.image_url, 3600);
-          return { ...p, image_url: signed?.signedUrl ?? null };
+          const raw =
+            p.image_urls && p.image_urls.length > 0
+              ? p.image_urls
+              : p.image_url
+                ? [p.image_url]
+                : [];
+          const urls = (await Promise.all(raw.map(resolveOne))).filter((u): u is string => !!u);
+          return {
+            id: p.id,
+            message: p.message,
+            created_time: p.created_time,
+            permalink_url: p.permalink_url,
+            image_urls: urls,
+          } satisfies FbPost;
         }),
       );
       if (cancelled) return;
@@ -99,10 +176,7 @@ const FacebookFeedSection = () => {
         {loading && (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="bg-card border border-border rounded-2xl p-5 h-64 animate-pulse"
-              >
+              <div key={i} className="bg-card border border-border rounded-2xl p-5 h-64 animate-pulse">
                 <div className="h-3 w-24 bg-muted rounded mb-4" />
                 <div className="h-3 w-full bg-muted rounded mb-2" />
                 <div className="h-3 w-5/6 bg-muted rounded mb-2" />
@@ -121,21 +195,8 @@ const FacebookFeedSection = () => {
                   key={p.id}
                   className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col"
                 >
-                  {p.image_url && (
-                    <a
-                      href={p.permalink_url ?? PAGE_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block aspect-video overflow-hidden bg-muted"
-                    >
-                      <img
-                        src={p.image_url}
-                        alt=""
-                        loading="lazy"
-                        referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </a>
+                  {p.image_urls.length > 0 && (
+                    <PostImages urls={p.image_urls} href={p.permalink_url ?? PAGE_URL} />
                   )}
                   <div className="p-5 flex flex-col flex-1">
                     <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
@@ -181,9 +242,7 @@ const FacebookFeedSection = () => {
           <div className="bg-card border border-border rounded-2xl p-8 text-center max-w-xl mx-auto">
             <Facebook className="w-10 h-10 text-primary mx-auto mb-3" />
             <p className="text-muted-foreground mb-4">
-              {error
-                ? "Nie udało się załadować postów."
-                : "Wkrótce pojawią się tutaj najnowsze posty."}
+              {error ? "Nie udało się załadować postów." : "Wkrótce pojawią się tutaj najnowsze posty."}
             </p>
             <a
               href={PAGE_URL}
