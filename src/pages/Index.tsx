@@ -29,8 +29,8 @@ const Index = () => {
       <StepsSection />
       <CityResponseSection />
       <WhatNextSection />
-      <FacebookFeedSection />
       <PhotosSection />
+      <FacebookFeedSection />
       <AboutFooter />
       <FloatingCityReplyBanner />
     </div>
