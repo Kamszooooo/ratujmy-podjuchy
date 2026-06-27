@@ -34,7 +34,7 @@ const items = [
         >
           zwycięskiego projektu
         </a>{" "}
-        (padały zapowiedzi ograniczenia liczby mieszkań o połowę). Mówiono też o zachowaniu korytarza ekologicznego w postaci zadrzewionego terenu między ul.{" "}Ukośną a ul.{" "}Olkuską.
+        (padały zapowiedzi ograniczenia liczby mieszkań o prawie połowę, z 560 do około 300). Mówiono też o zachowaniu korytarza ekologicznego w postaci zadrzewionego terenu między ul.{" "}Ukośną a ul.{" "}Olkuską.
       </>
     ),
   },
