@@ -72,38 +72,73 @@ const CityResponseSection = () => {
 
         </div>
 
-        <Dialog>
-          <DialogTrigger asChild>
-            <figure className="group relative mt-8 mx-auto w-full max-w-[45%] min-w-[280px] rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 mt-8">
+          <Dialog>
+            <DialogTrigger asChild>
+              <figure className="group relative w-full rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
+                <img
+                  src={gorkiMaksZabudowa.url}
+                  alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
+                  className="w-full h-auto block"
+                />
+                <div className="absolute top-2 right-2 md:top-3 md:right-3 inline-flex items-center gap-1 px-1.5 py-1 md:gap-1.5 md:px-2.5 md:py-1.5 rounded-full bg-background/90 backdrop-blur text-[10px] md:text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
+                  <ZoomIn className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                  Powiększ
+                </div>
+                <figcaption className="px-3 py-2 md:px-4 md:py-3 text-[10px] md:text-xs text-foreground/80 leading-relaxed border-t border-destructive/20">
+                  Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach (przy maksymalnej dopuszczonej planem ogólnym intensywności zabudowy 1,2 na całym obszarze strefy 1386SW).
+                </figcaption>
+              </figure>
+            </DialogTrigger>
+            <DialogContent className="max-w-5xl">
+              <DialogTitle className="sr-only">Maksymalna zabudowa górek w Podjuchach</DialogTitle>
+              <DialogDescription className="sr-only">
+                Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego.
+              </DialogDescription>
               <img
                 src={gorkiMaksZabudowa.url}
                 alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
-                className="w-full h-auto block"
+                className="w-full h-auto block rounded-md"
               />
-              <div className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-background/90 backdrop-blur text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
-                <ZoomIn className="w-3.5 h-3.5" />
-                Powiększ
-              </div>
-              <figcaption className="px-4 py-3 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-destructive/20">
+              <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
                 Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach (przy maksymalnej dopuszczonej planem ogólnym intensywności zabudowy 1,2 na całym obszarze strefy 1386SW).
-              </figcaption>
-            </figure>
-          </DialogTrigger>
-          <DialogContent className="max-w-5xl">
-            <DialogTitle className="sr-only">Maksymalna zabudowa górek w Podjuchach</DialogTitle>
-            <DialogDescription className="sr-only">
-              Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego.
-            </DialogDescription>
-            <img
-              src={gorkiMaksZabudowa.url}
-              alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
-              className="w-full h-auto block rounded-md"
-            />
-            <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-              Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach (przy maksymalnej dopuszczonej planem ogólnym intensywności zabudowy 1,2 na całym obszarze strefy 1386SW).
-            </p>
-          </DialogContent>
-        </Dialog>
+              </p>
+            </DialogContent>
+          </Dialog>
+
+          <Dialog>
+            <DialogTrigger asChild>
+              <figure className="group relative w-full rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
+                <img
+                  src={projektTbsCropped.url}
+                  alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów STBS"
+                  className="w-full h-auto block"
+                />
+                <div className="absolute top-2 right-2 md:top-3 md:right-3 inline-flex items-center gap-1 px-1.5 py-1 md:gap-1.5 md:px-2.5 md:py-1.5 rounded-full bg-background/90 backdrop-blur text-[10px] md:text-xs font-semibold text-foreground border border-border shadow-sm opacity-90 group-hover:opacity-100">
+                  <ZoomIn className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                  Powiększ
+                </div>
+                <figcaption className="px-3 py-2 md:px-4 md:py-3 text-[10px] md:text-xs text-foreground/80 leading-relaxed border-t border-destructive/20">
+                  Makieta przedstawiająca zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do STBS (czarna linia przerywana). Rzeczywista intensywność osiedla wygląda na podobną do maksymalnie dopuszczonej (STBS twierdzi inaczej, ale uwzględnia w kalkulacjach znajdującą się w granicach strefy 1386SW część niezabudowywanych terenów wzgórz). Jak widać, bryły projektowanych budynków są całkowicie niedopasowane skalą do okolicznej zabudowy jednorodzinnej. Władze Szczecina zapowiedziały zmniejszenie skali osiedla, ale oficjalnie nie przedstawiono dotąd konkretów (niektórzy mówili o zmniejszeniu z 560 do około 300 mieszkań). Dolną część makiety, pomiędzy ul. Ukośną a Olkuską, pozostawiono pustą, ponieważ teren ten nie należy do TBS. Również tutaj plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
+                </figcaption>
+              </figure>
+            </DialogTrigger>
+            <DialogContent className="max-w-5xl">
+              <DialogTitle className="sr-only">Projekt osiedla TBS autorstwa 22Architekci</DialogTitle>
+              <DialogDescription className="sr-only">
+                Makieta przedstawiająca zwycięski projekt osiedla TBS z naniesionymi granicami strefy 1386SW i terenów STBS.
+              </DialogDescription>
+              <img
+                src={projektTbsCropped.url}
+                alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów STBS"
+                className="w-full h-auto block rounded-md"
+              />
+              <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
+                Makieta przedstawiająca zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (linia brązowa) oraz granice terenów należących do STBS (czarna linia przerywana). Rzeczywista intensywność osiedla wygląda na podobną do maksymalnie dopuszczonej (STBS twierdzi inaczej, ale uwzględnia w kalkulacjach znajdującą się w granicach strefy 1386SW część niezabudowywanych terenów wzgórz). Jak widać, bryły projektowanych budynków są całkowicie niedopasowane skalą do okolicznej zabudowy jednorodzinnej. Władze Szczecina zapowiedziały zmniejszenie skali osiedla, ale oficjalnie nie przedstawiono dotąd konkretów (niektórzy mówili o zmniejszeniu z 560 do około 300 mieszkań). Dolną część makiety, pomiędzy ul. Ukośną a Olkuską, pozostawiono pustą, ponieważ teren ten nie należy do TBS. Również tutaj plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
+              </p>
+            </DialogContent>
+          </Dialog>
+        </div>
 
         {/* Pomost wizualny łączący sekcję z "Co dalej?" */}
         <div className="mt-4 px-6 md:px-8 pt-2 pb-6">
