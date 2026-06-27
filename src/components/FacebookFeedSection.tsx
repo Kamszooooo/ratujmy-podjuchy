@@ -152,7 +152,7 @@ function PostBody({ full, shown, truncated }: { full: string; shown: string; tru
   const [expanded, setExpanded] = useState(false);
   const text = (expanded || !truncated ? full : shown).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
   return (
-    <div className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1 space-y-3">
+    <div className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1">
       {text.split("\n").map((line, i) => {
         const trimmed = line.trim();
         if (!trimmed) return <div key={i} className="h-2" />;
