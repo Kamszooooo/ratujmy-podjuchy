@@ -1,4 +1,4 @@
-import { AlertTriangle, ZoomIn, ChevronDown } from "lucide-react";
+import { AlertTriangle, ZoomIn, ChevronDown, ExternalLink } from "lucide-react";
 import uwagaNieuwzgledniona from "@/assets/uwaga-nieuwzgledniona.png.asset.json";
 import gorkiMaksZabudowa from "@/assets/symulacja-zabudowy-cropped.jpg.asset.json";
 import projektTbsCropped from "@/assets/projekt-tbs-cropped.png.asset.json";

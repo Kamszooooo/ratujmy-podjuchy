@@ -1,4 +1,4 @@
-import { Eye, Map, Contrast, Megaphone } from "lucide-react";
+import { Eye, Map, Contrast, Megaphone, ExternalLink } from "lucide-react";
 
 const items = [
   {
