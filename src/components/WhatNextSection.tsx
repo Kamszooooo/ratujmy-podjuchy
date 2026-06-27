@@ -30,7 +30,7 @@ const items = [
           href="https://wiadomosci.szczecin.eu/artykul/mieszkalnictwo/wiemy-juz-jak-bedzie-wygladalo-nowe-osiedle-w-podjuchach"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-2 font-semibold text-foreground hover:opacity-80"
+          className="inline-flex items-center gap-1 underline underline-offset-2 font-semibold text-foreground hover:opacity-80"
         >
           zwycięskiego projektu
         </a>{" "}

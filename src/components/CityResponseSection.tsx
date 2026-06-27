@@ -31,7 +31,7 @@ const CityResponseSection = () => {
               href="https://cdn.um.szczecin.pl/httpfiles/projekt_133.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 font-semibold hover:opacity-80"
+              className="inline-flex items-center gap-1 underline underline-offset-2 font-semibold hover:opacity-80"
             >
               projektu uchwały w sprawie planu ogólnego
             </a>{" "}
