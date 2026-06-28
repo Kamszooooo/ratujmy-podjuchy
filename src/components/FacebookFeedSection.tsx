@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Facebook, ExternalLink, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
@@ -20,7 +20,6 @@ type FbPost = {
 };
 
 const PAGE_URL = "https://www.facebook.com/people/Ratujmy-Podjuchy/61574321447466/";
-const MAX_CHARS = 280;
 const IMAGE_BUCKET = "fb-post-images";
 
 function formatRelative(iso: string): string {
@@ -34,13 +33,6 @@ function formatRelative(iso: string): string {
   if (hours < 24) return `${hours} godz. temu`;
   if (days < 7) return `${days} ${days === 1 ? "dzień" : "dni"} temu`;
   return date.toLocaleDateString("pl-PL", { day: "numeric", month: "long", year: "numeric" });
-}
-
-function truncate(text: string): { shown: string; truncated: boolean } {
-  if (text.length <= MAX_CHARS) return { shown: text, truncated: false };
-  const cut = text.slice(0, MAX_CHARS);
-  const lastSpace = cut.lastIndexOf(" ");
-  return { shown: cut.slice(0, lastSpace > 200 ? lastSpace : MAX_CHARS) + "…", truncated: true };
 }
 
 async function resolveOne(value: string): Promise<string | null> {
@@ -149,28 +141,84 @@ function linkify(text: string) {
   return parts;
 }
 
-function PostBody({ full, shown, truncated }: { full: string; shown: string; truncated: boolean }) {
+function PostBody({ full }: { full: string }) {
   const [expanded, setExpanded] = useState(false);
-  const text = (expanded || !truncated ? full : shown).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  const [maxLines, setMaxLines] = useState<number | null>(null);
+  const [needsTruncation, setNeedsTruncation] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const normalized = full.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+
+  useLayoutEffect(() => {
+    if (expanded) return;
+    const wrapper = wrapperRef.current;
+    const text = textRef.current;
+    if (!wrapper || !text) return;
+
+    const compute = () => {
+      const lh = parseFloat(getComputedStyle(text).lineHeight) || 20;
+      const available = wrapper.clientHeight;
+      if (available <= 0) return;
+
+      // Measure unclamped
+      const prevDisplay = text.style.display;
+      const prevClamp = text.style.webkitLineClamp;
+      const prevOverflow = text.style.overflow;
+      text.style.display = "block";
+      text.style.webkitLineClamp = "unset";
+      text.style.overflow = "visible";
+      const fullHeight = text.scrollHeight;
+      text.style.display = prevDisplay;
+      text.style.webkitLineClamp = prevClamp;
+      text.style.overflow = prevOverflow;
+
+      if (fullHeight <= available + 1) {
+        setNeedsTruncation(false);
+        setMaxLines(null);
+      } else {
+        // Reserve one line for the "czytaj dalej" row
+        const lines = Math.max(1, Math.floor(available / lh) - 1);
+        setNeedsTruncation(true);
+        setMaxLines(lines);
+      }
+    };
+
+    compute();
+    const ro = new ResizeObserver(compute);
+    ro.observe(wrapper);
+    return () => ro.disconnect();
+  }, [normalized, expanded]);
+
+  const showClamp = needsTruncation && !expanded && maxLines !== null;
+
   return (
-    <div className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1">
-      {text.split("\n").map((line, i) => {
-        const trimmed = line.trim();
-        if (!trimmed) return <div key={i} className="h-2" />;
-        return (
-          <p key={i} className="mb-2 last:mb-0">
-            {linkify(trimmed)}
-          </p>
-        );
-      })}
-      {truncated && (
-        <button
-          type="button"
-          onClick={() => setExpanded((v) => !v)}
-          className="text-primary hover:underline font-medium mt-1 inline"
-        >
-          {expanded ? "zwiń" : "czytaj dalej"}
-        </button>
+    <div ref={wrapperRef} className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1 flex flex-col min-h-0">
+      <div
+        ref={textRef}
+        className="whitespace-pre-line break-words"
+        style={
+          showClamp
+            ? {
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: maxLines!,
+                overflow: "hidden",
+              }
+            : undefined
+        }
+      >
+        {linkify(normalized)}
+      </div>
+      {needsTruncation && (
+        <div className="mt-auto pt-1 flex justify-end">
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="text-primary hover:underline font-medium text-sm"
+          >
+            {expanded ? "zwiń" : "czytaj dalej"}
+          </button>
+        </div>
       )}
     </div>
   );
@@ -282,7 +330,6 @@ const FacebookFeedSection = () => {
             <CarouselContent className="-ml-4">
               {posts!.map((p) => {
                 const full = p.message ?? "";
-                const { shown, truncated } = truncate(full);
                 return (
                   <CarouselItem
                     key={p.id}
@@ -296,7 +343,7 @@ const FacebookFeedSection = () => {
                         <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
                           {formatRelative(p.created_time)}
                         </div>
-                        {full && <PostBody full={full} shown={shown} truncated={truncated} />}
+                        {full && <PostBody full={full} />}
                         {p.permalink_url && (
                           <a
                             href={p.permalink_url}
