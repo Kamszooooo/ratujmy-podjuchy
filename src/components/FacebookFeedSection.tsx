@@ -342,7 +342,7 @@ const FacebookFeedSection = () => {
                     key={p.id}
                     className="pl-4 md:basis-1/2 lg:basis-1/3"
                   >
-                    <article className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+                    <article className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full max-h-[32rem]">
                       {p.image_urls.length > 0 && (
                         <PostImages urls={p.image_urls} href={p.permalink_url ?? PAGE_URL} />
                       )}
