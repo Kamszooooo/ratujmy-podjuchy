@@ -20,7 +20,7 @@ type FbPost = {
 };
 
 const PAGE_URL = "https://www.facebook.com/people/Ratujmy-Podjuchy/61574321447466/";
-const MAX_CHARS = 280;
+const IMAGE_BUCKET = "fb-post-images";
 const IMAGE_BUCKET = "fb-post-images";
 
 function formatRelative(iso: string): string {
