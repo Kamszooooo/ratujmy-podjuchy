@@ -192,7 +192,7 @@ function PostBody({ full }: { full: string }) {
   const showClamp = needsTruncation && !expanded && maxLines !== null;
 
   return (
-    <div ref={wrapperRef} className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1 flex flex-col min-h-0">
+    <div ref={wrapperRef} className={`text-sm text-foreground/90 leading-relaxed mb-4 flex-1 flex flex-col min-h-0 ${expanded ? "" : "max-h-[14em]"}`}>
       <div
         ref={textRef}
         className="whitespace-pre-line break-words"
