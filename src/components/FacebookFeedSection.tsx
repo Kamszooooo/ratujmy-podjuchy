@@ -330,7 +330,6 @@ const FacebookFeedSection = () => {
             <CarouselContent className="-ml-4">
               {posts!.map((p) => {
                 const full = p.message ?? "";
-                const { shown, truncated } = truncate(full);
                 return (
                   <CarouselItem
                     key={p.id}
@@ -344,7 +343,7 @@ const FacebookFeedSection = () => {
                         <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
                           {formatRelative(p.created_time)}
                         </div>
-                        {full && <PostBody full={full} shown={shown} truncated={truncated} />}
+                        {full && <PostBody full={full} />}
                         {p.permalink_url && (
                           <a
                             href={p.permalink_url}
