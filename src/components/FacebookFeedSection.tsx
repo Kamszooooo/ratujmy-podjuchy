@@ -184,15 +184,22 @@ function PostBody({ full }: { full: string }) {
     };
 
     compute();
-    const ro = new ResizeObserver(compute);
+    let rafId = 0;
+    const ro = new ResizeObserver(() => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(compute);
+    });
     ro.observe(wrapper);
-    return () => ro.disconnect();
+    return () => {
+      cancelAnimationFrame(rafId);
+      ro.disconnect();
+    };
   }, [normalized, expanded]);
 
   const showClamp = needsTruncation && !expanded && maxLines !== null;
 
   return (
-    <div ref={wrapperRef} className={`text-sm text-foreground/90 leading-relaxed mb-4 flex-1 flex flex-col min-h-0 ${expanded ? "" : "max-h-[14em]"}`}>
+    <div ref={wrapperRef} className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1 flex flex-col min-h-0">
       <div
         ref={textRef}
         className="whitespace-pre-line break-words"
@@ -335,7 +342,7 @@ const FacebookFeedSection = () => {
                     key={p.id}
                     className="pl-4 md:basis-1/2 lg:basis-1/3"
                   >
-                    <article className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+                    <article className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full max-h-[32rem]">
                       {p.image_urls.length > 0 && (
                         <PostImages urls={p.image_urls} href={p.permalink_url ?? PAGE_URL} />
                       )}
