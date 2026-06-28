@@ -184,9 +184,16 @@ function PostBody({ full }: { full: string }) {
     };
 
     compute();
-    const ro = new ResizeObserver(compute);
+    let rafId = 0;
+    const ro = new ResizeObserver(() => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(compute);
+    });
     ro.observe(wrapper);
-    return () => ro.disconnect();
+    return () => {
+      cancelAnimationFrame(rafId);
+      ro.disconnect();
+    };
   }, [normalized, expanded]);
 
   const showClamp = needsTruncation && !expanded && maxLines !== null;
