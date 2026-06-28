@@ -36,13 +36,6 @@ function formatRelative(iso: string): string {
   return date.toLocaleDateString("pl-PL", { day: "numeric", month: "long", year: "numeric" });
 }
 
-function truncate(text: string): { shown: string; truncated: boolean } {
-  if (text.length <= MAX_CHARS) return { shown: text, truncated: false };
-  const cut = text.slice(0, MAX_CHARS);
-  const lastSpace = cut.lastIndexOf(" ");
-  return { shown: cut.slice(0, lastSpace > 200 ? lastSpace : MAX_CHARS) + "…", truncated: true };
-}
-
 async function resolveOne(value: string): Promise<string | null> {
   if (/^https?:\/\//i.test(value)) return value;
   const { data } = await supabase.storage.from(IMAGE_BUCKET).createSignedUrl(value, 3600);
