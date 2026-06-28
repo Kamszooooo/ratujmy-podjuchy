@@ -141,28 +141,84 @@ function linkify(text: string) {
   return parts;
 }
 
-function PostBody({ full, shown, truncated }: { full: string; shown: string; truncated: boolean }) {
+function PostBody({ full }: { full: string }) {
   const [expanded, setExpanded] = useState(false);
-  const text = (expanded || !truncated ? full : shown).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  const [maxLines, setMaxLines] = useState<number | null>(null);
+  const [needsTruncation, setNeedsTruncation] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const normalized = full.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+
+  useLayoutEffect(() => {
+    if (expanded) return;
+    const wrapper = wrapperRef.current;
+    const text = textRef.current;
+    if (!wrapper || !text) return;
+
+    const compute = () => {
+      const lh = parseFloat(getComputedStyle(text).lineHeight) || 20;
+      const available = wrapper.clientHeight;
+      if (available <= 0) return;
+
+      // Measure unclamped
+      const prevDisplay = text.style.display;
+      const prevClamp = text.style.webkitLineClamp;
+      const prevOverflow = text.style.overflow;
+      text.style.display = "block";
+      text.style.webkitLineClamp = "unset";
+      text.style.overflow = "visible";
+      const fullHeight = text.scrollHeight;
+      text.style.display = prevDisplay;
+      text.style.webkitLineClamp = prevClamp;
+      text.style.overflow = prevOverflow;
+
+      if (fullHeight <= available + 1) {
+        setNeedsTruncation(false);
+        setMaxLines(null);
+      } else {
+        // Reserve one line for the "czytaj dalej" row
+        const lines = Math.max(1, Math.floor(available / lh) - 1);
+        setNeedsTruncation(true);
+        setMaxLines(lines);
+      }
+    };
+
+    compute();
+    const ro = new ResizeObserver(compute);
+    ro.observe(wrapper);
+    return () => ro.disconnect();
+  }, [normalized, expanded]);
+
+  const showClamp = needsTruncation && !expanded && maxLines !== null;
+
   return (
-    <div className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1">
-      {text.split("\n").map((line, i) => {
-        const trimmed = line.trim();
-        if (!trimmed) return <div key={i} className="h-2" />;
-        return (
-          <p key={i} className="mb-2 last:mb-0">
-            {linkify(trimmed)}
-          </p>
-        );
-      })}
-      {truncated && (
-        <button
-          type="button"
-          onClick={() => setExpanded((v) => !v)}
-          className="text-primary hover:underline font-medium mt-1 inline"
-        >
-          {expanded ? "zwiń" : "czytaj dalej"}
-        </button>
+    <div ref={wrapperRef} className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1 flex flex-col min-h-0">
+      <div
+        ref={textRef}
+        className="whitespace-pre-line break-words"
+        style={
+          showClamp
+            ? {
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: maxLines!,
+                overflow: "hidden",
+              }
+            : undefined
+        }
+      >
+        {linkify(normalized)}
+      </div>
+      {needsTruncation && (
+        <div className="mt-auto pt-1 flex justify-end">
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="text-primary hover:underline font-medium text-sm"
+          >
+            {expanded ? "zwiń" : "czytaj dalej"}
+          </button>
+        </div>
       )}
     </div>
   );
