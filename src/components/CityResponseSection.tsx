@@ -134,7 +134,7 @@ const CityResponseSection = () => {
                   Powiększ
                 </div>
                 <figcaption className="px-3 py-2 md:px-4 md:py-3 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-destructive/20 whitespace-pre-line">
-                  Zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (<BrownLine />) oraz granice terenu należącego do TBS (<DashedLine />).&nbsp;Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi. Intensywność zabudowy na rzeczywiście zabudowywanym obszarze jest bliska maksymalnie dopuszczonej 1,2 (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych – słusznie! – terenów wzgórz od strony autostrady w granicach 1386SW). Jednocześnie zapowiedziano ograniczenie skali osiedla, ale oficjalnych konkretów ze strony TBS wciąż brak.{"\n\n"}Teren między ul. Ukośną a Olkuską jest na makiecie pusty, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
+                  Zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (<BrownLine />) oraz granice terenu należącego do TBS (<DashedLine />).&nbsp;Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi. Teren między ul. Ukośną a Olkuską jest na makiecie pusty, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.{"\n\n"}Intensywność zabudowy na rzeczywiście zabudowywanym przez TBS obszarze jest bliska maksymalnie dopuszczonej 1,2 (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych – słusznie! – terenów wzgórz od strony autostrady, znajdującą się w granicach strefy 1386SW). Zapowiedziano ograniczenie skali osiedla TBS, ale oficjalnych konkretów ze strony TBS wciąż brak.
                 </figcaption>
               </figure>
             </DialogTrigger>
@@ -149,10 +149,10 @@ const CityResponseSection = () => {
                 className="w-full h-auto block rounded-md"
               />
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed mb-4">
-                Zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (<BrownLine />) oraz granice terenu należącego do TBS (<DashedLine />).&nbsp;Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi. Intensywność zabudowy na rzeczywiście zabudowywanym obszarze jest bliska maksymalnie dopuszczonej 1,2 (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych – słusznie! – terenów wzgórz od strony autostrady w granicach 1386SW). Jednocześnie zapowiedziano ograniczenie skali osiedla, ale oficjalnych konkretów ze strony TBS wciąż brak.
+                Zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (<BrownLine />) oraz granice terenu należącego do TBS (<DashedLine />).&nbsp;Rzuca się w oczy kontrast między skalą projektowanych bloków a okolicznymi domami jednorodzinnymi. Teren między ul. Ukośną a Olkuską jest na makiecie pusty, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
               </p>
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
-                Teren między ul. Ukośną a Olkuską jest na makiecie pusty, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
+                Intensywność zabudowy na rzeczywiście zabudowywanym przez TBS obszarze jest bliska maksymalnie dopuszczonej 1,2 (TBS twierdzi inaczej, ale uwzględnia w obliczeniach część niezabudowywanych – słusznie! – terenów wzgórz od strony autostrady, znajdującą się w granicach strefy 1386SW). Zapowiedziano ograniczenie skali osiedla TBS, ale oficjalnych konkretów ze strony TBS wciąż brak.
               </p>
             </DialogContent>
           </Dialog>
