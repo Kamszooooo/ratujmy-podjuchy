@@ -346,7 +346,7 @@ const FacebookFeedSection = () => {
                       {p.image_urls.length > 0 && (
                         <PostImages urls={p.image_urls} href={p.permalink_url ?? PAGE_URL} />
                       )}
-                      <div className="p-5 flex flex-col flex-1">
+                      <div className="p-5 flex flex-col flex-1 min-h-0">
                         <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
                           {formatRelative(p.created_time)}
                         </div>
