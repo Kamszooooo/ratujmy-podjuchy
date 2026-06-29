@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } 
 const BrownLine = () => (
   <span
     className="inline-block rounded-full align-middle mx-0.5"
-    style={{ width: "3.5ch", height: "3px", backgroundColor: "hsl(var(--earth))" }}
+    style={{ width: "3.5ch", height: "2px", backgroundColor: "#8E7B82" }}
   />
 );
 
