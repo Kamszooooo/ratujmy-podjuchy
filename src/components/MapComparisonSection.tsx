@@ -157,6 +157,7 @@ const MapComparisonSection = () => {
         t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 
       const tick = (timestamp: number) => {
+        console.log("[HINT] tick", { isHinting: isHinting.current, stepIndex, startTime, timestamp });
         if (!isHinting.current) return;
         if (startTime === null) startTime = timestamp;
         const elapsed = timestamp - startTime;
@@ -164,6 +165,7 @@ const MapComparisonSection = () => {
         const rawProgress = Math.min(elapsed / duration, 1);
         const eased = easeInOutQuad(rawProgress);
         const value = from + (to - from) * eased;
+        console.log("[HINT] setting position", { value, rawProgress, stepIndex });
         setSliderPosition(value);
 
         if (rawProgress < 1) {
