@@ -128,17 +128,14 @@ const MapComparisonSection = () => {
 
   // Hint animation: runs once when the map first scrolls into view.
   useEffect(() => {
-    console.log("[HINT] effect running", { allLoaded, hasHinted: hasHinted.current, isHinting: isHinting.current, isDragging: isDragging.current, hasContainer: !!containerRef.current });
     if (typeof window === "undefined") return;
     if (!containerRef.current || !allLoaded) return;
     if (hasHinted.current || isHinting.current || isDragging.current) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    console.log("[HINT] reduced motion", reducedMotion.matches);
     if (reducedMotion.matches) return;
 
     const runHint = () => {
-      console.log("[HINT] runHint called");
       if (isHinting.current || hasHinted.current) return;
       isHinting.current = true;
       hasHinted.current = true;
@@ -157,7 +154,6 @@ const MapComparisonSection = () => {
         t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 
       const tick = (timestamp: number) => {
-        console.log("[HINT] tick", { isHinting: isHinting.current, stepIndex, startTime, timestamp });
         if (!isHinting.current) return;
         if (startTime === null) startTime = timestamp;
         const elapsed = timestamp - startTime;
@@ -165,7 +161,6 @@ const MapComparisonSection = () => {
         const rawProgress = Math.min(elapsed / duration, 1);
         const eased = easeInOutQuad(rawProgress);
         const value = from + (to - from) * eased;
-        console.log("[HINT] setting position", { value, rawProgress, stepIndex });
         setSliderPosition(value);
 
         if (rawProgress < 1) {
@@ -189,7 +184,6 @@ const MapComparisonSection = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log("[HINT] observer entry", entry.isIntersecting, entry.intersectionRatio);
           if (
             entry.isIntersecting &&
             !hasHinted.current &&
