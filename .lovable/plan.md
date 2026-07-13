@@ -1,48 +1,43 @@
-# Feed z Facebooka — bez wtyczki Meta, przyjazny prywatności
+Plan: suwak na mapie sam się lekko "pokiwa" po pierwszym przewinięciu sekcji `#mapa` na widok.
 
-Pobieramy posty oficjalnym Graph API po stronie serwera (Lovable Cloud), cache'ujemy je w bazie i serwujemy z naszego backendu. U czytelnika **żadnych skryptów ani ciasteczek Facebooka** — tylko nasze HTML/obrazy.
+## Wymagania (z potwierdzonych odpowiedzi)
 
-## Co dostanie czytelnik
+- Punkt startowy: domyślna pozycja 57%.
+- Sekwencja: ok. 15% w lewo (42%), potem ok. 15% w prawo (72%), potem powrót do 57%.
+- To tylko wskazówka — suwak wraca na pozycję wyjściową.
+- Animacja uruchamia się tylko raz, przy pierwszym wejściu sekcji w viewport.
+- Cel: zwrócić uwagę użytkownika, że suwak da się przesuwać.
 
-Nowa sekcja **„Aktualności z Facebooka"** umieszczona między `WhatNextSection` a `PhotosSection` w `src/pages/Index.tsx`:
+## Modyfikacje w `src/components/MapComparisonSection.tsx`
 
-- Nagłówek + krótki opis + link do profilu.
-- Siatka 9 najnowszych postów (3 kolumny na desktopie, 1 na mobile):
-  - data (formatowana po polsku, „2 dni temu"),
-  - tekst posta (skrócony do ~280 znaków z „czytaj dalej" → link do FB),
-  - miniatura zdjęcia jeśli post je ma,
-  - link „Zobacz na Facebooku".
-- Spójna stylistyka z resztą strony (te same tokeny kolorów, zaokrąglenia, cienie co `MeetingSection`/karty).
-- Stan ładowania (skeleton) i czytelny fallback gdy backend nie zwróci postów („Zobacz najnowsze posty na profilu →").
+1. **Wykrycie widoczności sekcji**
+   - Dodać `useEffect` z `IntersectionObserver` obserwującym `containerRef`.
+   - Próg wejścia: np. 50% widocznej powierzchni mapy (`threshold: 0.5`).
+   - Wyzwalacz: sekcja musi być widoczna, obie mapy załadowane (`allLoaded`) oraz animacja jeszcze nie była uruchomiona.
 
-## Jak to działa pod spodem (część techniczna)
+2. **Stan animacji**
+   - Dodać `hasHinted` jako `useRef(false)` (nie wpływa na render, wystarczy zapobiegać powtórzeniom).
+   - Dodać `isHinting` jako `useRef(false)` — blokuje nadpisywanie pozycji przez gesty użytkownika podczas animacji.
+   - Dodać `useRef` dla `requestAnimationFrame` ID, aby móc przerwać animację.
 
-1. **Lovable Cloud** zostaje włączony (potrzebny do edge functions + bazy + sekretów).
-2. **Sekret** `FACEBOOK_PAGE_ACCESS_TOKEN` — długoterminowy Page Access Token dla strony „Ratujmy Podjuchy". Instrukcję krok-po-kroku jak go wygenerować (Meta for Developers → aplikacja typu „Business" → Graph API Explorer → wymiana na long-lived token ~60 dni → ewentualnie never-expiring page token) dostaniesz w czacie zanim poproszę o wklejenie wartości przez bezpieczny formularz.
-3. **Tabela cache** `fb_posts` (publiczny SELECT dla `anon`, INSERT/UPDATE tylko dla `service_role`):
-   - `id` (FB post id, PK), `message` (text), `created_time` (timestamptz), `permalink_url`, `image_url`, `fetched_at`.
-4. **Edge function `refresh-fb-feed`** (chroniona — wywoływana z cronu / ręcznie):
-   - GET `https://graph.facebook.com/v21.0/me/posts?fields=id,message,created_time,permalink_url,full_picture&limit=15&access_token=…`
-   - upsert do `fb_posts`, usuwa rekordy starsze niż 30 pozycji.
-5. **Edge function `get-fb-feed`** (publiczna, `verify_jwt=false`): zwraca 9 najnowszych z tabeli. Frontend pobiera tylko stąd — Facebook nigdy nie jest wywoływany z przeglądarki czytelnika.
-6. **Cron** w Supabase (`pg_cron`) wywołuje `refresh-fb-feed` co 30 minut. Token długoterminowy odświeżany ręcznie raz na ~60 dni (powiadomienie w README + komentarz w funkcji).
-7. **Nowy komponent** `src/components/FacebookFeedSection.tsx` z fetchem do `get-fb-feed`, skeletonami i fallbackiem.
+3. **Logika animacji**
+   - Użyć `requestAnimationFrame` + własna funkcja easing (np. ease-in-out).
+   - Sekwencja kroków:
+     - 57% → 42% (ok. 400 ms)
+     - 42% → 72% (ok. 500 ms)
+     - 72% → 57% (ok. 400 ms)
+   - Aktualizacja `sliderPosition` przez `setSliderPosition` w każdej klatce.
+   - Po zakończeniu: `isHinting.current = false`, pozycja wraca dokładnie do 57%.
 
-## Prywatność
+4. **Obsługa interakcji użytkownika**
+   - W `handlePointerDown` (lub przy każdym zdarzeniu wskaźnika) sprawdzić `isHinting.current`. Jeśli trwa animacja — anulować `requestAnimationFrame`, ustawić `isHinting.current = false` i przekazać kontrolę użytkownikowi (jak dotychczas).
+   - Dzięki temu dotknięcie/kliknięcie suwaka natychmiast przerywa wskazówkę.
 
-- Zero skryptów Meta, zero iframe'ów `facebook.com`, zero ciasteczek third-party.
-- Obrazy: domyślnie linkujemy bezpośrednio do `fbcdn.net` (lekki hit prywatności — FB widzi IP gdy obraz się ładuje). Jeśli wolisz pełną izolację, mogę dodać proxy obrazów przez edge function (cache w Supabase Storage) — daj znać.
+5. **Dostępność**
+   - Sprawdzić `window.matchMedia('(prefers-reduced-motion: reduce)')`. Jeśli użytkownik wybrał redukcję ruchu, animacja nie startuje.
 
-## Pliki do zmiany / utworzenia
+## Weryfikacja
 
-- `src/pages/Index.tsx` — dodanie `<FacebookFeedSection />` między `WhatNextSection` a `PhotosSection`.
-- `src/components/FacebookFeedSection.tsx` — nowy.
-- `supabase/functions/refresh-fb-feed/index.ts` — nowy.
-- `supabase/functions/get-fb-feed/index.ts` — nowy.
-- Migracja: tabela `fb_posts` + GRANTy + RLS + cron.
-
-## Czego potrzebuję od Ciebie po zatwierdzeniu planu
-
-1. Zgoda na włączenie Lovable Cloud (jeśli jeszcze nie jest aktywne).
-2. Po moich instrukcjach — wklejenie `FACEBOOK_PAGE_ACCESS_TOKEN` w bezpieczny formularz (nie w czacie).
-3. Decyzja czy proxy'ujemy obrazy przez nasz backend (pełna prywatność, większe zużycie storage), czy linkujemy bezpośrednio do CDN Facebooka (prościej, drobny ślad prywatności).
+- Po zbudowaniu przewinąć stronę do sekcji mapy — suwak powinien się "pokiwać" (lewo-prawo-powrót).
+- Kliknięcie/tapnięcie w suwak podczas animacji powinno ją przerwać i umożliwić ręczne przesuwanie.
+- Po ponownym wyjściu i wejściu w sekcję animacja nie powinna się powtórzyć.
