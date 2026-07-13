@@ -128,14 +128,17 @@ const MapComparisonSection = () => {
 
   // Hint animation: runs once when the map first scrolls into view.
   useEffect(() => {
+    console.log("[HINT] effect running", { allLoaded, hasHinted: hasHinted.current, isHinting: isHinting.current, isDragging: isDragging.current, hasContainer: !!containerRef.current });
     if (typeof window === "undefined") return;
     if (!containerRef.current || !allLoaded) return;
     if (hasHinted.current || isHinting.current || isDragging.current) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    console.log("[HINT] reduced motion", reducedMotion.matches);
     if (reducedMotion.matches) return;
 
     const runHint = () => {
+      console.log("[HINT] runHint called");
       if (isHinting.current || hasHinted.current) return;
       isHinting.current = true;
       hasHinted.current = true;
@@ -184,6 +187,7 @@ const MapComparisonSection = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          console.log("[HINT] observer entry", entry.isIntersecting, entry.intersectionRatio);
           if (
             entry.isIntersecting &&
             !hasHinted.current &&
