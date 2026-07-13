@@ -1,7 +1,11 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
+
+const DEFAULT_POSITION = 57;
+const HINT_LEFT = 42;
+const HINT_RIGHT = 72;
 
 const MapComparisonSection = () => {
-  const [sliderPosition, setSliderPosition] = useState(57);
+  const [sliderPosition, setSliderPosition] = useState(DEFAULT_POSITION);
   const [imagesLoaded, setImagesLoaded] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
@@ -14,6 +18,23 @@ const MapComparisonSection = () => {
     cancelled: boolean;
   } | null>(null);
   const allLoaded = imagesLoaded >= 2;
+
+  const hasHinted = useRef(false);
+  const isHinting = useRef(false);
+  const rafId = useRef<number | null>(null);
+  const currentPositionRef = useRef(sliderPosition);
+
+  useEffect(() => {
+    currentPositionRef.current = sliderPosition;
+  }, [sliderPosition]);
+
+  useEffect(() => {
+    return () => {
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
+  }, []);
 
   const MOVE_THRESHOLD = 8; // px before we decide direction
   // tolerance 5%: only let the page scroll when the gesture is essentially
@@ -28,7 +49,19 @@ const MapComparisonSection = () => {
     setSliderPosition((x / rect.width) * 100);
   }, []);
 
+  const cancelHint = useCallback(() => {
+    if (rafId.current !== null) {
+      cancelAnimationFrame(rafId.current);
+      rafId.current = null;
+    }
+    isHinting.current = false;
+  }, []);
+
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
+    if (isHinting.current) {
+      cancelHint();
+    }
+
     gestureRef.current = {
       pointerId: e.pointerId,
       pointerType: e.pointerType,
@@ -47,7 +80,7 @@ const MapComparisonSection = () => {
     }
     // For touch: wait until move direction is clear; do not capture yet,
     // so the browser can still scroll the page vertically (touch-pan-y).
-  }, [updatePosition]);
+  }, [updatePosition, cancelHint]);
 
   const handlePointerMove = useCallback((e: React.PointerEvent) => {
     const g = gestureRef.current;
@@ -92,6 +125,82 @@ const MapComparisonSection = () => {
     isDragging.current = false;
     gestureRef.current = null;
   }, [updatePosition]);
+
+  // Hint animation: runs once when the map first scrolls into view.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!containerRef.current || !allLoaded) return;
+    if (hasHinted.current || isHinting.current || isDragging.current) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
+
+    const runHint = () => {
+      if (isHinting.current || hasHinted.current) return;
+      isHinting.current = true;
+      hasHinted.current = true;
+
+      const steps = [
+        { to: HINT_LEFT, duration: 450 },
+        { to: HINT_RIGHT, duration: 600 },
+        { to: DEFAULT_POSITION, duration: 450 },
+      ];
+
+      let stepIndex = 0;
+      let startTime: number | null = null;
+      let from = currentPositionRef.current;
+
+      const easeInOutQuad = (t: number) =>
+        t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+      const tick = (timestamp: number) => {
+        if (!isHinting.current) return;
+        if (startTime === null) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const { to, duration } = steps[stepIndex];
+        const rawProgress = Math.min(elapsed / duration, 1);
+        const eased = easeInOutQuad(rawProgress);
+        const value = from + (to - from) * eased;
+        setSliderPosition(value);
+
+        if (rawProgress < 1) {
+          rafId.current = requestAnimationFrame(tick);
+        } else {
+          stepIndex++;
+          if (stepIndex < steps.length) {
+            startTime = null;
+            from = to;
+            rafId.current = requestAnimationFrame(tick);
+          } else {
+            isHinting.current = false;
+            rafId.current = null;
+          }
+        }
+      };
+
+      rafId.current = requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (
+            entry.isIntersecting &&
+            !hasHinted.current &&
+            !isHinting.current &&
+            !isDragging.current &&
+            !reducedMotion.matches
+          ) {
+            runHint();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, [allLoaded]);
 
   return (
     <section className="pb-12 pt-0 px-4" id="mapa">
