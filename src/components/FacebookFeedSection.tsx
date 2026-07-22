@@ -141,8 +141,15 @@ function linkify(text: string) {
   return parts;
 }
 
-function PostBody({ full }: { full: string }) {
-  const [expanded, setExpanded] = useState(false);
+function PostBody({
+  full,
+  expanded,
+  setExpanded,
+}: {
+  full: string;
+  expanded: boolean;
+  setExpanded: (v: boolean) => void;
+}) {
   const [maxLines, setMaxLines] = useState<number | null>(null);
   const [needsTruncation, setNeedsTruncation] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -160,7 +167,6 @@ function PostBody({ full }: { full: string }) {
       const available = wrapper.clientHeight;
       if (available <= 0) return;
 
-      // Measure unclamped
       const prevDisplay = text.style.display;
       const prevClamp = text.style.webkitLineClamp;
       const prevOverflow = text.style.overflow;
@@ -176,7 +182,6 @@ function PostBody({ full }: { full: string }) {
         setNeedsTruncation(false);
         setMaxLines(null);
       } else {
-        // Reserve one line for the "czytaj dalej" row
         const lines = Math.max(1, Math.floor(available / lh) - 1);
         setNeedsTruncation(true);
         setMaxLines(lines);
@@ -216,11 +221,11 @@ function PostBody({ full }: { full: string }) {
       >
         {linkify(normalized)}
       </div>
-      {needsTruncation && (
+      {(needsTruncation || expanded) && (
         <div className="mt-auto pt-1 flex justify-end">
           <button
             type="button"
-            onClick={() => setExpanded((v) => !v)}
+            onClick={() => setExpanded(!expanded)}
             className="text-primary hover:underline font-medium text-sm"
           >
             {expanded ? "zwiń" : "czytaj dalej"}
@@ -228,6 +233,39 @@ function PostBody({ full }: { full: string }) {
         </div>
       )}
     </div>
+  );
+}
+
+function PostCard({ p }: { p: FbPost }) {
+  const [expanded, setExpanded] = useState(false);
+  const full = p.message ?? "";
+  return (
+    <article
+      className={`bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full ${
+        expanded ? "" : "max-h-[32rem]"
+      }`}
+    >
+      {p.image_urls.length > 0 && (
+        <PostImages urls={p.image_urls} href={p.permalink_url ?? PAGE_URL} />
+      )}
+      <div className="p-5 flex flex-col flex-1 min-h-0">
+        <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
+          {formatRelative(p.created_time)}
+        </div>
+        {full && <PostBody full={full} expanded={expanded} setExpanded={setExpanded} />}
+        {p.permalink_url && (
+          <a
+            href={p.permalink_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline mt-auto"
+          >
+            Zobacz na Facebooku
+            <ExternalLink className="w-3 h-3" />
+          </a>
+        )}
+      </div>
+    </article>
   );
 }
 
