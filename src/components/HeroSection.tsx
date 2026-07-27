@@ -13,8 +13,9 @@ const HeroSection = () => {
   const touchStartY = useRef(0);
 
   useEffect(() => {
+    const base = import.meta.env.BASE_URL || "/";
     const img = new Image();
-    img.src = "/images/hero-bg.webp";
+    img.src = `${base}images/hero-bg.webp`;
     if (img.complete) {
       setImageLoaded(true);
     } else {
@@ -131,7 +132,7 @@ const HeroSection = () => {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-bottom"
-        style={{ backgroundImage: "url('/images/hero-bg.webp')" }}
+        style={{ backgroundImage: `url("${import.meta.env.BASE_URL || '/'}images/hero-bg.webp")` }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />

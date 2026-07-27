@@ -8,17 +8,18 @@ type MediaItem = {
   poster?: string;
 };
 
+const base = import.meta.env.BASE_URL || '/';
 const photos: MediaItem[] = [
-  { src: "/images/teren_video.mp4", alt: "Górne Podjuchy — film z terenu", type: "video", poster: "/images/teren_video_poster.webp" },
-  { src: "/images/teren_01.webp", alt: "Górne Podjuchy — leśny zakątek z bujną zielenią" },
-  { src: "/images/teren_02.webp", alt: "Górne Podjuchy — kwitnący bez i drzewa" },
-  { src: "/images/teren_03.webp", alt: "Górne Podjuchy — wysokie brzozy i bujny las" },
-  { src: "/images/teren_04.webp", alt: "Górne Podjuchy — leśna ścieżka wśród starych drzew" },
-  { src: "/images/teren_05.webp", alt: "Górne Podjuchy — gęsty las liściasty" },
-  { src: "/images/teren_06.webp", alt: "Górne Podjuchy — panorama wzgórz i zieleni o zachodzie słońca" },
+  { src: `${base}images/teren_video.mp4`, alt: "Górne Podjuchy — film z terenu", type: "video", poster: `${base}images/teren_video_poster.webp` },
+  { src: `${base}images/teren_01.webp`, alt: "Górne Podjuchy — leśny zakątek z bujną zielenią" },
+  { src: `${base}images/teren_02.webp`, alt: "Górne Podjuchy — kwitnący bez i drzewa" },
+  { src: `${base}images/teren_03.webp`, alt: "Górne Podjuchy — wysokie brzozy i bujny las" },
+  { src: `${base}images/teren_04.webp`, alt: "Górne Podjuchy — leśna ścieżka wśród starych drzew" },
+  { src: `${base}images/teren_05.webp`, alt: "Górne Podjuchy — gęsty las liściasty" },
+  { src: `${base}images/teren_06.webp`, alt: "Górne Podjuchy — panorama wzgórz i zieleni o zachodzie słońca" },
   
-  { src: "/images/teren_08.webp", alt: "Górne Podjuchy — zielony teren z kwitnącymi krzewami" },
-  { src: "/images/teren_09.webp", alt: "Górne Podjuchy — sarna w wysokiej trawie na skraju lasu" },
+  { src: `${base}images/teren_08.webp`, alt: "Górne Podjuchy — zielony teren z kwitnącymi krzewami" },
+  { src: `${base}images/teren_09.webp`, alt: "Górne Podjuchy — sarna w wysokiej trawie na skraju lasu" },
 ];
 
 const useColumns = () => {
