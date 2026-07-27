@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 140 20% 97%;
+    --foreground: 150 20% 5%;
+
+    --card: 140 15% 95%;
+    --card-foreground: 150 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 10%;
+
+    --primary: 152 45% 28%;
+    --primary-foreground: 140 20% 97%;
+
+    --secondary: 145 20% 90%;
+    --secondary-foreground: 150 30% 15%;
+
+    --muted: 140 15% 92%;
+    --muted-foreground: 150 10% 25%;
+
+    --accent: 205 65% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 145 15% 85%;
+    --input: 145 15% 85%;
+    --ring: 152 45% 28%;
+
+    --radius: 0.75rem;
+
+    --forest-dark: 152 50% 18%;
+    --forest-mid: 152 45% 28%;
+    --forest-light: 145 30% 42%;
+    --earth: 30 25% 35%;
+    --szczecin-blue: 205 65% 38%;
+    --leaf: 95 45% 55%;
+
+    --hero-gradient: linear-gradient(135deg, hsl(152 50% 18%), hsl(152 45% 28%), hsl(205 65% 38%));
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  @media (min-width: 768px) {
+    body {
+      line-height: 1.5;
+    }
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-forest {
+    background: linear-gradient(135deg, hsl(var(--forest-dark)), hsl(var(--forest-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
