@@ -105,7 +105,7 @@ const CityResponseSection = () => {
                 </figcaption>
               </figure>
             </DialogTrigger>
-            <DialogContent className="max-w-5xl">
+            <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
               <DialogTitle className="sr-only">Maksymalna zabudowa górek w Podjuchach</DialogTitle>
               <DialogDescription className="sr-only">
                 Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego.
@@ -113,7 +113,7 @@ const CityResponseSection = () => {
               <img
                 src={gorkiMaksZabudowa.url}
                 alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
-                className="w-full h-auto block rounded-md"
+                className="w-auto max-w-full max-h-[65vh] mx-auto object-contain block rounded-md"
               />
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
                 Tak w skrajnie pesymistycznym scenariuszu mogą wyglądać górki w Podjuchach (przy maksymalnej dopuszczonej planem ogólnym intensywności zabudowy 1,2 na całym obszarze strefy 1386SW).
@@ -139,7 +139,7 @@ const CityResponseSection = () => {
                 </figcaption>
               </figure>
             </DialogTrigger>
-            <DialogContent className="max-w-5xl">
+            <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
               <DialogTitle className="sr-only">Projekt osiedla TBS autorstwa 22Architekci</DialogTitle>
               <DialogDescription className="sr-only">
                 Zwycięski projekt osiedla TBS z naniesionymi granicami strefy 1386SW i terenów TBS.
@@ -147,7 +147,7 @@ const CityResponseSection = () => {
               <img
                 src={projektTbsCropped.url}
                 alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów TBS"
-                className="w-full h-auto block rounded-md"
+                className="w-auto max-w-full max-h-[65vh] mx-auto object-contain block rounded-md"
               />
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed mb-4">
                 Zwycięski projekt osiedla TBS autorstwa 22Architekci. Nanieśliśmy granice strefy zabudowy wielorodzinnej 1386SW z planu ogólnego (<span className="whitespace-nowrap"><BrownLine /></span>) oraz granice terenu należącego do TBS (<span className="whitespace-nowrap"><DashedLine /></span>).&nbsp;Rzuca się w oczy kontrast między kubaturą projektowanych bloków a okolicznych domów jednorodzinnych. Teren między ul. Ukośną a Olkuską jest na makiecie pusty, bo nie należy do TBS, ale i tu plan ogólny dopuszcza gęstą zabudowę wielorodzinną.
