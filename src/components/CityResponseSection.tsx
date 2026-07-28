@@ -1,5 +1,5 @@
 import { AlertTriangle, ZoomIn, ChevronDown, ExternalLink } from "lucide-react";
-import uwagaNieuwzgledniona from "@/assets/uwaga-nieuwzgledniona.png.asset.json";
+const uwagaNieuwzglednionaUrl = `${import.meta.env.BASE_URL}images/uwaga-nieuwzgledniona.png`;
 const gorkiMaksZabudowaUrl = `${import.meta.env.BASE_URL}images/symulacja-zabudowy-cropped.jpg`;
 const projektTbsCroppedUrl = `${import.meta.env.BASE_URL}images/projekt-tbs-cropped.png`;
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -57,7 +57,7 @@ const CityResponseSection = () => {
             <DialogTrigger asChild>
               <figure className="group relative rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
                 <img
-                  src={uwagaNieuwzgledniona.url}
+                  src={uwagaNieuwzglednionaUrl}
                   alt="Fragment projektu uchwały: Uwaga nieuwzględniona. Zachowuje się strefę SW – strefa wielofunkcyjna z zabudową mieszkaniową wielorodzinną."
                   className="w-full h-auto block"
                 />
