@@ -1,7 +1,7 @@
 import { AlertTriangle, ZoomIn, ChevronDown, ExternalLink } from "lucide-react";
 import uwagaNieuwzgledniona from "@/assets/uwaga-nieuwzgledniona.png.asset.json";
-import gorkiMaksZabudowa from "@/assets/symulacja-zabudowy-cropped.jpg.asset.json";
-import projektTbsCropped from "@/assets/projekt-tbs-cropped.png.asset.json";
+const gorkiMaksZabudowaUrl = `${import.meta.env.BASE_URL}images/symulacja-zabudowy-cropped.jpg`;
+const projektTbsCroppedUrl = `${import.meta.env.BASE_URL}images/projekt-tbs-cropped.png`;
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const BrownLine = () => (
@@ -92,7 +92,7 @@ const CityResponseSection = () => {
             <DialogTrigger asChild>
               <figure className="group relative w-full rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
                 <img
-                  src={gorkiMaksZabudowa.url}
+                                  src={gorkiMaksZabudowaUrl}
                   alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
                   className="w-full aspect-[1927/1773] block"
                 />
@@ -111,7 +111,7 @@ const CityResponseSection = () => {
                 Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego.
               </DialogDescription>
               <img
-                src={gorkiMaksZabudowa.url}
+                              src={gorkiMaksZabudowaUrl}
                 alt="Wizualizacja maksymalnej zabudowy górek w Podjuchach według przyjętego planu ogólnego"
                 className="w-auto max-w-full max-h-[65vh] mx-auto object-contain block rounded-md"
               />
@@ -125,7 +125,7 @@ const CityResponseSection = () => {
             <DialogTrigger asChild>
               <figure className="group relative w-full rounded-xl overflow-hidden border-2 border-destructive/30 bg-background shadow-md cursor-zoom-in transition-transform hover:scale-[1.01]">
                 <img
-                  src={projektTbsCropped.url}
+                                  src={projektTbsCroppedUrl}
                   alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów TBS"
                   className="w-full h-auto block"
                 />
@@ -145,7 +145,7 @@ const CityResponseSection = () => {
                 Zwycięski projekt osiedla TBS z naniesionymi granicami strefy 1386SW i terenów TBS.
               </DialogDescription>
               <img
-                src={projektTbsCropped.url}
+                              src={projektTbsCroppedUrl}
                 alt="Makieta osiedla TBS autorstwa 22Architekci z naniesionymi granicami strefy 1386SW i terenów TBS"
                 className="w-auto max-w-full max-h-[65vh] mx-auto object-contain block rounded-md"
               />
