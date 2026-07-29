@@ -124,7 +124,7 @@ const ArgumentsInfographic = () => {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-1 mb-1">
               
-              <span className="text-3xl font-bold text-slate-800 md:text-3xl">czyli <span className="text-destructive">~2000</span> <span className="text-[0.75em]">dodatkowych</span> samochodów!</span>
+              <span className="text-3xl font-bold text-slate-800 md:text-3xl">czyli <span className="text-destructive">~1500</span> <span className="text-[0.75em]">dodatkowych</span> samochodów!</span>
             </div>
             <p className="text-xs md:text-sm text-muted-foreground leading-tight">
               (licząc półtora samochodu na mieszkanie)
